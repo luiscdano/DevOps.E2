@@ -146,6 +146,6 @@ El uso del tablero Kanban permitió comprender cómo la planificación visual me
 
 ---
 
-## 👨‍💻 Autor
-**Luis Emilio Cedano Martínez**  
+## Autor
+**Luis Emilio Cedano, Matr.2024-0128**  
 ITLA – Electiva 2 (DevOps)
