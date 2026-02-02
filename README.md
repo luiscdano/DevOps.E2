@@ -2,31 +2,150 @@
 
 Repositorio público creado para la práctica de la asignatura **Electiva 2 (DevOps)** en el Instituto Tecnológico de las Américas (ITLA), bajo la conducción del docente **Elvys Cruz**.
 
-## Objetivo de la práctica
-- Crear un repositorio público en GitHub.
-- Mantener una rama principal **main**.
-- Mantener una rama de desarrollo **dev**.
-- Agregar uno o más archivos y compartir el enlace público del repositorio.
+Este repositorio documenta de forma progresiva los conceptos, prácticas y evidencias desarrolladas semana a semana durante el curso, simulando un entorno real de trabajo DevOps con enfoque en colaboración, automatización y mejora continua.
 
-## Estructura de ramas
-- **main**: rama estable (entregables finalizados).
-- **dev**: rama de desarrollo (cambios en progreso antes de pasar a main).
+---
 
-## Flujo de trabajo
-1. Trabajar cambios en `dev`
-2. Crear Pull Request `dev -> main`
-3. Revisar y aprobar
-4. Merge a `main` (historial limpio y estable)
+## Objetivo General del Repositorio
+- Aplicar los principios fundamentales de DevOps en un entorno práctico.
+- Utilizar control de versiones con ramas (`main` y `dev`) como base del flujo de trabajo.
+- Implementar herramientas de planificación y seguimiento de tareas (Kanban).
+- Documentar la evolución del proyecto como evidencia de aprendizaje académico y técnico.
 
-## Evidencias
-- Ramas creadas: `main` y `dev`
-- Historial de commits: ver pestaña **Commits**
-- Pull Requests: (cuando crees el primero, coloca el link aquí)
-- GitHub Actions (CI): (link a la corrida si la configuras)
+---
 
-## Resumen: ¿Qué es DevOps?
-DevOps es un conjunto de prácticas y cultura que integra desarrollo y operaciones para lograr entregas continuas de software confiable, automatizando procesos, mejorando colaboración y monitoreando constantemente.
+## Estructura de Ramas
+- **main**: Rama estable que representa los entregables validados y listos como versión final.
+- **dev**: Rama de desarrollo donde se realizan los cambios, mejoras y pruebas antes de ser promovidos a `main`.
 
-## Autor
+---
+
+## Flujo de Trabajo
+1. Desarrollo de cambios en la rama `dev`  
+2. Creación de Pull Request (`dev → main`)  
+3. Revisión y validación de los cambios  
+4. Integración en `main` para mantener un historial limpio y estable  
+
+---
+
+## S1 — Introducción a DevOps
+
+### Objetivo de la Semana
+Comprender los fundamentos de DevOps y establecer la base técnica del proyecto mediante la creación de un repositorio público con control de ramas y estructura profesional.
+
+---
+
+### Definición y Principios de DevOps
+DevOps es una cultura y conjunto de prácticas que integran los equipos de desarrollo (Dev) y operaciones (Ops) para mejorar la entrega continua de software, promoviendo la colaboración, la automatización y la responsabilidad compartida a lo largo del ciclo de vida del sistema.
+
+Principios clave abordados:
+- Colaboración entre equipos
+- Integración continua
+- Automatización de procesos
+- Monitoreo y retroalimentación constante
+
+---
+
+### Historia y Evolución de DevOps
+Se revisó cómo DevOps surge como respuesta a la separación tradicional entre desarrollo y operaciones, la cual generaba retrasos, errores en producción y falta de alineación entre equipos. La evolución ha llevado a la adopción de prácticas como CI/CD, infraestructura como código y monitoreo en tiempo real.
+
+---
+
+### Roles y Responsabilidades en DevOps
+Se identificaron los principales roles dentro de un entorno DevOps:
+- Desarrolladores
+- Ingenieros de Operaciones
+- Ingenieros DevOps
+- QA / Testing
+- Product Owner / Project Manager
+
+Todos enfocados en un modelo de trabajo colaborativo y multifuncional.
+
+---
+
+### Desafíos en DevOps
+Se analizaron retos comunes como:
+- Resistencia al cambio cultural
+- Falta de automatización
+- Problemas de comunicación entre equipos
+- Gestión de infraestructura y seguridad
+
+---
+
+### Evidencia Técnica — S1
+- Repositorio público creado en GitHub
+- Ramas configuradas: `main` y `dev`
+- Documentación inicial en README
+- Historial de commits como evidencia de control de versiones
+
+---
+
+### Experiencia Personal
+Esta semana permitió comprender que DevOps no es solo una herramienta o metodología, sino una cultura organizacional. La creación del repositorio y la separación de ramas ayudó a visualizar cómo se estructuran los flujos de trabajo en equipos reales de desarrollo y despliegue.
+
+---
+
+## S2 — Herramientas de Comunicación y Colaboración
+
+### Objetivo de la Semana
+Implementar una herramienta visual de planificación y seguimiento de tareas mediante un tablero Kanban, reforzando la importancia de la comunicación, la trazabilidad y la organización del trabajo en entornos DevOps.
+
+---
+
+### Herramientas de Comunicación y Colaboración en DevOps
+Se trabajó con GitHub Projects como herramienta central para la gestión visual de tareas, permitiendo:
+- Organización de actividades por estados
+- Seguimiento del progreso del proyecto
+- Relación entre tareas e incidencias del repositorio
+
+---
+
+### Construyendo una Cultura Colaborativa y Multifuncional
+Se reforzó la importancia de la transparencia en el trabajo, donde todos los miembros del equipo pueden ver:
+- Qué tareas están pendientes
+- Qué se está desarrollando
+- Qué está en revisión
+- Qué ya fue completado
+
+---
+
+### Metodologías Ágiles y DevOps
+Se estableció la relación entre enfoques ágiles (como Kanban) y DevOps, destacando cómo ambos buscan:
+- Entregas continuas
+- Mejora incremental
+- Retroalimentación constante
+- Adaptación al cambio
+
+---
+
+### Automatización
+Se introdujo el concepto de automatización como pilar de DevOps, con énfasis en:
+- Integración continua (CI)
+- Validación automática de cambios
+- Preparación para futuras configuraciones de pipelines
+
+---
+
+### Evidencia Técnica
+- Creación de tablero Kanban en GitHub Projects
+- Columnas configuradas:
+  - Todo
+  - In Progress
+  - Review / PR
+  - Done
+- Tareas vinculadas a issues del repositorio
+- Seguimiento visual del flujo de trabajo
+
+Enlace del tablero Kanban:  
+https://github.com/users/luiscdano/projects/1
+
+---
+
+### Experiencia Personal — S2
+El uso del tablero Kanban permitió comprender cómo la planificación visual mejora la comunicación dentro de los equipos, facilita la priorización de tareas y crea una trazabilidad clara entre la planeación, el desarrollo y la validación del trabajo realizado.
+
+---
+
+## 👨‍💻 Autor
 **Luis Emilio Cedano Martínez**  
 ITLA – Electiva 2 (DevOps)
