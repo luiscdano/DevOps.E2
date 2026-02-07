@@ -11,6 +11,11 @@ on:
 
 permissions:
   contents: write
+  actions: write
+
+concurrency:
+  group: sync-project-progress
+  cancel-in-progress: true
 
 jobs:
   sync:
@@ -28,9 +33,11 @@ jobs:
         run: node scripts/sync-project-progress.mjs --owner luiscdano --project 1 --path docs/data/progress.json
 
       - name: Commit sync changes
+        id: commit_sync
         run: |
           if git diff --quiet -- docs/data/progress.json; then
             echo "No changes to commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -38,4 +45,33 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/data/progress.json
           git commit -m "chore: sync progress board from GitHub Projects"
-          git push
+
+          success=false
+          for attempt in 1 2 3; do
+            if git push; then
+              success=true
+              break
+            fi
+
+            echo "Push failed on attempt ${attempt}. Rebasing and retrying..."
+            git pull --rebase origin main
+          done
+
+          if [ "$success" != "true" ]; then
+            echo "Push failed after 3 attempts."
+            exit 1
+          fi
+
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Trigger Pages deployment
+        if: steps.commit_sync.outputs.changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          curl -fsSL \
+            -X POST \
+            -H "Authorization: Bearer ${GITHUB_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/actions/workflows/pages.yml/dispatches \
+            -d '{"ref":"main"}'
