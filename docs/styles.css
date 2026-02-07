@@ -148,8 +148,8 @@ main {
 
 .hero-layout {
   display: grid;
-  grid-template-columns: minmax(220px, 300px) 1fr;
-  gap: 1.8rem;
+  grid-template-columns: minmax(320px, 460px) 1fr;
+  gap: 2.1rem;
   align-items: center;
 }
 
@@ -168,6 +168,17 @@ main {
 
 .hero-main {
   min-width: 0;
+  max-width: 54ch;
+  display: grid;
+}
+
+.hero-main .eyebrow {
+  font-size: 0.72rem;
+}
+
+.hero-main h1 {
+  font-size: clamp(1.55rem, 2.65vw, 2.55rem);
+  max-width: 17ch;
 }
 
 .eyebrow {
@@ -195,9 +206,12 @@ h1 {
 
 .hero-copy {
   margin: 1.1rem 0 0;
-  max-width: 62ch;
+  max-width: 46ch;
   color: var(--muted);
-  font-size: 1.03rem;
+  font-size: 0.94rem;
+  text-align: center;
+  justify-self: center;
+  line-height: 1.62;
 }
 
 code {
@@ -809,7 +823,7 @@ main > .module:first-child {
   }
 
   .hero-illustration {
-    width: min(340px, 100%);
+    width: min(400px, 100%);
     justify-self: center;
   }
 
