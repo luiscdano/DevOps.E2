@@ -146,6 +146,48 @@ El uso del tablero Kanban permitió comprender cómo la planificación visual me
 
 ---
 
+## S3 — Herramientas CI/CD y Automatización
+
+### Objetivo de la Semana
+Crear una página web del proyecto y desplegarla automáticamente en la nube desde GitHub usando **GitHub Pages** como base del flujo CI/CD.
+
+---
+
+### Implementación Realizada
+- Se creó una web evolutiva en `docs/` para presentar el progreso DevOps del cuatrimestre.
+- Se configuró un workflow de GitHub Actions en `.github/workflows/pages.yml`.
+- Cada push a `main` (con cambios en `docs/`, workflow o `README.md`) dispara el despliegue automático.
+- La web quedó diseñada para crecer por semanas sin rehacer toda la estructura.
+- Se integró el seguimiento general con enlace directo al tablero Kanban (`Projects/1`) y métricas dinámicas del repositorio (issues, PR y estado del último deploy).
+
+---
+
+### Evidencia Técnica — S3
+- Sitio web estático publicado con GitHub Pages
+- Pipeline de despliegue automático con GitHub Actions
+- Secciones incluidas:
+  - Integración Continua (CI)
+  - Entrega Continua (CD)
+  - Automatización de infraestructura (roadmap)
+  - Monitoreo y trazabilidad (commits recientes desde API de GitHub)
+
+Enlace esperado del sitio:
+https://luiscdano.github.io/DevOps.E2/
+
+---
+
+### Activación en GitHub (una sola vez)
+1. Ir a **Settings > Pages** del repositorio.
+2. En **Source**, seleccionar **GitHub Actions**.
+3. Confirmar que el workflow `Deploy GitHub Pages` complete correctamente.
+
+---
+
+### Experiencia Personal — S3
+Esta semana permitió conectar teoría y práctica de CI/CD en un caso real: cada cambio en el repositorio puede transformarse en una entrega visible en línea, con trazabilidad y base para futuras automatizaciones del curso.
+
+---
+
 ## Autor
 **Luis Emilio Cedano, Matr.2024-0128**  
 ITLA – Electiva 2 (DevOps)

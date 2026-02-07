@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bitácora evolutiva de DevOps.E2 (ITLA): CI/CD, automatización, infraestructura y monitoreo semana a semana."
+    />
+    <title>DevOps.E2 | Laboratorio Vivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#inicio">
+        <span class="brand-dot"></span>
+        <span>DevOps.E2</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#pipeline">Pipeline</a>
+        <a href="#semanas">Semanas</a>
+        <a href="#kanban">Kanban</a>
+        <a href="#automatizacion">Automatizacion</a>
+        <a href="#pulse">Repo Pulse</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <p class="eyebrow">Electiva II · ITLA · 2026-C1</p>
+        <h1>
+          DevOps no como teoria,<br />
+          sino como un sistema que evoluciona cada semana.
+        </h1>
+        <p class="hero-copy">
+          Este sitio es el tablero vivo del repositorio <code>DevOps.E2</code>: integra evidencia academica,
+          automatizacion CI/CD y una arquitectura lista para crecer con cada practica del cuatrimestre.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2" target="_blank" rel="noreferrer">
+            Ver repositorio
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/users/luiscdano/projects/1" target="_blank" rel="noreferrer">
+            Ver tablero Kanban
+          </a>
+        </div>
+
+        <ul class="meta-strip">
+          <li><span class="label">Rama estable</span><span class="value">main</span></li>
+          <li><span class="label">Rama de trabajo</span><span class="value">dev</span></li>
+          <li><span class="label">Entrega activa</span><span class="value">S3 · CI/CD</span></li>
+        </ul>
+      </section>
+
+      <section class="pipeline reveal" id="pipeline">
+        <div class="section-head">
+          <p class="eyebrow">S3 · Herramientas CI/CD y automatizacion</p>
+          <h2>Ciclo DevOps operando en flujo continuo</h2>
+        </div>
+
+        <div class="loop-board">
+          <div class="loop-track" aria-hidden="true"></div>
+          <div class="loop-grid">
+            <article class="stage-card" data-stage="plan">
+              <h3>Plan</h3>
+              <p>Historias, backlog y priorizacion visible.</p>
+            </article>
+            <article class="stage-card" data-stage="code">
+              <h3>Code</h3>
+              <p>Trabajo controlado por ramas y PR.</p>
+            </article>
+            <article class="stage-card" data-stage="build">
+              <h3>Build</h3>
+              <p>Versionado y empaquetado repetible.</p>
+            </article>
+            <article class="stage-card" data-stage="test">
+              <h3>Test</h3>
+              <p>Validacion automatica antes de integrar.</p>
+            </article>
+            <article class="stage-card" data-stage="release">
+              <h3>Release</h3>
+              <p>Promocion controlada de entregables.</p>
+            </article>
+            <article class="stage-card" data-stage="deploy">
+              <h3>Deploy</h3>
+              <p>Publicacion automatica con GitHub Pages.</p>
+            </article>
+            <article class="stage-card" data-stage="monitor">
+              <h3>Monitor</h3>
+              <p>Seguimiento de estado y trazabilidad.</p>
+            </article>
+            <article class="stage-card" data-stage="feedback">
+              <h3>Feedback</h3>
+              <p>Iteraciones cortas para mejora continua.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="weeks reveal" id="semanas">
+        <div class="section-head">
+          <p class="eyebrow">Bitacora evolutiva</p>
+          <h2>Ruta de aprendizaje por semanas</h2>
+        </div>
+
+        <div class="filters" role="tablist" aria-label="Filtrar semanas">
+          <button class="filter-btn active" data-filter="all" type="button">Todas</button>
+          <button class="filter-btn" data-filter="done" type="button">Completadas</button>
+          <button class="filter-btn" data-filter="active" type="button">En curso</button>
+          <button class="filter-btn" data-filter="next" type="button">Proximas</button>
+        </div>
+
+        <div class="weeks-grid" id="weeks-grid"></div>
+      </section>
+
+      <section class="kanban reveal" id="kanban">
+        <div class="section-head">
+          <p class="eyebrow">Seguimiento general</p>
+          <h2>Vinculacion con GitHub Projects y actividad real</h2>
+        </div>
+
+        <div class="kanban-grid">
+          <article class="kanban-card">
+            <h3>Tablero Kanban oficial</h3>
+            <p>
+              Fuente principal para visualizar el estado de las tareas del curso.
+              Usa este tablero para ver prioridades, trabajo en proceso y entregables completados.
+            </p>
+            <a
+              class="btn btn-primary"
+              href="https://github.com/users/luiscdano/projects/1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Abrir GitHub Projects
+            </a>
+          </article>
+
+          <article class="kanban-card">
+            <h3>Indicadores del repositorio</h3>
+            <ul class="metric-list" id="repo-metrics">
+              <li class="metric-item loading">Cargando indicadores...</li>
+            </ul>
+          </article>
+
+          <article class="kanban-card">
+            <h3>Estado de despliegue</h3>
+            <ul class="metric-list" id="deploy-metrics">
+              <li class="metric-item loading">Consultando ultimo deploy...</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="automation reveal" id="automatizacion">
+        <div class="section-head">
+          <p class="eyebrow">Automatizacion aplicada</p>
+          <h2>Estado de implementacion DevOps</h2>
+        </div>
+
+        <div class="automation-grid" id="automation-grid"></div>
+      </section>
+
+      <section class="toolbox reveal" id="herramientas">
+        <div class="section-head">
+          <p class="eyebrow">Mapa de herramientas</p>
+          <h2>Stack actual y stack objetivo</h2>
+        </div>
+
+        <div class="tool-rows">
+          <article class="tool-group">
+            <h3>Versionado y colaboracion</h3>
+            <ul>
+              <li>Git + GitHub</li>
+              <li>GitHub Projects (Kanban)</li>
+              <li>Pull Requests y revisiones</li>
+            </ul>
+          </article>
+          <article class="tool-group">
+            <h3>CI/CD</h3>
+            <ul>
+              <li>GitHub Actions</li>
+              <li>GitHub Pages</li>
+              <li>Deploy continuo por push</li>
+            </ul>
+          </article>
+          <article class="tool-group">
+            <h3>Siguientes integraciones</h3>
+            <ul>
+              <li>Pruebas automatizadas</li>
+              <li>Linting y quality gates</li>
+              <li>Monitoreo y logs</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="pulse reveal" id="pulse">
+        <div class="section-head">
+          <p class="eyebrow">Monitoreo de actividad</p>
+          <h2>Ultimos commits del repositorio</h2>
+        </div>
+
+        <p class="pulse-note">
+          Esta seccion consulta la API publica de GitHub para mostrar trazabilidad reciente del trabajo.
+        </p>
+        <ul id="commit-list" class="commit-list">
+          <li class="commit-item loading">Cargando actividad...</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Luis Emilio Cedano · Matr. 2024-0128 · ITLA Electiva II (DevOps)
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
