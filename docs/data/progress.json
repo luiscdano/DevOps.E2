@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-02-07T22:55:40Z",
+  "lastUpdated": "2026-02-07T23:45:13Z",
   "source": {
     "kind": "github-projects-public-html",
     "projectUrl": "https://github.com/users/luiscdano/projects/1",
     "projectTitle": "DevOps Workflow Board",
-    "syncedAt": "2026-02-07T22:55:40Z"
+    "syncedAt": "2026-02-07T23:45:13Z"
   },
   "cards": [
     {
@@ -63,39 +63,6 @@
       }
     },
     {
-      "id": "issue-6",
-      "title": "S4 · Configurar triggers CI sobre rama main",
-      "week": "Sin semana",
-      "status": "in-progress",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
-      "proof": {
-        "label": "Issue",
-        "url": "https://github.com/luiscdano/DevOps.E2/issues/6"
-      }
-    },
-    {
-      "id": "issue-5",
-      "title": "S4 · Crear programa Hola Mundo para CI",
-      "week": "Sin semana",
-      "status": "in-progress",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
-      "proof": {
-        "label": "Issue",
-        "url": "https://github.com/luiscdano/DevOps.E2/issues/5"
-      }
-    },
-    {
-      "id": "issue-4",
-      "title": "S4 · Workflow alerta.yml para ntfy.sh (en revision)",
-      "week": "Sin semana",
-      "status": "review-pr",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
-      "proof": {
-        "label": "Issue",
-        "url": "https://github.com/luiscdano/DevOps.E2/issues/4"
-      }
-    },
-    {
       "id": "issue-2",
       "title": "Document DevOps principles",
       "week": "Sin semana",
@@ -140,6 +107,39 @@
       }
     },
     {
+      "id": "issue-6",
+      "title": "S4 · Configurar triggers CI sobre rama main",
+      "week": "Sin semana",
+      "status": "done",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/6"
+      }
+    },
+    {
+      "id": "issue-5",
+      "title": "S4 · Crear programa Hola Mundo para CI",
+      "week": "Sin semana",
+      "status": "done",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/5"
+      }
+    },
+    {
+      "id": "issue-4",
+      "title": "S4 · Workflow alerta.yml para ntfy.sh (en revision)",
+      "week": "Sin semana",
+      "status": "done",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/4"
+      }
+    },
+    {
       "id": "issue-3",
       "title": "Setup repository workflow (dev → main)",
       "week": "Sin semana",
@@ -152,6 +152,27 @@
     }
   ],
   "movements": [
+    {
+      "date": "2026-02-07T23:45:34.563Z",
+      "taskId": "issue-6",
+      "from": "in-progress",
+      "to": "done",
+      "note": "Estado actualizado por sincronizacion con GitHub Projects"
+    },
+    {
+      "date": "2026-02-07T23:45:34.563Z",
+      "taskId": "issue-5",
+      "from": "in-progress",
+      "to": "done",
+      "note": "Estado actualizado por sincronizacion con GitHub Projects"
+    },
+    {
+      "date": "2026-02-07T23:45:34.563Z",
+      "taskId": "issue-4",
+      "from": "review-pr",
+      "to": "done",
+      "note": "Estado actualizado por sincronizacion con GitHub Projects"
+    },
     {
       "date": "2026-02-07T22:55:42.816Z",
       "taskId": "issue-14",
