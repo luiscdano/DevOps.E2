@@ -183,6 +183,37 @@ https://luiscdano.github.io/DevOps.E2/
 
 ---
 
+### Seguimiento Paso a Paso (Kanban Web)
+La web ahora incluye un Kanban interno con columnas `Todo`, `In Progress`, `Review / PR` y `Done`, mas una bitacora cronologica de cada movimiento.
+
+Archivos clave:
+- `docs/data/progress.json`: estado actual de tareas y log de movimientos.
+- `scripts/progress-task.mjs`: utilitario CLI para agregar/mover tareas sin editar JSON manualmente.
+
+Comandos utiles:
+1. Mover tarea entre columnas  
+   `node scripts/progress-task.mjs move --id s3-docs-refresh --to review-pr --note "Lista para validacion"`
+2. Marcar tarea como completada  
+   `node scripts/progress-task.mjs move --id s3-docs-refresh --to done --note "Aprobada y cerrada"`
+3. Crear tarea nueva  
+   `node scripts/progress-task.mjs add --id s4-ci-tests --title "Configurar pruebas CI" --week S4 --details "Ejecutar tests en cada PR"`
+
+Flujo recomendado:
+1. Crear tarea en `Todo`
+2. Mover a `In Progress` al iniciar trabajo
+3. Mover a `Review / PR` al abrir validacion
+4. Mover a `Done` al aprobar/mergear
+
+---
+
+### Nota de Integracion con GitHub Projects
+El enlace oficial del tablero se mantiene en:
+https://github.com/users/luiscdano/projects/1
+
+Para sincronizacion API directa de `ProjectV2` (lectura/escritura automatica), el token de GitHub CLI necesita el scope `read:project`.
+
+---
+
 ### Experiencia Personal — S3
 Esta semana permitió conectar teoría y práctica de CI/CD en un caso real: cada cambio en el repositorio puede transformarse en una entrega visible en línea, con trazabilidad y base para futuras automatizaciones del curso.
 

@@ -301,6 +301,13 @@ section {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.progress-wrap {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: 1.7fr 1fr;
+}
+
 .week-card,
 .auto-card {
   border: 1px solid var(--line);
@@ -360,6 +367,152 @@ section {
   width: fit-content;
   color: var(--accent-3);
   font-size: 0.86rem;
+}
+
+.progress-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  background: linear-gradient(160deg, rgba(19, 24, 52, 0.92), rgba(11, 15, 35, 0.88));
+}
+
+.progress-head {
+  margin-bottom: 0.7rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.progress-head h3 {
+  font-size: 1.02rem;
+}
+
+.progress-head p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.board-columns {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.board-column {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(10, 14, 30, 0.72);
+  min-height: 220px;
+  padding: 0.7rem;
+}
+
+.board-column h4 {
+  margin: 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.board-count {
+  margin: 0.35rem 0 0;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.board-items {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.board-task {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.55rem;
+  background: rgba(14, 18, 38, 0.84);
+}
+
+.board-task h5 {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+.board-task p {
+  margin: 0.28rem 0 0;
+  color: var(--muted);
+  font-size: 0.79rem;
+  line-height: 1.35;
+}
+
+.board-task .task-week {
+  display: inline-flex;
+  margin-top: 0.4rem;
+  border-radius: 999px;
+  padding: 0.12rem 0.45rem;
+  font-size: 0.67rem;
+  font-family: "JetBrains Mono", monospace;
+  color: #7ad6ff;
+  background: rgba(111, 183, 255, 0.12);
+}
+
+.board-task .task-proof {
+  margin-top: 0.42rem;
+  display: inline-flex;
+  color: var(--accent-3);
+  font-size: 0.72rem;
+}
+
+.board-column.status-todo {
+  border-color: rgba(111, 183, 255, 0.38);
+}
+
+.board-column.status-in-progress {
+  border-color: rgba(255, 191, 147, 0.5);
+}
+
+.board-column.status-review-pr {
+  border-color: rgba(187, 154, 255, 0.46);
+}
+
+.board-column.status-done {
+  border-color: rgba(110, 235, 188, 0.46);
+}
+
+.movement-card {
+  max-height: 520px;
+  overflow: auto;
+}
+
+.movement-log {
+  margin: 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.58rem;
+}
+
+.movement-item {
+  border-left: 2px solid var(--line);
+  padding-left: 0.55rem;
+}
+
+.movement-item p {
+  margin: 0;
+  font-size: 0.81rem;
+}
+
+.movement-date {
+  color: var(--muted);
+  font-size: 0.73rem;
+}
+
+.movement-shift {
+  color: var(--text);
+  font-weight: 600;
 }
 
 .week-head {
@@ -553,6 +706,8 @@ section {
   .loop-grid,
   .weeks-grid,
   .kanban-grid,
+  .progress-wrap,
+  .board-columns,
   .automation-grid,
   .tool-rows {
     grid-template-columns: 1fr;

@@ -1,0 +1,142 @@
+{
+  "lastUpdated": "2026-02-07T16:12:00.000Z",
+  "cards": [
+    {
+      "id": "s3-web-base",
+      "title": "Creacion de pagina web base del proyecto",
+      "week": "S3",
+      "status": "done",
+      "details": "Landing DevOps, secciones dinamicas y arquitectura para evolucion semanal.",
+      "proof": {
+        "label": "Commit principal",
+        "url": "https://github.com/luiscdano/DevOps.E2/commit/c406107"
+      }
+    },
+    {
+      "id": "s3-pages-workflow",
+      "title": "Automatizar deploy con GitHub Pages y Actions",
+      "week": "S3",
+      "status": "done",
+      "details": "Workflow pages.yml activo y despliegue exitoso en la URL publica.",
+      "proof": {
+        "label": "Workflow de Pages",
+        "url": "https://github.com/luiscdano/DevOps.E2/actions/workflows/pages.yml"
+      }
+    },
+    {
+      "id": "s3-kanban-followup",
+      "title": "Integrar seguimiento Kanban paso a paso en la web",
+      "week": "S3",
+      "status": "done",
+      "details": "Kanban interno con columnas y bitacora cronologica de movimientos.",
+      "proof": {
+        "label": "Project #1",
+        "url": "https://github.com/users/luiscdano/projects/1"
+      }
+    },
+    {
+      "id": "s3-docs-refresh",
+      "title": "Actualizar README con evidencia S3 y trazabilidad",
+      "week": "S3",
+      "status": "review-pr",
+      "details": "Documentar el estado de implementacion CI/CD y seguimiento.",
+      "proof": {
+        "label": "README",
+        "url": "https://github.com/luiscdano/DevOps.E2/blob/main/README.md"
+      }
+    },
+    {
+      "id": "s4-quality-gates",
+      "title": "Definir quality gates (lint + tests) para S4",
+      "week": "S4",
+      "status": "todo",
+      "details": "Configurar validaciones automaticas previas al deploy."
+    },
+    {
+      "id": "s4-observability",
+      "title": "Agregar monitoreo y logs basicos",
+      "week": "S4",
+      "status": "todo",
+      "details": "Incorporar observabilidad para salud, errores y rendimiento."
+    }
+  ],
+  "movements": [
+    {
+      "date": "2026-02-07T16:12:00.000Z",
+      "taskId": "s3-kanban-followup",
+      "from": "review-pr",
+      "to": "done",
+      "note": "Kanban interno validado y completado"
+    },
+    {
+      "date": "2026-02-07T16:05:00.000Z",
+      "taskId": "s3-docs-refresh",
+      "from": "in-progress",
+      "to": "review-pr",
+      "note": "Tarea movida de In Progress a Review/PR para validacion"
+    },
+    {
+      "date": "2026-02-07T15:35:00Z",
+      "taskId": "s3-kanban-followup",
+      "from": "in-progress",
+      "to": "review-pr",
+      "note": "Se completa implementacion inicial y pasa a revision."
+    },
+    {
+      "date": "2026-02-07T15:28:00Z",
+      "taskId": "s3-docs-refresh",
+      "from": "todo",
+      "to": "in-progress",
+      "note": "Se inicia ajuste de README con evidencia tecnica."
+    },
+    {
+      "date": "2026-02-07T15:20:00Z",
+      "taskId": "s3-kanban-followup",
+      "from": "todo",
+      "to": "in-progress",
+      "note": "Se inicia conexion visual del progreso en la pagina web."
+    },
+    {
+      "date": "2026-02-07T15:10:00Z",
+      "taskId": "s3-pages-workflow",
+      "from": "review-pr",
+      "to": "done",
+      "note": "Deploy verificado en produccion con GitHub Pages."
+    },
+    {
+      "date": "2026-02-07T15:07:00Z",
+      "taskId": "s3-pages-workflow",
+      "from": "in-progress",
+      "to": "review-pr",
+      "note": "Workflow listo y enviado a validacion final."
+    },
+    {
+      "date": "2026-02-07T15:04:00Z",
+      "taskId": "s3-web-base",
+      "from": "review-pr",
+      "to": "done",
+      "note": "Merge a main y publicacion completada."
+    },
+    {
+      "date": "2026-02-07T15:00:00Z",
+      "taskId": "s3-web-base",
+      "from": "in-progress",
+      "to": "review-pr",
+      "note": "Estructura estable para revision y PR."
+    },
+    {
+      "date": "2026-02-07T14:50:00Z",
+      "taskId": "s3-pages-workflow",
+      "from": "todo",
+      "to": "in-progress",
+      "note": "Se inicia automatizacion CI/CD para GitHub Pages."
+    },
+    {
+      "date": "2026-02-07T14:30:00Z",
+      "taskId": "s3-web-base",
+      "from": "todo",
+      "to": "in-progress",
+      "note": "Inicio de desarrollo de la pagina S3."
+    }
+  ]
+}
