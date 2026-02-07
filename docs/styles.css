@@ -148,7 +148,7 @@ main {
 
 .hero-layout {
   display: grid;
-  grid-template-columns: minmax(320px, 460px) 1fr;
+  grid-template-columns: minmax(368px, 530px) 1fr;
   gap: 2.1rem;
   align-items: center;
 }
@@ -177,7 +177,7 @@ main {
 }
 
 .hero-main h1 {
-  font-size: clamp(1.55rem, 2.65vw, 2.55rem);
+  font-size: clamp(1.4rem, 2.4vw, 2.3rem);
   max-width: 17ch;
 }
 
@@ -205,7 +205,7 @@ h1 {
 }
 
 .hero-copy {
-  margin: 1.1rem 0 0;
+  margin: 0.6rem 0 0;
   max-width: 46ch;
   color: var(--muted);
   font-size: 0.94rem;
