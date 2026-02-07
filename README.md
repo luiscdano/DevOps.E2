@@ -183,34 +183,26 @@ https://luiscdano.github.io/DevOps.E2/
 
 ---
 
-### Seguimiento Paso a Paso (Kanban Web)
-La web ahora incluye un Kanban interno con columnas `Todo`, `In Progress`, `Review / PR` y `Done`, mas una bitacora cronologica de cada movimiento.
+### Sincronizacion automatica del Kanban Web
+La web ahora refleja automaticamente el estado real de **GitHub Projects** (`Project #1`) para evitar diferencias entre tablero y pagina.
 
-Archivos clave:
-- `docs/data/progress.json`: estado actual de tareas y log de movimientos.
-- `scripts/progress-task.mjs`: utilitario CLI para agregar/mover tareas sin editar JSON manualmente.
-
-Comandos utiles:
-1. Mover tarea entre columnas  
-   `node scripts/progress-task.mjs move --id s3-docs-refresh --to review-pr --note "Lista para validacion"`
-2. Marcar tarea como completada  
-   `node scripts/progress-task.mjs move --id s3-docs-refresh --to done --note "Aprobada y cerrada"`
-3. Crear tarea nueva  
-   `node scripts/progress-task.mjs add --id s4-ci-tests --title "Configurar pruebas CI" --week S4 --details "Ejecutar tests en cada PR"`
-
-Flujo recomendado:
-1. Crear tarea en `Todo`
-2. Mover a `In Progress` al iniciar trabajo
-3. Mover a `Review / PR` al abrir validacion
-4. Mover a `Done` al aprobar/mergear
-
----
-
-### Nota de Integracion con GitHub Projects
-El enlace oficial del tablero se mantiene en:
+Fuente oficial del estado:
 https://github.com/users/luiscdano/projects/1
 
-Para sincronizacion API directa de `ProjectV2` (lectura/escritura automatica), el token de GitHub CLI necesita el scope `read:project`.
+Implementacion:
+- `docs/data/progress.json`: archivo generado automaticamente con tareas y estados.
+- `scripts/sync-project-progress.mjs`: sincroniza `Project #1` hacia `progress.json`.
+- `.github/workflows/sync-project-progress.yml`: ejecuta la sincronizacion en CI.
+
+Disparadores del workflow de sync:
+1. Manual (`workflow_dispatch`)
+2. Cada 30 minutos (`cron`)
+3. Eventos de `issues` y `pull_request`
+
+Comando local de sincronizacion:
+`node scripts/sync-project-progress.mjs --owner luiscdano --project 1 --path docs/data/progress.json`
+
+Nota: para mantener consistencia, los cambios de estado deben hacerse en **GitHub Projects**; la web se actualiza a partir de ese tablero.
 
 ---
 

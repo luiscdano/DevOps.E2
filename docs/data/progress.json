@@ -1,235 +1,121 @@
 {
-  "lastUpdated": "2026-02-07T18:40:00Z",
+  "lastUpdated": "2026-02-07T22:27:02Z",
+  "source": {
+    "kind": "github-projects-public-html",
+    "projectUrl": "https://github.com/users/luiscdano/projects/1",
+    "projectTitle": "DevOps Workflow Board",
+    "syncedAt": "2026-02-07T22:27:02Z"
+  },
   "cards": [
     {
-      "id": "s1-repo-setup",
-      "title": "S1: repositorio publico con ramas main y dev",
-      "week": "S1",
-      "status": "done",
-      "details": "Base tecnica creada con control de versiones y primeras evidencias.",
+      "id": "issue-7",
+      "title": "Create collaboration guidelines",
+      "week": "Sin semana",
+      "status": "todo",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
       "proof": {
-        "label": "Repositorio",
-        "url": "https://github.com/luiscdano/DevOps.E2"
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/7"
       }
     },
     {
-      "id": "s2-project-kanban",
-      "title": "S2: tablero Kanban en GitHub Projects",
-      "week": "S2",
-      "status": "done",
-      "details": "Planificacion visual con columnas y trazabilidad por estado.",
+      "id": "issue-5",
+      "title": "Configure basic CI pipeline",
+      "week": "Sin semana",
+      "status": "in-progress",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
       "proof": {
-        "label": "Project #1",
-        "url": "https://github.com/users/luiscdano/projects/1"
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/5"
       }
     },
     {
-      "id": "s3-pages-hosting",
-      "title": "S3: despliegue automatico en GitHub Pages",
-      "week": "S3",
-      "status": "done",
-      "details": "Hosting en la nube activado desde el repositorio con Actions.",
+      "id": "issue-6",
+      "title": "Define CI workflow triggers",
+      "week": "Sin semana",
+      "status": "in-progress",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
       "proof": {
-        "label": "Sitio publicado",
-        "url": "https://luiscdano.github.io/DevOps.E2/"
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/6"
       }
     },
     {
-      "id": "s3-home-hero",
-      "title": "S3: rediseño del Home con hero modular",
-      "week": "S3",
-      "status": "done",
-      "details": "Seccion principal optimizada con layout visual y narrativa del curso.",
-      "proof": {
-        "label": "Home",
-        "url": "https://luiscdano.github.io/DevOps.E2/index.html"
-      }
-    },
-    {
-      "id": "s3-semanas-route",
-      "title": "S3: separacion por modulos Home, Semanas y Kanban",
-      "week": "S3",
-      "status": "done",
-      "details": "Navegacion por paginas para mantener cada bloque en su propio espacio.",
-      "proof": {
-        "label": "Modulo Semanas",
-        "url": "https://luiscdano.github.io/DevOps.E2/semanas.html"
-      }
-    },
-    {
-      "id": "s3-cycle-order",
-      "title": "S3: orden del ciclo DevOps alineado al flujo real",
-      "week": "S3",
-      "status": "done",
-      "details": "Pipeline visual con secuencia Plan, Code, Build, Test, Release, Deploy, Operate y Monitor.",
-      "proof": {
-        "label": "Ciclo DevOps",
-        "url": "https://luiscdano.github.io/DevOps.E2/semanas.html"
-      }
-    },
-    {
-      "id": "s3-kanban-command",
-      "title": "S3: Command Center Kanban con resumen ejecutivo",
-      "week": "S3",
+      "id": "issue-4",
+      "title": "Add evidence reports",
+      "week": "Sin semana",
       "status": "review-pr",
-      "details": "Panel final que concentra KPIs, foco actual e historial de movimientos.",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
       "proof": {
-        "label": "Modulo Kanban",
-        "url": "https://luiscdano.github.io/DevOps.E2/kanban.html"
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/4"
       }
     },
     {
-      "id": "s3-readme-evidence",
-      "title": "S3: actualizar README con evidencia de avances",
-      "week": "S3",
-      "status": "in-progress",
-      "details": "Documentar la evolucion de modulos, flujo CI/CD y entregables por semana.",
+      "id": "issue-2",
+      "title": "Document DevOps principles",
+      "week": "Sin semana",
+      "status": "done",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
       "proof": {
-        "label": "README",
-        "url": "https://github.com/luiscdano/DevOps.E2/blob/main/README.md"
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/2"
       }
     },
     {
-      "id": "s4-ci-hola",
-      "title": "S4: programa Hola Mundo para flujo CI",
-      "week": "S4",
-      "status": "in-progress",
-      "details": "Preparar base del ejercicio para integracion continua en main."
-    },
-    {
-      "id": "s4-ci-ntfy",
-      "title": "S4: workflow alerta.yml con notificacion a ntfy.sh/devops-itla",
-      "week": "S4",
-      "status": "todo",
-      "details": "Crear automatizacion que dispare alerta al hacer push a main."
-    },
-    {
-      "id": "s4-ci-checks",
-      "title": "S4: checks previos al deploy (lint y pruebas)",
-      "week": "S4",
-      "status": "todo",
-      "details": "Agregar quality gates para fortalecer el pipeline."
-    },
-    {
-      "id": "s5-partial-evaluation",
-      "title": "S5: preparar evidencia integral para el primer parcial",
-      "week": "S5",
-      "status": "todo",
-      "details": "Consolidar practicas S1-S4 con trazabilidad y demostracion tecnica."
-    },
-    {
-      "id": "s6-docker-nginx",
-      "title": "S6: publicar pagina en Nginx con Docker Compose",
-      "week": "S6",
-      "status": "todo",
-      "details": "Servir src/index.html montado en /usr/share/nginx/html."
-    },
-    {
-      "id": "s7-app-mysql",
-      "title": "S7: app conectada a MySQL con Docker Compose",
-      "week": "S7",
-      "status": "todo",
-      "details": "Definir servicios de aplicacion y base de datos en docker-compose.yml."
-    },
-    {
-      "id": "s8-ansible-automation",
-      "title": "S8: automatizacion de 5 servidores Ubuntu con Ansible",
-      "week": "S8",
-      "status": "todo",
-      "details": "Aplicar playbooks para usuarios, paquetes, archivos y configuracion base."
+      "id": "issue-3",
+      "title": "Setup repository workflow (dev → main)",
+      "week": "Sin semana",
+      "status": "done",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/3"
+      }
     }
   ],
   "movements": [
     {
-      "date": "2026-02-07T18:40:00Z",
-      "taskId": "s3-kanban-command",
-      "from": "in-progress",
-      "to": "review-pr",
-      "note": "Command Center Kanban listo para revision final."
+      "date": "2026-02-07T22:38:00.399Z",
+      "taskId": "issue-7",
+      "from": "todo",
+      "to": "todo",
+      "note": "Tarea importada desde GitHub Projects"
     },
     {
-      "date": "2026-02-07T18:30:00Z",
-      "taskId": "s3-readme-evidence",
+      "date": "2026-02-07T22:38:00.399Z",
+      "taskId": "issue-5",
       "from": "todo",
       "to": "in-progress",
-      "note": "Se inicia documentacion del avance S3."
+      "note": "Tarea importada desde GitHub Projects"
     },
     {
-      "date": "2026-02-07T18:20:00Z",
-      "taskId": "s4-ci-hola",
+      "date": "2026-02-07T22:38:00.399Z",
+      "taskId": "issue-6",
       "from": "todo",
       "to": "in-progress",
-      "note": "Comienza preparacion del ejercicio CI para S4."
+      "note": "Tarea importada desde GitHub Projects"
     },
     {
-      "date": "2026-02-07T18:05:00Z",
-      "taskId": "s3-cycle-order",
-      "from": "review-pr",
-      "to": "done",
-      "note": "Secuencia del ciclo validada y aplicada."
-    },
-    {
-      "date": "2026-02-07T17:55:00Z",
-      "taskId": "s3-cycle-order",
-      "from": "in-progress",
+      "date": "2026-02-07T22:38:00.399Z",
+      "taskId": "issue-4",
+      "from": "todo",
       "to": "review-pr",
-      "note": "Ajuste de alineamiento para revision."
+      "note": "Tarea importada desde GitHub Projects"
     },
     {
-      "date": "2026-02-07T17:35:00Z",
-      "taskId": "s3-semanas-route",
-      "from": "review-pr",
+      "date": "2026-02-07T22:38:00.399Z",
+      "taskId": "issue-2",
+      "from": "todo",
       "to": "done",
-      "note": "Estructura modular aprobada."
+      "note": "Tarea importada desde GitHub Projects"
     },
     {
-      "date": "2026-02-07T17:20:00Z",
-      "taskId": "s3-semanas-route",
-      "from": "in-progress",
-      "to": "review-pr",
-      "note": "Separacion de modulos enviada a revision."
-    },
-    {
-      "date": "2026-02-07T16:50:00Z",
-      "taskId": "s3-home-hero",
-      "from": "review-pr",
+      "date": "2026-02-07T22:38:00.399Z",
+      "taskId": "issue-3",
+      "from": "todo",
       "to": "done",
-      "note": "Hero final validado visualmente."
-    },
-    {
-      "date": "2026-02-07T16:35:00Z",
-      "taskId": "s3-home-hero",
-      "from": "in-progress",
-      "to": "review-pr",
-      "note": "Cambio de copy y layout listo para revisar."
-    },
-    {
-      "date": "2026-02-07T16:12:00Z",
-      "taskId": "s3-pages-hosting",
-      "from": "review-pr",
-      "to": "done",
-      "note": "Deploy en Pages verificado en produccion."
-    },
-    {
-      "date": "2026-02-07T16:00:00Z",
-      "taskId": "s3-pages-hosting",
-      "from": "in-progress",
-      "to": "review-pr",
-      "note": "Workflow de Pages listo para validacion."
-    },
-    {
-      "date": "2026-02-07T15:40:00Z",
-      "taskId": "s2-project-kanban",
-      "from": "review-pr",
-      "to": "done",
-      "note": "Tablero Kanban oficial consolidado."
-    },
-    {
-      "date": "2026-02-07T15:20:00Z",
-      "taskId": "s1-repo-setup",
-      "from": "review-pr",
-      "to": "done",
-      "note": "Base del repositorio marcada como completada."
+      "note": "Tarea importada desde GitHub Projects"
     }
   ]
 }
