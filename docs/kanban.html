@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Modulo Kanban de DevOps.E2: tablero general, tablero detallado y trazabilidad."
+    />
+    <title>DevOps.E2 | Kanban</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260207-02" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-dot"></span>
+        <span>DevOps.E2</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="semanas.html">Semanas</a>
+        <a class="is-active" href="kanban.html">Kanban</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="module module-kanban kanban reveal" id="kanban">
+        <div class="section-head">
+          <p class="eyebrow">Seguimiento general</p>
+          <h2>Vinculacion con GitHub Projects, Kanban y trazabilidad</h2>
+        </div>
+
+        <div class="kanban-grid">
+          <article class="kanban-card">
+            <h3>Tablero Kanban oficial</h3>
+            <p>
+              Fuente principal para visualizar el estado de las tareas del curso.
+              Usa este tablero para ver prioridades, trabajo en proceso y entregables completados.
+            </p>
+            <a
+              class="btn btn-primary"
+              href="https://github.com/users/luiscdano/projects/1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Abrir GitHub Projects
+            </a>
+          </article>
+
+          <article class="kanban-card">
+            <h3>Indicadores del repositorio</h3>
+            <ul class="metric-list" id="repo-metrics">
+              <li class="metric-item loading">Cargando indicadores...</li>
+            </ul>
+          </article>
+
+          <article class="kanban-card">
+            <h3>Estado de despliegue</h3>
+            <ul class="metric-list" id="deploy-metrics">
+              <li class="metric-item loading">Consultando ultimo deploy...</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="progress-wrap">
+          <article class="progress-card">
+            <header class="progress-head">
+              <h3>Kanban detallado del curso</h3>
+              <p id="progress-last-updated">Actualizando tablero...</p>
+            </header>
+            <div class="board-columns" id="board-columns">
+              <article class="board-column">
+                <h4>Todo</h4>
+                <p>Cargando...</p>
+              </article>
+            </div>
+          </article>
+
+          <article class="progress-card movement-card">
+            <header class="progress-head">
+              <h3>Historial de movimientos</h3>
+              <p>Cada cambio queda registrado paso a paso.</p>
+            </header>
+            <ol class="movement-log" id="movement-log">
+              <li class="movement-item">Cargando historial...</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Luis Emilio Cedano · Matr. 2024-0128 · ITLA Electiva II (DevOps)
+      </p>
+    </footer>
+
+    <script src="script.js?v=20260207-02"></script>
+  </body>
+</html>

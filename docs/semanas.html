@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Modulo de semanas de DevOps.E2: Pipeline CI/CD y ruta de aprendizaje."
+    />
+    <title>DevOps.E2 | Semanas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260207-02" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-dot"></span>
+        <span>DevOps.E2</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a class="is-active" href="semanas.html">Semanas</a>
+        <a href="kanban.html">Kanban</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="module module-semanas" id="semanas">
+        <section class="pipeline reveal">
+          <div class="section-head">
+            <p class="eyebrow">S3 · Herramientas CI/CD y automatizacion</p>
+            <h2>Ciclo DevOps operando en flujo continuo</h2>
+          </div>
+
+          <div class="loop-board">
+            <div class="loop-track" aria-hidden="true"></div>
+            <div class="loop-grid">
+              <article class="stage-card" data-stage="plan">
+                <h3>Plan</h3>
+                <p>Historias, backlog y priorizacion visible.</p>
+              </article>
+              <article class="stage-card" data-stage="code">
+                <h3>Code</h3>
+                <p>Trabajo controlado por ramas y PR.</p>
+              </article>
+              <article class="stage-card" data-stage="build">
+                <h3>Build</h3>
+                <p>Versionado y empaquetado repetible.</p>
+              </article>
+              <article class="stage-card" data-stage="test">
+                <h3>Test</h3>
+                <p>Validacion automatica antes de integrar.</p>
+              </article>
+              <article class="stage-card" data-stage="release">
+                <h3>Release</h3>
+                <p>Promocion controlada de entregables.</p>
+              </article>
+              <article class="stage-card" data-stage="deploy">
+                <h3>Deploy</h3>
+                <p>Publicacion automatica con GitHub Pages.</p>
+              </article>
+              <article class="stage-card" data-stage="monitor">
+                <h3>Monitor</h3>
+                <p>Seguimiento de estado y trazabilidad.</p>
+              </article>
+              <article class="stage-card" data-stage="feedback">
+                <h3>Feedback</h3>
+                <p>Iteraciones cortas para mejora continua.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="weeks reveal">
+          <div class="section-head">
+            <p class="eyebrow">Bitacora evolutiva</p>
+            <h2>Ruta de aprendizaje por semanas</h2>
+          </div>
+
+          <div class="filters" role="tablist" aria-label="Filtrar semanas">
+            <button class="filter-btn active" data-filter="all" type="button">Todas</button>
+            <button class="filter-btn" data-filter="done" type="button">Completadas</button>
+            <button class="filter-btn" data-filter="active" type="button">En curso</button>
+            <button class="filter-btn" data-filter="next" type="button">Proximas</button>
+          </div>
+
+          <div class="weeks-grid" id="weeks-grid"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Luis Emilio Cedano · Matr. 2024-0128 · ITLA Electiva II (DevOps)
+      </p>
+    </footer>
+
+    <script src="script.js?v=20260207-02"></script>
+  </body>
+</html>

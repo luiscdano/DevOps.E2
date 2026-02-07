@@ -104,6 +104,10 @@ body {
   text-shadow: 0 0 8px rgba(9, 12, 25, 0.95);
 }
 
+.nav a.is-active {
+  color: var(--text);
+}
+
 @keyframes brandDotPulse {
   0%,
   100% {

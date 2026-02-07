@@ -247,6 +247,10 @@ function formatDateTime(dateValue) {
 }
 
 function renderWeeks(filter = "all") {
+  if (!weeksGrid) {
+    return;
+  }
+
   const filtered = weeksData.filter((week) => filter === "all" || week.status === filter);
 
   if (!filtered.length) {
@@ -273,6 +277,10 @@ function renderWeeks(filter = "all") {
 }
 
 function renderAutomation() {
+  if (!automationGrid) {
+    return;
+  }
+
   automationGrid.innerHTML = automationData
     .map(
       (item) => `
@@ -287,6 +295,10 @@ function renderAutomation() {
 }
 
 function setupFilters() {
+  if (!weeksGrid || !filterButtons.length) {
+    return;
+  }
+
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
       filterButtons.forEach((btn) => btn.classList.remove("active"));
@@ -364,6 +376,10 @@ function renderProgressBoard(progressData) {
   const movementLog = document.querySelector("#movement-log");
   const progressLastUpdated = document.querySelector("#progress-last-updated");
 
+  if (!boardColumns || !movementLog || !progressLastUpdated) {
+    return;
+  }
+
   const cardsByStatus = Object.fromEntries(boardStatusOrder.map((status) => [status, []]));
 
   progressData.cards.forEach((card) => {
@@ -433,6 +449,10 @@ function renderProgressBoard(progressData) {
 async function loadTrackingMetrics() {
   const repoMetrics = document.querySelector("#repo-metrics");
   const deployMetrics = document.querySelector("#deploy-metrics");
+
+  if (!repoMetrics || !deployMetrics) {
+    return;
+  }
 
   const queryBase = `https://api.github.com/search/issues?q=repo:${repoOwner}/${repoName}+`;
   const openIssuesUrl = `${queryBase}is:issue+state:open`;
@@ -514,10 +534,22 @@ async function loadTrackingMetrics() {
   }
 }
 
-renderWeeks();
-renderAutomation();
-setupFilters();
+if (weeksGrid) {
+  renderWeeks();
+}
+
+if (automationGrid) {
+  renderAutomation();
+}
+
+if (filterButtons.length) {
+  setupFilters();
+}
+
 cycleStages();
 setupRevealOnScroll();
 loadTrackingMetrics();
-loadProgressData().then(renderProgressBoard);
+
+if (document.querySelector("#board-columns")) {
+  loadProgressData().then(renderProgressBoard);
+}
