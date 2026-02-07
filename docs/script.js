@@ -102,8 +102,8 @@ const automationData = [
   },
   {
     title: "Deploy continuo en GitHub Pages",
-    detail: "Cada push a main puede generar una version publicada automaticamente.",
-    status: "active"
+    detail: "Cada push a main genera una version publicada automaticamente.",
+    status: "done"
   },
   {
     title: "Pruebas automatizadas",
