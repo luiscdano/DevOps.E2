@@ -211,6 +211,39 @@ Esta semana permitió conectar teoría y práctica de CI/CD en un caso real: cad
 
 ---
 
+## S4 — Integración Continua (CI)
+
+### Objetivo de la Semana
+Implementar una integración continua con GitHub Actions que, al subir cambios a la rama `main`, envíe una notificación a `ntfy.sh/devops-itla`.
+
+---
+
+### Implementación Realizada
+- Se mantiene el programa base del curso en `docs/index.html` (sitio ya publicado en GitHub Pages).
+- Se creó el workflow `.github/workflows/alerta.yml`.
+- El workflow se ejecuta en `push` a `main` y también permite prueba manual con `workflow_dispatch`.
+- En cada ejecución:
+  1. valida que exista `docs/index.html`;
+  2. envía una alerta a `https://ntfy.sh/devops-itla` con datos del repositorio, autor, evento y commit.
+
+---
+
+### Evidencia Técnica — S4
+- Workflow de CI con alerta:
+  - `.github/workflows/alerta.yml`
+- Notificación enviada a:
+  - `ntfy.sh/devops-itla`
+- Integración con el flujo del curso:
+  - `main` como rama de integración
+  - trazabilidad en GitHub Actions + Kanban + sitio web
+
+---
+
+### Experiencia Personal — S4
+Esta práctica fortalece la cultura DevOps al incorporar retroalimentación inmediata en cada integración a `main`, acercando el flujo académico a un escenario real de monitoreo y respuesta temprana.
+
+---
+
 ## Autor
 **Luis Emilio Cedano, Matr.2024-0128**  
 ITLA – Electiva 2 (DevOps)

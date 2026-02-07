@@ -106,9 +106,9 @@ const automationData = [
     status: "done"
   },
   {
-    title: "Pruebas automatizadas",
-    detail: "Pendiente para proximas semanas: ejecutar checks antes del deploy.",
-    status: "next"
+    title: "Integracion continua con alerta ntfy",
+    detail: "S4 en implementacion: workflow alerta.yml notifica en ntfy.sh/devops-itla al hacer push a main.",
+    status: "active"
   },
   {
     title: "Monitoreo y gestion de logs",

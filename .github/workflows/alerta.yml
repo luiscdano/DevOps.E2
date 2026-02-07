@@ -1,0 +1,53 @@
+name: CI Alerta NTFY
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verificar programa base del sitio
+        run: |
+          test -f docs/index.html
+          echo "Programa web detectado en docs/index.html"
+
+      - name: Enviar notificacion a ntfy.sh/devops-itla
+        env:
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+          COMMIT_SHA: ${{ github.sha }}
+          ACTOR: ${{ github.actor }}
+          EVENT: ${{ github.event_name }}
+          COMMIT_URL: ${{ github.event.head_commit.url }}
+        run: |
+          if [ -z "$COMMIT_URL" ]; then
+            COMMIT_URL="${REPO_URL}/commit/${COMMIT_SHA}"
+          fi
+
+          MESSAGE=$(cat <<EOF
+          CI DevOps.E2 (S4) - Integracion Continua
+          Repositorio: ${REPO_URL}
+          Rama: main
+          Evento: ${EVENT}
+          Autor: ${ACTOR}
+          Commit: ${COMMIT_URL}
+          Sitio: https://luiscdano.github.io/DevOps.E2/
+          EOF
+          )
+
+          curl -fsS \
+            -H "Title: DevOps.E2 CI Alert" \
+            -H "Tags: github,automation,devops" \
+            -H "Priority: default" \
+            -d "$MESSAGE" \
+            https://ntfy.sh/devops-itla
