@@ -53,8 +53,19 @@ jobs:
               break
             fi
 
-            echo "Push failed on attempt ${attempt}. Rebasing and retrying..."
-            git pull --rebase origin main
+            echo "Push failed on attempt ${attempt}. Refreshing branch and retrying..."
+            git fetch origin main
+            git reset --hard origin/main
+            node scripts/sync-project-progress.mjs --owner luiscdano --project 1 --path docs/data/progress.json
+
+            if git diff --quiet -- docs/data/progress.json; then
+              echo "No pending changes after refresh."
+              success=true
+              break
+            fi
+
+            git add docs/data/progress.json
+            git commit -m "chore: sync progress board from GitHub Projects"
           done
 
           if [ "$success" != "true" ]; then
