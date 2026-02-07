@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-02-07T22:27:02Z",
+  "lastUpdated": "2026-02-07T22:54:41Z",
   "source": {
     "kind": "github-projects-public-html",
     "projectUrl": "https://github.com/users/luiscdano/projects/1",
     "projectTitle": "DevOps Workflow Board",
-    "syncedAt": "2026-02-07T22:27:02Z"
+    "syncedAt": "2026-02-07T22:54:41Z"
   },
   "cards": [
     {
       "id": "issue-7",
-      "title": "Create collaboration guidelines",
+      "title": "S5 · Preparar checklist y evidencia para 1er parcial",
       "week": "Sin semana",
       "status": "todo",
       "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
@@ -19,19 +19,8 @@
       }
     },
     {
-      "id": "issue-5",
-      "title": "Configure basic CI pipeline",
-      "week": "Sin semana",
-      "status": "in-progress",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
-      "proof": {
-        "label": "Issue",
-        "url": "https://github.com/luiscdano/DevOps.E2/issues/5"
-      }
-    },
-    {
       "id": "issue-6",
-      "title": "Define CI workflow triggers",
+      "title": "S4 · Configurar triggers CI sobre rama main",
       "week": "Sin semana",
       "status": "in-progress",
       "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
@@ -41,8 +30,19 @@
       }
     },
     {
+      "id": "issue-5",
+      "title": "S4 · Crear programa Hola Mundo para CI",
+      "week": "Sin semana",
+      "status": "in-progress",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/5"
+      }
+    },
+    {
       "id": "issue-4",
-      "title": "Add evidence reports",
+      "title": "S4 · Workflow alerta.yml para ntfy.sh (en revision)",
       "week": "Sin semana",
       "status": "review-pr",
       "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
