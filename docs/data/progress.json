@@ -1,12 +1,45 @@
 {
-  "lastUpdated": "2026-02-07T22:54:41Z",
+  "lastUpdated": "2026-02-07T22:55:13Z",
   "source": {
     "kind": "github-projects-public-html",
     "projectUrl": "https://github.com/users/luiscdano/projects/1",
     "projectTitle": "DevOps Workflow Board",
-    "syncedAt": "2026-02-07T22:54:41Z"
+    "syncedAt": "2026-02-07T22:55:13Z"
   },
   "cards": [
+    {
+      "id": "issue-8",
+      "title": "S2 · Implementar tablero Kanban en GitHub Projects",
+      "week": "S2",
+      "status": "todo",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/8"
+      }
+    },
+    {
+      "id": "issue-9",
+      "title": "S3 · Crear pagina web DevOps.E2 para evidencia del curso",
+      "week": "S3",
+      "status": "todo",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/9"
+      }
+    },
+    {
+      "id": "issue-10",
+      "title": "S3 · Desplegar automaticamente en GitHub Pages",
+      "week": "S3",
+      "status": "todo",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/10"
+      }
+    },
     {
       "id": "issue-7",
       "title": "S5 · Preparar checklist y evidencia para 1er parcial",
@@ -16,6 +49,39 @@
       "proof": {
         "label": "Issue",
         "url": "https://github.com/luiscdano/DevOps.E2/issues/7"
+      }
+    },
+    {
+      "id": "issue-11",
+      "title": "S6 · Servir pagina web con Nginx y Docker Compose",
+      "week": "S6",
+      "status": "todo",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/11"
+      }
+    },
+    {
+      "id": "issue-12",
+      "title": "S7 · Conectar aplicacion web con MySQL usando Compose",
+      "week": "S7",
+      "status": "todo",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/12"
+      }
+    },
+    {
+      "id": "issue-13",
+      "title": "S8 · Automatizar 5 servidores Ubuntu con Ansible",
+      "week": "S8",
+      "status": "todo",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/13"
       }
     },
     {
@@ -75,6 +141,48 @@
     }
   ],
   "movements": [
+    {
+      "date": "2026-02-07T22:55:15.008Z",
+      "taskId": "issue-8",
+      "from": "backlog",
+      "to": "todo",
+      "note": "Tarea importada desde GitHub Projects"
+    },
+    {
+      "date": "2026-02-07T22:55:15.008Z",
+      "taskId": "issue-9",
+      "from": "backlog",
+      "to": "todo",
+      "note": "Tarea importada desde GitHub Projects"
+    },
+    {
+      "date": "2026-02-07T22:55:15.008Z",
+      "taskId": "issue-10",
+      "from": "backlog",
+      "to": "todo",
+      "note": "Tarea importada desde GitHub Projects"
+    },
+    {
+      "date": "2026-02-07T22:55:15.008Z",
+      "taskId": "issue-11",
+      "from": "backlog",
+      "to": "todo",
+      "note": "Tarea importada desde GitHub Projects"
+    },
+    {
+      "date": "2026-02-07T22:55:15.008Z",
+      "taskId": "issue-12",
+      "from": "backlog",
+      "to": "todo",
+      "note": "Tarea importada desde GitHub Projects"
+    },
+    {
+      "date": "2026-02-07T22:55:15.008Z",
+      "taskId": "issue-13",
+      "from": "backlog",
+      "to": "todo",
+      "note": "Tarea importada desde GitHub Projects"
+    },
     {
       "date": "2026-02-07T22:38:00.399Z",
       "taskId": "issue-7",
