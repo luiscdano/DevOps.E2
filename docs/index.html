@@ -33,104 +33,108 @@
     </header>
 
     <main>
-      <section class="hero" id="home">
-        <p class="eyebrow">Electiva II · ITLA · 2026-C1</p>
-        <h1>
-          DevOps no como teoria,<br />
-          sino como un sistema que evoluciona cada semana.
-        </h1>
-        <p class="hero-copy">
-          Este sitio es el tablero vivo del repositorio <code>DevOps.E2</code>: integra evidencia academica,
-          automatizacion CI/CD y una arquitectura lista para crecer con cada practica del cuatrimestre.
-        </p>
+      <section class="module module-home" id="home">
+        <section class="hero">
+          <p class="eyebrow">Electiva II · ITLA · 2026-C1</p>
+          <h1>
+            DevOps no como teoria,<br />
+            sino como un sistema que evoluciona cada semana.
+          </h1>
+          <p class="hero-copy">
+            Este sitio es el tablero vivo del repositorio <code>DevOps.E2</code>: integra evidencia academica,
+            automatizacion CI/CD y una arquitectura lista para crecer con cada practica del cuatrimestre.
+          </p>
 
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2" target="_blank" rel="noreferrer">
-            Ver repositorio
-          </a>
-          <a class="btn btn-ghost" href="https://github.com/users/luiscdano/projects/1" target="_blank" rel="noreferrer">
-            Ver tablero Kanban
-          </a>
-        </div>
-
-        <ul class="meta-strip">
-          <li><span class="label">Rama estable</span><span class="value">main</span></li>
-          <li><span class="label">Rama de trabajo</span><span class="value">dev</span></li>
-          <li><span class="label">Entrega activa</span><span class="value">S3 · CI/CD</span></li>
-        </ul>
-      </section>
-
-      <section class="automation reveal" id="home-automatizacion">
-        <div class="section-head">
-          <p class="eyebrow">Automatizacion aplicada</p>
-          <h2>Estado de implementacion DevOps</h2>
-        </div>
-
-        <div class="automation-grid" id="automation-grid"></div>
-      </section>
-
-      <section class="pipeline reveal" id="semanas">
-        <div class="section-head">
-          <p class="eyebrow">S3 · Herramientas CI/CD y automatizacion</p>
-          <h2>Ciclo DevOps operando en flujo continuo</h2>
-        </div>
-
-        <div class="loop-board">
-          <div class="loop-track" aria-hidden="true"></div>
-          <div class="loop-grid">
-            <article class="stage-card" data-stage="plan">
-              <h3>Plan</h3>
-              <p>Historias, backlog y priorizacion visible.</p>
-            </article>
-            <article class="stage-card" data-stage="code">
-              <h3>Code</h3>
-              <p>Trabajo controlado por ramas y PR.</p>
-            </article>
-            <article class="stage-card" data-stage="build">
-              <h3>Build</h3>
-              <p>Versionado y empaquetado repetible.</p>
-            </article>
-            <article class="stage-card" data-stage="test">
-              <h3>Test</h3>
-              <p>Validacion automatica antes de integrar.</p>
-            </article>
-            <article class="stage-card" data-stage="release">
-              <h3>Release</h3>
-              <p>Promocion controlada de entregables.</p>
-            </article>
-            <article class="stage-card" data-stage="deploy">
-              <h3>Deploy</h3>
-              <p>Publicacion automatica con GitHub Pages.</p>
-            </article>
-            <article class="stage-card" data-stage="monitor">
-              <h3>Monitor</h3>
-              <p>Seguimiento de estado y trazabilidad.</p>
-            </article>
-            <article class="stage-card" data-stage="feedback">
-              <h3>Feedback</h3>
-              <p>Iteraciones cortas para mejora continua.</p>
-            </article>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2" target="_blank" rel="noreferrer">
+              Ver repositorio
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/users/luiscdano/projects/1" target="_blank" rel="noreferrer">
+              Ver tablero Kanban
+            </a>
           </div>
-        </div>
+
+          <ul class="meta-strip">
+            <li><span class="label">Rama estable</span><span class="value">main</span></li>
+            <li><span class="label">Rama de trabajo</span><span class="value">dev</span></li>
+            <li><span class="label">Entrega activa</span><span class="value">S3 · CI/CD</span></li>
+          </ul>
+        </section>
+
+        <section class="automation reveal home-automation">
+          <div class="section-head">
+            <p class="eyebrow">Automatizacion aplicada</p>
+            <h2>Estado de implementacion DevOps</h2>
+          </div>
+
+          <div class="automation-grid" id="automation-grid"></div>
+        </section>
       </section>
 
-      <section class="weeks reveal">
-        <div class="section-head">
-          <p class="eyebrow">Bitacora evolutiva</p>
-          <h2>Ruta de aprendizaje por semanas</h2>
-        </div>
+      <section class="module module-semanas" id="semanas">
+        <section class="pipeline reveal">
+          <div class="section-head">
+            <p class="eyebrow">S3 · Herramientas CI/CD y automatizacion</p>
+            <h2>Ciclo DevOps operando en flujo continuo</h2>
+          </div>
 
-        <div class="filters" role="tablist" aria-label="Filtrar semanas">
-          <button class="filter-btn active" data-filter="all" type="button">Todas</button>
-          <button class="filter-btn" data-filter="done" type="button">Completadas</button>
-          <button class="filter-btn" data-filter="active" type="button">En curso</button>
-          <button class="filter-btn" data-filter="next" type="button">Proximas</button>
-        </div>
+          <div class="loop-board">
+            <div class="loop-track" aria-hidden="true"></div>
+            <div class="loop-grid">
+              <article class="stage-card" data-stage="plan">
+                <h3>Plan</h3>
+                <p>Historias, backlog y priorizacion visible.</p>
+              </article>
+              <article class="stage-card" data-stage="code">
+                <h3>Code</h3>
+                <p>Trabajo controlado por ramas y PR.</p>
+              </article>
+              <article class="stage-card" data-stage="build">
+                <h3>Build</h3>
+                <p>Versionado y empaquetado repetible.</p>
+              </article>
+              <article class="stage-card" data-stage="test">
+                <h3>Test</h3>
+                <p>Validacion automatica antes de integrar.</p>
+              </article>
+              <article class="stage-card" data-stage="release">
+                <h3>Release</h3>
+                <p>Promocion controlada de entregables.</p>
+              </article>
+              <article class="stage-card" data-stage="deploy">
+                <h3>Deploy</h3>
+                <p>Publicacion automatica con GitHub Pages.</p>
+              </article>
+              <article class="stage-card" data-stage="monitor">
+                <h3>Monitor</h3>
+                <p>Seguimiento de estado y trazabilidad.</p>
+              </article>
+              <article class="stage-card" data-stage="feedback">
+                <h3>Feedback</h3>
+                <p>Iteraciones cortas para mejora continua.</p>
+              </article>
+            </div>
+          </div>
+        </section>
 
-        <div class="weeks-grid" id="weeks-grid"></div>
+        <section class="weeks reveal">
+          <div class="section-head">
+            <p class="eyebrow">Bitacora evolutiva</p>
+            <h2>Ruta de aprendizaje por semanas</h2>
+          </div>
+
+          <div class="filters" role="tablist" aria-label="Filtrar semanas">
+            <button class="filter-btn active" data-filter="all" type="button">Todas</button>
+            <button class="filter-btn" data-filter="done" type="button">Completadas</button>
+            <button class="filter-btn" data-filter="active" type="button">En curso</button>
+            <button class="filter-btn" data-filter="next" type="button">Proximas</button>
+          </div>
+
+          <div class="weeks-grid" id="weeks-grid"></div>
+        </section>
       </section>
 
-      <section class="kanban reveal" id="kanban">
+      <section class="module module-kanban kanban reveal" id="kanban">
         <div class="section-head">
           <p class="eyebrow">Seguimiento general</p>
           <h2>Vinculacion con GitHub Projects, Kanban y trazabilidad</h2>
