@@ -35,7 +35,7 @@ const weeksData = [
   {
     id: "S4",
     title: "S4 - Integracion Continua (CI)",
-    status: "active",
+    status: "done",
     goal: "Crear flujo CI que notifique al subir a main.",
     highlights: [
       "Practica 4: programa hola mundo en cualquier lenguaje",
@@ -107,8 +107,8 @@ const automationData = [
   },
   {
     title: "Integracion continua con alerta ntfy",
-    detail: "S4 en implementacion: workflow alerta.yml notifica en ntfy.sh/devops-itla al hacer push a main.",
-    status: "active"
+    detail: "S4 completada: workflow alerta.yml notifica en ntfy.sh/devops-itla al hacer push a main.",
+    status: "done"
   },
   {
     title: "Monitoreo y gestion de logs",
