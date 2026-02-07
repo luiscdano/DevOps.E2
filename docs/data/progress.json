@@ -1,45 +1,12 @@
 {
-  "lastUpdated": "2026-02-07T22:55:13Z",
+  "lastUpdated": "2026-02-07T22:55:40Z",
   "source": {
     "kind": "github-projects-public-html",
     "projectUrl": "https://github.com/users/luiscdano/projects/1",
     "projectTitle": "DevOps Workflow Board",
-    "syncedAt": "2026-02-07T22:55:13Z"
+    "syncedAt": "2026-02-07T22:55:40Z"
   },
   "cards": [
-    {
-      "id": "issue-8",
-      "title": "S2 · Implementar tablero Kanban en GitHub Projects",
-      "week": "S2",
-      "status": "todo",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
-      "proof": {
-        "label": "Issue",
-        "url": "https://github.com/luiscdano/DevOps.E2/issues/8"
-      }
-    },
-    {
-      "id": "issue-9",
-      "title": "S3 · Crear pagina web DevOps.E2 para evidencia del curso",
-      "week": "S3",
-      "status": "todo",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
-      "proof": {
-        "label": "Issue",
-        "url": "https://github.com/luiscdano/DevOps.E2/issues/9"
-      }
-    },
-    {
-      "id": "issue-10",
-      "title": "S3 · Desplegar automaticamente en GitHub Pages",
-      "week": "S3",
-      "status": "todo",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
-      "proof": {
-        "label": "Issue",
-        "url": "https://github.com/luiscdano/DevOps.E2/issues/10"
-      }
-    },
     {
       "id": "issue-7",
       "title": "S5 · Preparar checklist y evidencia para 1er parcial",
@@ -82,6 +49,17 @@
       "proof": {
         "label": "Issue",
         "url": "https://github.com/luiscdano/DevOps.E2/issues/13"
+      }
+    },
+    {
+      "id": "issue-14",
+      "title": "S8 · Observabilidad y seguridad DevOps (ruta futura)",
+      "week": "S8",
+      "status": "todo",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/14"
       }
     },
     {
@@ -129,6 +107,39 @@
       }
     },
     {
+      "id": "issue-8",
+      "title": "S2 · Implementar tablero Kanban en GitHub Projects",
+      "week": "S2",
+      "status": "done",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/8"
+      }
+    },
+    {
+      "id": "issue-9",
+      "title": "S3 · Crear pagina web DevOps.E2 para evidencia del curso",
+      "week": "S3",
+      "status": "done",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/9"
+      }
+    },
+    {
+      "id": "issue-10",
+      "title": "S3 · Desplegar automaticamente en GitHub Pages",
+      "week": "S3",
+      "status": "done",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/10"
+      }
+    },
+    {
       "id": "issue-3",
       "title": "Setup repository workflow (dev → main)",
       "week": "Sin semana",
@@ -141,6 +152,34 @@
     }
   ],
   "movements": [
+    {
+      "date": "2026-02-07T22:55:42.816Z",
+      "taskId": "issue-14",
+      "from": "backlog",
+      "to": "todo",
+      "note": "Tarea importada desde GitHub Projects"
+    },
+    {
+      "date": "2026-02-07T22:55:42.816Z",
+      "taskId": "issue-8",
+      "from": "todo",
+      "to": "done",
+      "note": "Estado actualizado por sincronizacion con GitHub Projects"
+    },
+    {
+      "date": "2026-02-07T22:55:42.816Z",
+      "taskId": "issue-9",
+      "from": "todo",
+      "to": "done",
+      "note": "Estado actualizado por sincronizacion con GitHub Projects"
+    },
+    {
+      "date": "2026-02-07T22:55:42.816Z",
+      "taskId": "issue-10",
+      "from": "todo",
+      "to": "done",
+      "note": "Estado actualizado por sincronizacion con GitHub Projects"
+    },
     {
       "date": "2026-02-07T22:55:15.008Z",
       "taskId": "issue-8",
