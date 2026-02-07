@@ -461,6 +461,226 @@ main > .module:first-child {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.kanban-executive {
+  margin-bottom: 0.9rem;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.exec-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  background: linear-gradient(160deg, rgba(19, 24, 52, 0.92), rgba(11, 15, 35, 0.88));
+}
+
+.exec-card h3 {
+  font-size: 1rem;
+}
+
+.exec-copy {
+  margin: 0.42rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.exec-grid {
+  margin-top: 0.72rem;
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.exec-item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.68rem 0.7rem;
+  background: rgba(8, 12, 28, 0.72);
+  display: grid;
+  gap: 0.26rem;
+}
+
+.exec-item.loading {
+  color: var(--muted);
+}
+
+.exec-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.exec-value {
+  margin: 0;
+  font-family: "Syne", sans-serif;
+  font-size: 1.42rem;
+  line-height: 1;
+}
+
+.exec-foot {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.exec-meter {
+  width: 100%;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(111, 183, 255, 0.18);
+  overflow: hidden;
+}
+
+.exec-meter span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #22d3bb, #5ef0d8);
+}
+
+.tone-main,
+.tone-done,
+.tone-active,
+.tone-next,
+.tone-total,
+.tone-moves {
+  border-color: rgba(92, 121, 222, 0.36);
+}
+
+.tone-main {
+  grid-column: span 2;
+  border-color: rgba(36, 214, 179, 0.42);
+}
+
+.tone-done {
+  border-color: rgba(110, 235, 188, 0.44);
+}
+
+.tone-active {
+  border-color: rgba(255, 191, 147, 0.46);
+}
+
+.tone-next {
+  border-color: rgba(111, 183, 255, 0.44);
+}
+
+.tone-total {
+  border-color: rgba(155, 172, 255, 0.4);
+}
+
+.tone-moves {
+  border-color: rgba(255, 153, 196, 0.42);
+}
+
+.focus-list {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.56rem;
+}
+
+.focus-item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.64rem 0.7rem;
+  background: rgba(8, 12, 28, 0.74);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.focus-item.loading {
+  color: var(--muted);
+}
+
+.focus-top {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.focus-week {
+  font-size: 0.69rem;
+  font-family: "JetBrains Mono", monospace;
+  color: #9ac8ff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.focus-status {
+  border-radius: 999px;
+  padding: 0.14rem 0.52rem;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.focus-status.status-done {
+  background: rgba(110, 235, 188, 0.2);
+  color: #76f0c3;
+}
+
+.focus-status.status-in-progress {
+  background: rgba(255, 191, 147, 0.2);
+  color: #ffc7a6;
+}
+
+.focus-status.status-review-pr {
+  background: rgba(187, 154, 255, 0.2);
+  color: #d2b9ff;
+}
+
+.focus-status.status-todo {
+  background: rgba(158, 204, 255, 0.2);
+  color: #afd4ff;
+}
+
+.focus-item h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.focus-item p {
+  margin: 0;
+  font-size: 0.83rem;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.focus-proof {
+  display: inline-flex;
+  width: fit-content;
+  color: var(--accent-3);
+  font-size: 0.75rem;
+}
+
+.sync-meta {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.quick-actions {
+  margin-top: 0.72rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.quick-actions .btn {
+  padding: 0.54rem 0.9rem;
+  font-size: 0.84rem;
+}
+
 .progress-wrap {
   margin-top: 0.9rem;
   display: grid;
@@ -926,6 +1146,8 @@ main > .module:first-child {
   }
 
   .meta-strip,
+  .kanban-executive,
+  .exec-grid,
   .loop-grid,
   .weeks-grid,
   .kanban-grid,

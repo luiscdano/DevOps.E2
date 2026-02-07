@@ -141,130 +141,237 @@ const repoOwner = "luiscdano";
 const repoName = "DevOps.E2";
 
 const defaultProgressData = {
-  lastUpdated: "2026-02-07T15:35:00Z",
+  lastUpdated: "2026-02-07T18:40:00Z",
   cards: [
     {
-      id: "s3-web-base",
-      title: "Creacion de pagina web base del proyecto",
-      week: "S3",
+      id: "s1-repo-setup",
+      title: "S1: repositorio publico con ramas main y dev",
+      week: "S1",
       status: "done",
-      details: "Landing DevOps, secciones dinamicas y arquitectura para evolucion semanal.",
+      details: "Base tecnica creada con control de versiones y primeras evidencias.",
       proof: {
-        label: "Commit principal",
-        url: "https://github.com/luiscdano/DevOps.E2/commit/c406107"
+        label: "Repositorio",
+        url: "https://github.com/luiscdano/DevOps.E2"
       }
     },
     {
-      id: "s3-pages-workflow",
-      title: "Automatizar deploy con GitHub Pages y Actions",
-      week: "S3",
+      id: "s2-project-kanban",
+      title: "S2: tablero Kanban en GitHub Projects",
+      week: "S2",
       status: "done",
-      details: "Workflow pages.yml activo y despliegue exitoso en la URL publica.",
-      proof: {
-        label: "Workflow de Pages",
-        url: "https://github.com/luiscdano/DevOps.E2/actions/workflows/pages.yml"
-      }
-    },
-    {
-      id: "s3-kanban-followup",
-      title: "Integrar seguimiento Kanban paso a paso en la web",
-      week: "S3",
-      status: "review-pr",
-      details: "Kanban interno con columnas y bitacora cronologica de movimientos.",
+      details: "Planificacion visual con columnas y trazabilidad por estado.",
       proof: {
         label: "Project #1",
         url: "https://github.com/users/luiscdano/projects/1"
       }
     },
     {
-      id: "s3-docs-refresh",
-      title: "Actualizar README con evidencia S3 y trazabilidad",
+      id: "s3-pages-hosting",
+      title: "S3: despliegue automatico en GitHub Pages",
+      week: "S3",
+      status: "done",
+      details: "Hosting en la nube activado desde el repositorio con Actions.",
+      proof: {
+        label: "Sitio publicado",
+        url: "https://luiscdano.github.io/DevOps.E2/"
+      }
+    },
+    {
+      id: "s3-home-hero",
+      title: "S3: rediseño del Home con hero modular",
+      week: "S3",
+      status: "done",
+      details: "Seccion principal optimizada con layout visual y narrativa del curso.",
+      proof: {
+        label: "Home",
+        url: "https://luiscdano.github.io/DevOps.E2/index.html"
+      }
+    },
+    {
+      id: "s3-semanas-route",
+      title: "S3: separacion por modulos Home, Semanas y Kanban",
+      week: "S3",
+      status: "done",
+      details: "Navegacion por paginas para mantener cada bloque en su propio espacio.",
+      proof: {
+        label: "Modulo Semanas",
+        url: "https://luiscdano.github.io/DevOps.E2/semanas.html"
+      }
+    },
+    {
+      id: "s3-cycle-order",
+      title: "S3: orden del ciclo DevOps alineado al flujo real",
+      week: "S3",
+      status: "done",
+      details: "Pipeline visual con secuencia Plan, Code, Build, Test, Release, Deploy, Operate y Monitor.",
+      proof: {
+        label: "Ciclo DevOps",
+        url: "https://luiscdano.github.io/DevOps.E2/semanas.html"
+      }
+    },
+    {
+      id: "s3-kanban-command",
+      title: "S3: Command Center Kanban con resumen ejecutivo",
+      week: "S3",
+      status: "review-pr",
+      details: "Panel final que concentra KPIs, foco actual e historial de movimientos.",
+      proof: {
+        label: "Modulo Kanban",
+        url: "https://luiscdano.github.io/DevOps.E2/kanban.html"
+      }
+    },
+    {
+      id: "s3-readme-evidence",
+      title: "S3: actualizar README con evidencia de avances",
       week: "S3",
       status: "in-progress",
-      details: "Documentar el estado de implementacion CI/CD y seguimiento.",
+      details: "Documentar la evolucion de modulos, flujo CI/CD y entregables por semana.",
       proof: {
         label: "README",
         url: "https://github.com/luiscdano/DevOps.E2/blob/main/README.md"
       }
     },
     {
-      id: "s4-quality-gates",
-      title: "Definir quality gates (lint + tests) para S4",
+      id: "s4-ci-hola",
+      title: "S4: programa Hola Mundo para flujo CI",
       week: "S4",
-      status: "todo",
-      details: "Configurar validaciones automaticas previas al deploy."
+      status: "in-progress",
+      details: "Preparar base del ejercicio para integracion continua en main."
     },
     {
-      id: "s4-observability",
-      title: "Agregar monitoreo y logs basicos",
+      id: "s4-ci-ntfy",
+      title: "S4: workflow alerta.yml con notificacion a ntfy.sh/devops-itla",
       week: "S4",
       status: "todo",
-      details: "Incorporar observabilidad para salud, errores y rendimiento."
+      details: "Crear automatizacion que dispare alerta al hacer push a main."
+    },
+    {
+      id: "s4-ci-checks",
+      title: "S4: checks previos al deploy (lint y pruebas)",
+      week: "S4",
+      status: "todo",
+      details: "Agregar quality gates para fortalecer el pipeline."
+    },
+    {
+      id: "s5-partial-evaluation",
+      title: "S5: preparar evidencia integral para el primer parcial",
+      week: "S5",
+      status: "todo",
+      details: "Consolidar practicas S1-S4 con trazabilidad y demostracion tecnica."
+    },
+    {
+      id: "s6-docker-nginx",
+      title: "S6: publicar pagina en Nginx con Docker Compose",
+      week: "S6",
+      status: "todo",
+      details: "Servir src/index.html montado en /usr/share/nginx/html."
+    },
+    {
+      id: "s7-app-mysql",
+      title: "S7: app conectada a MySQL con Docker Compose",
+      week: "S7",
+      status: "todo",
+      details: "Definir servicios de aplicacion y base de datos en docker-compose.yml."
+    },
+    {
+      id: "s8-ansible-automation",
+      title: "S8: automatizacion de 5 servidores Ubuntu con Ansible",
+      week: "S8",
+      status: "todo",
+      details: "Aplicar playbooks para usuarios, paquetes, archivos y configuracion base."
     }
   ],
   movements: [
     {
-      date: "2026-02-07T15:35:00Z",
-      taskId: "s3-kanban-followup",
+      date: "2026-02-07T18:40:00Z",
+      taskId: "s3-kanban-command",
       from: "in-progress",
       to: "review-pr",
-      note: "Se completa implementacion inicial y pasa a revision."
+      note: "Command Center Kanban listo para revision final."
     },
     {
-      date: "2026-02-07T15:28:00Z",
-      taskId: "s3-docs-refresh",
+      date: "2026-02-07T18:30:00Z",
+      taskId: "s3-readme-evidence",
       from: "todo",
       to: "in-progress",
-      note: "Se inicia ajuste de README con evidencia tecnica."
+      note: "Se inicia documentacion del avance S3."
+    },
+    {
+      date: "2026-02-07T18:20:00Z",
+      taskId: "s4-ci-hola",
+      from: "todo",
+      to: "in-progress",
+      note: "Comienza preparacion del ejercicio CI para S4."
+    },
+    {
+      date: "2026-02-07T18:05:00Z",
+      taskId: "s3-cycle-order",
+      from: "review-pr",
+      to: "done",
+      note: "Secuencia del ciclo validada y aplicada."
+    },
+    {
+      date: "2026-02-07T17:55:00Z",
+      taskId: "s3-cycle-order",
+      from: "in-progress",
+      to: "review-pr",
+      note: "Ajuste de alineamiento para revision."
+    },
+    {
+      date: "2026-02-07T17:35:00Z",
+      taskId: "s3-semanas-route",
+      from: "review-pr",
+      to: "done",
+      note: "Estructura modular aprobada."
+    },
+    {
+      date: "2026-02-07T17:20:00Z",
+      taskId: "s3-semanas-route",
+      from: "in-progress",
+      to: "review-pr",
+      note: "Separacion de modulos enviada a revision."
+    },
+    {
+      date: "2026-02-07T16:50:00Z",
+      taskId: "s3-home-hero",
+      from: "review-pr",
+      to: "done",
+      note: "Hero final validado visualmente."
+    },
+    {
+      date: "2026-02-07T16:35:00Z",
+      taskId: "s3-home-hero",
+      from: "in-progress",
+      to: "review-pr",
+      note: "Cambio de copy y layout listo para revisar."
+    },
+    {
+      date: "2026-02-07T16:12:00Z",
+      taskId: "s3-pages-hosting",
+      from: "review-pr",
+      to: "done",
+      note: "Deploy en Pages verificado en produccion."
+    },
+    {
+      date: "2026-02-07T16:00:00Z",
+      taskId: "s3-pages-hosting",
+      from: "in-progress",
+      to: "review-pr",
+      note: "Workflow de Pages listo para validacion."
+    },
+    {
+      date: "2026-02-07T15:40:00Z",
+      taskId: "s2-project-kanban",
+      from: "review-pr",
+      to: "done",
+      note: "Tablero Kanban oficial consolidado."
     },
     {
       date: "2026-02-07T15:20:00Z",
-      taskId: "s3-kanban-followup",
-      from: "todo",
-      to: "in-progress",
-      note: "Se inicia conexion visual del progreso en la pagina web."
-    },
-    {
-      date: "2026-02-07T15:10:00Z",
-      taskId: "s3-pages-workflow",
+      taskId: "s1-repo-setup",
       from: "review-pr",
       to: "done",
-      note: "Deploy verificado en produccion con GitHub Pages."
-    },
-    {
-      date: "2026-02-07T15:07:00Z",
-      taskId: "s3-pages-workflow",
-      from: "in-progress",
-      to: "review-pr",
-      note: "Workflow listo y enviado a validacion final."
-    },
-    {
-      date: "2026-02-07T15:04:00Z",
-      taskId: "s3-web-base",
-      from: "review-pr",
-      to: "done",
-      note: "Merge a main y publicacion completada."
-    },
-    {
-      date: "2026-02-07T15:00:00Z",
-      taskId: "s3-web-base",
-      from: "in-progress",
-      to: "review-pr",
-      note: "Estructura estable para revision y PR."
-    },
-    {
-      date: "2026-02-07T14:50:00Z",
-      taskId: "s3-pages-workflow",
-      from: "todo",
-      to: "in-progress",
-      note: "Se inicia automatizacion CI/CD para GitHub Pages."
-    },
-    {
-      date: "2026-02-07T14:30:00Z",
-      taskId: "s3-web-base",
-      from: "todo",
-      to: "in-progress",
-      note: "Inicio de desarrollo de la pagina S3."
+      note: "Base del repositorio marcada como completada."
     }
   ]
 };
@@ -490,6 +597,113 @@ function renderProgressBoard(progressData) {
   progressLastUpdated.textContent = `Ultima actualizacion: ${updatedLabel}${fallback}`;
 }
 
+function renderKanbanExecutive(progressData) {
+  const execGrid = document.querySelector("#exec-grid");
+  const focusList = document.querySelector("#focus-list");
+  const syncMeta = document.querySelector("#sync-meta");
+
+  if (!execGrid || !focusList || !syncMeta) {
+    return;
+  }
+
+  const cards = Array.isArray(progressData.cards) ? progressData.cards : [];
+  const movements = Array.isArray(progressData.movements) ? progressData.movements : [];
+  const cardsById = Object.fromEntries(cards.map((card) => [card.id, card]));
+
+  const doneCount = cards.filter((card) => card.status === "done").length;
+  const inProgressCount = cards.filter((card) => card.status === "in-progress").length;
+  const reviewCount = cards.filter((card) => card.status === "review-pr").length;
+  const activeCount = inProgressCount + reviewCount;
+  const todoCount = cards.filter((card) => card.status === "todo").length;
+  const totalCount = cards.length;
+  const completion = totalCount ? Math.round((doneCount / totalCount) * 100) : 0;
+
+  execGrid.innerHTML = `
+    <article class="exec-item tone-main">
+      <p class="exec-label">Avance global</p>
+      <p class="exec-value">${completion}%</p>
+      <div class="exec-meter" role="img" aria-label="Avance ${completion}%">
+        <span style="width: ${completion}%"></span>
+      </div>
+    </article>
+    <article class="exec-item tone-done">
+      <p class="exec-label">Completado</p>
+      <p class="exec-value">${doneCount}</p>
+      <p class="exec-foot">Entregables cerrados</p>
+    </article>
+    <article class="exec-item tone-active">
+      <p class="exec-label">En curso</p>
+      <p class="exec-value">${activeCount}</p>
+      <p class="exec-foot">In Progress + Review / PR</p>
+    </article>
+    <article class="exec-item tone-next">
+      <p class="exec-label">Pendiente</p>
+      <p class="exec-value">${todoCount}</p>
+      <p class="exec-foot">Backlog del cuatrimestre</p>
+    </article>
+    <article class="exec-item tone-total">
+      <p class="exec-label">Total de tareas</p>
+      <p class="exec-value">${totalCount}</p>
+      <p class="exec-foot">Ruta S1 -> S8</p>
+    </article>
+    <article class="exec-item tone-moves">
+      <p class="exec-label">Movimientos</p>
+      <p class="exec-value">${movements.length}</p>
+      <p class="exec-foot">Trazabilidad registrada</p>
+    </article>
+  `;
+
+  const activeCards = cards
+    .filter((card) => card.status === "in-progress" || card.status === "review-pr")
+    .slice(0, 3);
+  const nextCards = cards.filter((card) => card.status === "todo").slice(0, 1);
+
+  const focusEntries = [...activeCards, ...nextCards];
+
+  if (!focusEntries.length) {
+    focusList.innerHTML = "<li class='focus-item'>No hay tareas activas por ahora.</li>";
+  } else {
+    focusList.innerHTML = focusEntries
+      .map((card) => {
+        const statusLabel =
+          card.status === "todo"
+            ? "Siguiente"
+            : boardStatusMeta[card.status] || card.status;
+
+        const proof = card.proof?.url
+          ? `<a class="focus-proof" href="${escapeHtml(card.proof.url)}" target="_blank" rel="noreferrer">${escapeHtml(card.proof.label || "Evidencia")}</a>`
+          : "";
+
+        return `
+          <li class="focus-item">
+            <p class="focus-top">
+              <span class="focus-week">${escapeHtml(card.week || "Sin semana")}</span>
+              <span class="focus-status status-${escapeHtml(card.status)}">${escapeHtml(statusLabel)}</span>
+            </p>
+            <h4>${escapeHtml(card.title)}</h4>
+            <p>${escapeHtml(card.details || "")}</p>
+            ${proof}
+          </li>
+        `;
+      })
+      .join("");
+  }
+
+  const orderedMovements = [...movements].sort((a, b) => new Date(b.date) - new Date(a.date));
+  const lastMove = orderedMovements[0];
+  const lastMoveTask = lastMove ? cardsById[lastMove.taskId] : null;
+  const lastMoveLabel = lastMove
+    ? `${lastMoveTask?.title || lastMove.taskId} -> ${boardStatusMeta[lastMove.to] || lastMove.to}`
+    : "Sin movimientos recientes";
+  const updatedLabel = progressData.lastUpdated ? formatDateTime(progressData.lastUpdated) : "Sin fecha";
+  const lastMoveDate = lastMove?.date ? formatDateTime(lastMove.date) : "Sin fecha";
+  const fallbackLabel = progressData.fallbackReason
+    ? `Modo respaldo local (${progressData.fallbackReason}).`
+    : "Sincronizado desde data/progress.json.";
+
+  syncMeta.textContent = `Ultima sincronizacion: ${updatedLabel}. Ultimo movimiento: ${lastMoveDate} (${lastMoveLabel}). ${fallbackLabel} Fuente oficial: GitHub Projects #1.`;
+}
+
 async function loadTrackingMetrics() {
   const repoMetrics = document.querySelector("#repo-metrics");
   const deployMetrics = document.querySelector("#deploy-metrics");
@@ -595,5 +809,8 @@ setupRevealOnScroll();
 loadTrackingMetrics();
 
 if (document.querySelector("#board-columns")) {
-  loadProgressData().then(renderProgressBoard);
+  loadProgressData().then((progressData) => {
+    renderProgressBoard(progressData);
+    renderKanbanExecutive(progressData);
+  });
 }

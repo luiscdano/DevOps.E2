@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@500;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260207-06" />
+    <link rel="stylesheet" href="styles.css?v=20260207-08" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -35,8 +35,49 @@
     <main>
       <section class="module module-kanban kanban reveal" id="kanban">
         <div class="section-head">
-          <p class="eyebrow">Seguimiento general</p>
-          <h2>Vinculacion con GitHub Projects, Kanban y trazabilidad</h2>
+          <p class="eyebrow">Command Center · Kanban</p>
+          <h2>Estado real del curso: hecho, en curso y siguiente</h2>
+        </div>
+
+        <div class="kanban-executive">
+          <article class="exec-card">
+            <h3>Resumen Ejecutivo</h3>
+            <p class="exec-copy">
+              Panorama del cuatrimestre basado en las tareas activas del repositorio.
+            </p>
+            <div class="exec-grid" id="exec-grid">
+              <article class="exec-item loading">Cargando resumen...</article>
+            </div>
+          </article>
+
+          <article class="exec-card">
+            <h3>Foco Actual y Sincronizacion</h3>
+            <p class="exec-copy">
+              GitHub Projects es la fuente oficial. Esta web lo refleja como tablero de seguimiento academico.
+            </p>
+            <ul class="focus-list" id="focus-list">
+              <li class="focus-item loading">Cargando foco actual...</li>
+            </ul>
+            <p class="sync-meta" id="sync-meta">Sincronizando...</p>
+            <div class="quick-actions">
+              <a
+                class="btn btn-primary"
+                href="https://github.com/users/luiscdano/projects/1"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Abrir Projects #1
+              </a>
+              <a
+                class="btn btn-ghost"
+                href="https://github.com/luiscdano/DevOps.E2/actions/workflows/pages.yml"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver Workflow Pages
+              </a>
+            </div>
+          </article>
         </div>
 
         <div class="kanban-grid">
@@ -74,7 +115,7 @@
         <div class="progress-wrap">
           <article class="progress-card">
             <header class="progress-head">
-              <h3>Kanban detallado del curso</h3>
+              <h3>Kanban detallado del cuatrimestre</h3>
               <p id="progress-last-updated">Actualizando tablero...</p>
             </header>
             <div class="board-columns" id="board-columns">
@@ -104,6 +145,6 @@
       </p>
     </footer>
 
-    <script src="script.js?v=20260207-06"></script>
+    <script src="script.js?v=20260207-08"></script>
   </body>
 </html>
