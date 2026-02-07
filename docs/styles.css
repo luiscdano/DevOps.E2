@@ -357,6 +357,26 @@ main > .module:first-child {
   font-size: clamp(1.4rem, 2.4vw, 2.2rem);
 }
 
+.objectives-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.2rem 1.25rem;
+  background: linear-gradient(150deg, rgba(15, 21, 52, 0.95), rgba(10, 15, 38, 0.92));
+}
+
+.objectives-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.objectives-list li {
+  color: var(--muted);
+  font-size: 1.01rem;
+  line-height: 1.5;
+}
+
 .loop-board {
   border: 1px solid var(--line);
   border-radius: var(--radius);

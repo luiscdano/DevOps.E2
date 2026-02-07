@@ -3,44 +3,88 @@ const weeksData = [
     id: "S1",
     title: "S1 - Introduccion a DevOps",
     status: "done",
-    goal: "Fundamentos de DevOps y base del repositorio con ramas main/dev.",
+    goal: "Comprender fundamentos DevOps y crear la base tecnica del repositorio.",
     highlights: [
-      "Repositorio publico inicializado",
-      "Definicion de flujo de trabajo con pull requests",
-      "Documentacion de conceptos y evidencias"
+      "Definicion, principios, historia, roles y desafios de DevOps",
+      "Practica 1: repositorio publico con ramas main y dev",
+      "Primeros archivos y evidencia de commits"
     ]
   },
   {
     id: "S2",
     title: "S2 - Comunicacion y colaboracion",
     status: "done",
-    goal: "Gestion visual de tareas con Kanban para trazabilidad del proyecto.",
+    goal: "Aplicar colaboracion visual con Kanban y cultura de trabajo en equipo.",
     highlights: [
-      "GitHub Projects configurado",
-      "Columnas Todo, In Progress, Review y Done",
-      "Vinculacion de tareas e issues"
+      "Herramientas colaborativas y enfoque agil en DevOps",
+      "Practica 2: tablero Kanban en GitHub Projects o Jira",
+      "Tareas y flujo de trabajo trazable"
     ]
   },
   {
     id: "S3",
     title: "S3 - CI/CD y automatizacion",
-    status: "active",
-    goal: "Publicar esta web automaticamente con GitHub Pages usando GitHub Actions.",
+    status: "done",
+    goal: "Desplegar automaticamente la web desde GitHub con Pages y Actions.",
     highlights: [
-      "Workflow de despliegue continuo",
-      "Pagina web evolutiva para evidencias",
-      "Base para pruebas y monitoreo futuros"
+      "Integracion y entrega continua como base del flujo",
+      "Practica 3: web publicada con GitHub Pages",
+      "Deploy automatico desde el repositorio"
     ]
   },
   {
-    id: "S4+",
-    title: "S4 en adelante - Expansion del pipeline",
-    status: "next",
-    goal: "Agregar pruebas, calidad, observabilidad e infraestructura como codigo.",
+    id: "S4",
+    title: "S4 - Integracion Continua (CI)",
+    status: "active",
+    goal: "Crear flujo CI que notifique al subir a main.",
     highlights: [
-      "Quality gates y lint automatizado",
-      "IaC para entornos reproducibles",
-      "Monitoreo, logs y alertas"
+      "Practica 4: programa hola mundo en cualquier lenguaje",
+      "Workflow alerta.yml en GitHub Actions",
+      "Notificacion en ntfy.sh/devops-itla al hacer push a main"
+    ]
+  },
+  {
+    id: "S5",
+    title: "S5 - 1er Parcial",
+    status: "next",
+    goal: "Evaluar de forma integrada los temas trabajados de S1 a S4.",
+    highlights: [
+      "Evaluacion conjunta de fundamentos, colaboracion y CI/CD",
+      "Revision de practicas implementadas",
+      "Validacion del dominio tecnico del flujo DevOps"
+    ]
+  },
+  {
+    id: "S6",
+    title: "S6 - Contenedores",
+    status: "next",
+    goal: "Servir una pagina web con Nginx usando Docker Compose.",
+    highlights: [
+      "Introduccion a contenedores: Docker Desktop, Docker Hub y Play With Docker",
+      "Practica 6: montar src/index.html en /usr/share/nginx/html",
+      "Ejecucion y verificacion con docker compose up -d"
+    ]
+  },
+  {
+    id: "S7",
+    title: "S7 - Dockerfile y Docker Compose",
+    status: "next",
+    goal: "Conectar una app web con base de datos MySQL usando Compose.",
+    highlights: [
+      "Crear codigo fuente en src para app conectada a BD",
+      "Definir servicios de aplicacion y mysql en docker-compose.yml",
+      "Publicar codigo final en GitHub"
+    ]
+  },
+  {
+    id: "S8",
+    title: "S8 - Automatizacion de Infraestructura",
+    status: "next",
+    goal: "Automatizar 5 servidores Ubuntu con Ansible sobre Docker.",
+    highlights: [
+      "Crear imagen Ubuntu con SSH, usuario ansible y privilegios sudo",
+      "Levantar 5 servidores con docker-compose",
+      "Playbooks: update apt, crear usuario itla, carpeta app, hola.txt, instalar cowsay y htop"
     ]
   }
 ];
