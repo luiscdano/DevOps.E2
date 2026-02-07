@@ -20,22 +20,20 @@
     <div class="noise" aria-hidden="true"></div>
 
     <header class="topbar">
-      <a class="brand" href="#inicio">
+      <a class="brand" href="#home">
         <span class="brand-dot"></span>
         <span>DevOps.E2</span>
       </a>
 
       <nav class="nav">
-        <a href="#pipeline">Pipeline</a>
+        <a href="#home">Home</a>
         <a href="#semanas">Semanas</a>
         <a href="#kanban">Kanban</a>
-        <a href="#automatizacion">Automatizacion</a>
-        <a href="#pulse">Repo Pulse</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero" id="inicio">
+      <section class="hero" id="home">
         <p class="eyebrow">Electiva II · ITLA · 2026-C1</p>
         <h1>
           DevOps no como teoria,<br />
@@ -62,7 +60,16 @@
         </ul>
       </section>
 
-      <section class="pipeline reveal" id="pipeline">
+      <section class="automation reveal" id="home-automatizacion">
+        <div class="section-head">
+          <p class="eyebrow">Automatizacion aplicada</p>
+          <h2>Estado de implementacion DevOps</h2>
+        </div>
+
+        <div class="automation-grid" id="automation-grid"></div>
+      </section>
+
+      <section class="pipeline reveal" id="semanas">
         <div class="section-head">
           <p class="eyebrow">S3 · Herramientas CI/CD y automatizacion</p>
           <h2>Ciclo DevOps operando en flujo continuo</h2>
@@ -107,7 +114,7 @@
         </div>
       </section>
 
-      <section class="weeks reveal" id="semanas">
+      <section class="weeks reveal">
         <div class="section-head">
           <p class="eyebrow">Bitacora evolutiva</p>
           <h2>Ruta de aprendizaje por semanas</h2>
@@ -185,63 +192,6 @@
             </ol>
           </article>
         </div>
-      </section>
-
-      <section class="automation reveal" id="automatizacion">
-        <div class="section-head">
-          <p class="eyebrow">Automatizacion aplicada</p>
-          <h2>Estado de implementacion DevOps</h2>
-        </div>
-
-        <div class="automation-grid" id="automation-grid"></div>
-      </section>
-
-      <section class="toolbox reveal" id="herramientas">
-        <div class="section-head">
-          <p class="eyebrow">Mapa de herramientas</p>
-          <h2>Stack actual y stack objetivo</h2>
-        </div>
-
-        <div class="tool-rows">
-          <article class="tool-group">
-            <h3>Versionado y colaboracion</h3>
-            <ul>
-              <li>Git + GitHub</li>
-              <li>GitHub Projects (Kanban)</li>
-              <li>Pull Requests y revisiones</li>
-            </ul>
-          </article>
-          <article class="tool-group">
-            <h3>CI/CD</h3>
-            <ul>
-              <li>GitHub Actions</li>
-              <li>GitHub Pages</li>
-              <li>Deploy continuo por push</li>
-            </ul>
-          </article>
-          <article class="tool-group">
-            <h3>Siguientes integraciones</h3>
-            <ul>
-              <li>Pruebas automatizadas</li>
-              <li>Linting y quality gates</li>
-              <li>Monitoreo y logs</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="pulse reveal" id="pulse">
-        <div class="section-head">
-          <p class="eyebrow">Monitoreo de actividad</p>
-          <h2>Ultimos commits del repositorio</h2>
-        </div>
-
-        <p class="pulse-note">
-          Esta seccion consulta la API publica de GitHub para mostrar trazabilidad reciente del trabajo.
-        </p>
-        <ul id="commit-list" class="commit-list">
-          <li class="commit-item loading">Cargando actividad...</li>
-        </ul>
       </section>
     </main>
 

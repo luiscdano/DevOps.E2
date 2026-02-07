@@ -430,57 +430,6 @@ function renderProgressBoard(progressData) {
   progressLastUpdated.textContent = `Ultima actualizacion: ${updatedLabel}${fallback}`;
 }
 
-async function loadCommits() {
-  const commitList = document.querySelector("#commit-list");
-  const endpoint = `https://api.github.com/repos/${repoOwner}/${repoName}/commits?per_page=5`;
-
-  try {
-    const response = await fetch(endpoint, {
-      headers: {
-        Accept: "application/vnd.github+json"
-      }
-    });
-
-    if (!response.ok) {
-      throw new Error(`Error ${response.status}`);
-    }
-
-    const commits = await response.json();
-
-    if (!Array.isArray(commits) || !commits.length) {
-      commitList.innerHTML = "<li class='commit-item'>No hay commits disponibles por ahora.</li>";
-      return;
-    }
-
-    commitList.innerHTML = commits
-      .map((commit) => {
-        const message = commit.commit?.message?.split("\n")[0] ?? "Sin mensaje";
-        const author = commit.commit?.author?.name ?? "Autor desconocido";
-        const date = new Date(commit.commit?.author?.date ?? Date.now()).toLocaleString("es-DO", {
-          dateStyle: "medium",
-          timeStyle: "short"
-        });
-        const url = commit.html_url;
-
-        return `
-          <li class="commit-item">
-            <p class="commit-message">${escapeHtml(message)}</p>
-            <p class="commit-meta">${escapeHtml(author)} · ${escapeHtml(date)}</p>
-            <a class="commit-link" href="${escapeHtml(url)}" target="_blank" rel="noreferrer">Ver commit</a>
-          </li>
-        `;
-      })
-      .join("");
-  } catch (error) {
-    commitList.innerHTML = `
-      <li class="commit-item">
-        <p class="commit-message">No se pudo cargar la actividad en este momento.</p>
-        <p class="commit-meta">${escapeHtml(error.message)}</p>
-      </li>
-    `;
-  }
-}
-
 async function loadTrackingMetrics() {
   const repoMetrics = document.querySelector("#repo-metrics");
   const deployMetrics = document.querySelector("#deploy-metrics");
@@ -570,6 +519,5 @@ renderAutomation();
 setupFilters();
 cycleStages();
 setupRevealOnScroll();
-loadCommits();
 loadTrackingMetrics();
 loadProgressData().then(renderProgressBoard);
