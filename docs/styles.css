@@ -148,8 +148,8 @@ main {
 
 .hero-layout {
   display: grid;
-  grid-template-columns: minmax(368px, 530px) 1fr;
-  gap: 2.1rem;
+  grid-template-columns: minmax(430px, 620px) 1fr;
+  gap: 2.3rem;
   align-items: center;
 }
 
@@ -168,17 +168,15 @@ main {
 
 .hero-main {
   min-width: 0;
-  max-width: 54ch;
+  max-width: 50ch;
   display: grid;
+  align-content: center;
+  gap: 0.75rem;
+  align-self: center;
 }
 
 .hero-main .eyebrow {
   font-size: 0.72rem;
-}
-
-.hero-main h1 {
-  font-size: clamp(1.4rem, 2.4vw, 2.3rem);
-  max-width: 17ch;
 }
 
 .eyebrow {
@@ -204,11 +202,17 @@ h1 {
   max-width: 16ch;
 }
 
+.hero .hero-main h1 {
+  margin-top: 0;
+  font-size: clamp(1.28rem, 2.05vw, 2rem);
+  max-width: 16ch;
+}
+
 .hero-copy {
-  margin: 0.6rem 0 0;
-  max-width: 46ch;
+  margin: 0.2rem auto 0;
+  max-width: 40ch;
   color: var(--muted);
-  font-size: 0.94rem;
+  font-size: 0.91rem;
   text-align: center;
   justify-self: center;
   line-height: 1.62;
@@ -823,7 +827,7 @@ main > .module:first-child {
   }
 
   .hero-illustration {
-    width: min(400px, 100%);
+    width: min(460px, 100%);
     justify-self: center;
   }
 
