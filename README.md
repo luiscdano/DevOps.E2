@@ -171,7 +171,7 @@ Crear una página web del proyecto y desplegarla automáticamente en la nube des
   - Automatización de infraestructura (roadmap)
   - Monitoreo y trazabilidad (commits recientes desde API de GitHub)
 
-Enlace esperado del sitio:
+Enlace raiz principal (Home) del sitio:
 https://luiscdano.github.io/DevOps.E2/
 
 ---

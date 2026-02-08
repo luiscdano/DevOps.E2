@@ -459,7 +459,7 @@ main > .module:first-child {
   display: grid;
   gap: 0.72rem;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  align-items: start;
+  align-items: stretch;
 }
 
 .kanban-executive {
@@ -702,9 +702,10 @@ main > .module:first-child {
   border-radius: 14px;
   padding: 0.88rem;
   background: linear-gradient(160deg, rgba(19, 24, 52, 0.92), rgba(11, 15, 35, 0.88));
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.58rem;
-  align-content: start;
+  height: 100%;
 }
 
 .kanban-card h3 {
@@ -720,6 +721,15 @@ main > .module:first-child {
 .kanban-card .btn {
   font-size: 0.82rem;
   padding: 0.56rem 0.82rem;
+}
+
+.kanban-card .metric-list {
+  flex: 1;
+}
+
+.kanban-card > .btn,
+.kanban-card .quick-actions {
+  margin-top: auto;
 }
 
 .metric-list {
