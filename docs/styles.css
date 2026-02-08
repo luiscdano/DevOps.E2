@@ -739,6 +739,26 @@ main > .module:first-child {
   color: var(--muted);
 }
 
+.metric-detail {
+  margin-top: 0.35rem;
+  display: grid;
+  gap: 0.12rem;
+  color: var(--text);
+  font-size: 0.82rem;
+  line-height: 1.34;
+}
+
+.metric-detail strong {
+  color: var(--muted);
+  font-size: 0.66rem;
+  letter-spacing: 0.05em;
+}
+
+.metric-message {
+  white-space: pre-line;
+  word-break: break-word;
+}
+
 .metric-item.loading {
   color: var(--muted);
 }

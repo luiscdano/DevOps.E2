@@ -139,6 +139,8 @@ const boardStatusOrder = ["todo", "in-progress", "review-pr", "done"];
 
 const repoOwner = "luiscdano";
 const repoName = "DevOps.E2";
+const ntfyTopicUrl = "https://ntfy.sh/devops-itla";
+const ntfyLatestJsonUrl = `${ntfyTopicUrl}/json?poll=1&since=latest`;
 
 const defaultProgressData = {
   lastUpdated: "2026-02-07T18:40:00Z",
@@ -792,6 +794,87 @@ async function loadTrackingMetrics() {
   }
 }
 
+function parseNtfyPayload(rawBody) {
+  const lines = rawBody
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  if (!lines.length) {
+    return null;
+  }
+
+  const events = lines
+    .map((line) => {
+      try {
+        return JSON.parse(line);
+      } catch {
+        return null;
+      }
+    })
+    .filter(Boolean);
+
+  if (!events.length) {
+    return null;
+  }
+
+  const messageEvent = [...events].reverse().find((event) => event.event === "message");
+  return messageEvent || events[events.length - 1];
+}
+
+async function loadLatestCiAlert() {
+  const alertFeed = document.querySelector("#ci-alert-feed");
+
+  if (!alertFeed) {
+    return;
+  }
+
+  try {
+    const response = await fetch(ntfyLatestJsonUrl, {
+      headers: {
+        Accept: "application/x-ndjson, application/json"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`Error ${response.status}`);
+    }
+
+    const rawBody = await response.text();
+    const event = parseNtfyPayload(rawBody);
+
+    if (!event) {
+      throw new Error("Sin eventos de alerta");
+    }
+
+    const title = event.title || "DevOps.E2 CI Alert";
+    const eventDate = event.time ? formatDateTime(event.time * 1000) : "Sin fecha";
+    const message = event.message || "Sin contenido";
+    const tags = Array.isArray(event.tags) && event.tags.length ? event.tags.join(", ") : "Sin tags";
+    const commitMatch = message.match(/https:\/\/github\.com\/[^\s]+\/commit\/[a-f0-9]{7,40}/i);
+    const commitUrl = commitMatch ? commitMatch[0] : "";
+
+    alertFeed.innerHTML = `
+      <li class="metric-item">
+        <strong>${escapeHtml(title)}</strong>
+        <span class="metric-detail"><strong>Fecha</strong>${escapeHtml(eventDate)}</span>
+        <span class="metric-detail"><strong>Tags</strong>${escapeHtml(tags)}</span>
+        <span class="metric-detail metric-message"><strong>Mensaje</strong>${escapeHtml(message)}</span>
+      </li>
+      ${commitUrl ? `<li><a class="metric-link" href="${escapeHtml(commitUrl)}" target="_blank" rel="noreferrer">Abrir commit notificado</a></li>` : ""}
+      <li><a class="metric-link" href="${escapeHtml(ntfyTopicUrl)}" target="_blank" rel="noreferrer">Ver historial completo en ntfy</a></li>
+    `;
+  } catch (error) {
+    alertFeed.innerHTML = `
+      <li class="metric-item">
+        <strong>Alerta CI</strong>
+        No disponible en este momento (${escapeHtml(error.message)}).
+      </li>
+      <li><a class="metric-link" href="${escapeHtml(ntfyTopicUrl)}" target="_blank" rel="noreferrer">Abrir topic en ntfy</a></li>
+    `;
+  }
+}
+
 if (weeksGrid) {
   renderWeeks();
 }
@@ -807,6 +890,7 @@ if (filterButtons.length) {
 cycleStages();
 setupRevealOnScroll();
 loadTrackingMetrics();
+loadLatestCiAlert();
 
 if (document.querySelector("#board-columns")) {
   loadProgressData().then((progressData) => {

@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@500;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260207-11" />
+    <link rel="stylesheet" href="styles.css?v=20260208-12" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -110,6 +110,31 @@
               <li class="metric-item loading">Consultando ultimo deploy...</li>
             </ul>
           </article>
+
+          <article class="kanban-card">
+            <h3>Ultima alerta CI (ntfy)</h3>
+            <ul class="metric-list" id="ci-alert-feed">
+              <li class="metric-item loading">Consultando ultima alerta...</li>
+            </ul>
+            <div class="quick-actions">
+              <a
+                class="btn btn-primary"
+                href="https://ntfy.sh/devops-itla"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Abrir topic ntfy
+              </a>
+              <a
+                class="btn btn-ghost"
+                href="https://github.com/luiscdano/DevOps.E2/actions/workflows/alerta.yml"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ver workflow alerta
+              </a>
+            </div>
+          </article>
         </div>
 
         <div class="progress-wrap">
@@ -145,6 +170,6 @@
       </p>
     </footer>
 
-    <script src="script.js?v=20260207-11"></script>
+    <script src="script.js?v=20260208-12"></script>
   </body>
 </html>
