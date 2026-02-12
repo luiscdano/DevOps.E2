@@ -1,23 +1,12 @@
 {
-  "lastUpdated": "2026-02-07T23:45:13Z",
+  "lastUpdated": "2026-02-12T02:00:03Z",
   "source": {
     "kind": "github-projects-public-html",
     "projectUrl": "https://github.com/users/luiscdano/projects/1",
     "projectTitle": "DevOps Workflow Board",
-    "syncedAt": "2026-02-07T23:45:13Z"
+    "syncedAt": "2026-02-12T02:00:03Z"
   },
   "cards": [
-    {
-      "id": "issue-7",
-      "title": "S5 · Preparar checklist y evidencia para 1er parcial",
-      "week": "Sin semana",
-      "status": "todo",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
-      "proof": {
-        "label": "Issue",
-        "url": "https://github.com/luiscdano/DevOps.E2/issues/7"
-      }
-    },
     {
       "id": "issue-11",
       "title": "S6 · Servir pagina web con Nginx y Docker Compose",
@@ -140,6 +129,17 @@
       }
     },
     {
+      "id": "issue-7",
+      "title": "S5 · Preparar checklist y evidencia para 1er parcial",
+      "week": "Sin semana",
+      "status": "done",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/7"
+      }
+    },
+    {
       "id": "issue-3",
       "title": "Setup repository workflow (dev → main)",
       "week": "Sin semana",
@@ -152,6 +152,13 @@
     }
   ],
   "movements": [
+    {
+      "date": "2026-02-12T02:00:09.431Z",
+      "taskId": "issue-7",
+      "from": "todo",
+      "to": "done",
+      "note": "Estado actualizado por sincronizacion con GitHub Projects"
+    },
     {
       "date": "2026-02-07T23:45:34.563Z",
       "taskId": "issue-6",
