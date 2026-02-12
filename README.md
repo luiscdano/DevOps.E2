@@ -1,8 +1,8 @@
 # DevOps.E2
 
-Repositorio público creado para la práctica de la asignatura **Electiva 2 (DevOps)** en el Instituto Tecnológico de las Américas (ITLA), bajo la conducción del docente **Elvys Cruz**.
+Este es mi repositorio público para la práctica de la asignatura **Electiva 2 (DevOps)** en el Instituto Tecnológico de las Américas (ITLA), bajo la conducción del docente **Elvys Cruz**.
 
-Este repositorio documenta de forma progresiva los conceptos, prácticas y evidencias desarrolladas semana a semana durante el curso, simulando un entorno real de trabajo DevOps con enfoque en colaboración, automatización y mejora continua.
+Aquí documento de forma progresiva los conceptos, prácticas y evidencias que desarrollo semana a semana durante el curso, simulando un entorno real de trabajo DevOps con enfoque en colaboración, automatización y mejora continua.
 
 ---
 
@@ -47,12 +47,12 @@ Principios clave abordados:
 ---
 
 ### Historia y Evolución de DevOps
-Se revisó cómo DevOps surge como respuesta a la separación tradicional entre desarrollo y operaciones, la cual generaba retrasos, errores en producción y falta de alineación entre equipos. La evolución ha llevado a la adopción de prácticas como CI/CD, infraestructura como código y monitoreo en tiempo real.
+En esta semana revisé cómo DevOps surge como respuesta a la separación tradicional entre desarrollo y operaciones, la cual generaba retrasos, errores en producción y falta de alineación entre equipos. También identifiqué cómo esta evolución ha impulsado la adopción de prácticas como CI/CD, infraestructura como código y monitoreo en tiempo real.
 
 ---
 
 ### Roles y Responsabilidades en DevOps
-Se identificaron los principales roles dentro de un entorno DevOps:
+Identifiqué los principales roles dentro de un entorno DevOps:
 - Desarrolladores
 - Ingenieros de Operaciones
 - Ingenieros DevOps
@@ -64,7 +64,7 @@ Todos enfocados en un modelo de trabajo colaborativo y multifuncional.
 ---
 
 ### Desafíos en DevOps
-Se analizaron retos comunes como:
+Analicé retos comunes como:
 - Resistencia al cambio cultural
 - Falta de automatización
 - Problemas de comunicación entre equipos
@@ -81,7 +81,7 @@ Se analizaron retos comunes como:
 ---
 
 ### Experiencia Personal
-Esta semana permitió comprender que DevOps no es solo una herramienta o metodología, sino una cultura organizacional. La creación del repositorio y la separación de ramas ayudó a visualizar cómo se estructuran los flujos de trabajo en equipos reales de desarrollo y despliegue.
+Esta semana comprendí que DevOps no es solo una herramienta o metodología, sino una cultura organizacional. Crear el repositorio y separar ramas me ayudó a visualizar cómo se estructuran los flujos de trabajo en equipos reales de desarrollo y despliegue.
 
 ---
 
@@ -93,7 +93,7 @@ Implementar una herramienta visual de planificación y seguimiento de tareas med
 ---
 
 ### Herramientas de Comunicación y Colaboración en DevOps
-Se trabajó con GitHub Projects como herramienta central para la gestión visual de tareas, permitiendo:
+Trabajé con GitHub Projects como herramienta central para la gestión visual de tareas, lo que me permitió:
 - Organización de actividades por estados
 - Seguimiento del progreso del proyecto
 - Relación entre tareas e incidencias del repositorio
@@ -101,7 +101,7 @@ Se trabajó con GitHub Projects como herramienta central para la gestión visual
 ---
 
 ### Construyendo una Cultura Colaborativa y Multifuncional
-Se reforzó la importancia de la transparencia en el trabajo, donde todos los miembros del equipo pueden ver:
+Reforcé la importancia de la transparencia en el trabajo, donde todos los miembros del equipo pueden ver:
 - Qué tareas están pendientes
 - Qué se está desarrollando
 - Qué está en revisión
@@ -110,7 +110,7 @@ Se reforzó la importancia de la transparencia en el trabajo, donde todos los mi
 ---
 
 ### Metodologías Ágiles y DevOps
-Se estableció la relación entre enfoques ágiles (como Kanban) y DevOps, destacando cómo ambos buscan:
+Establecí la relación entre enfoques ágiles (como Kanban) y DevOps, destacando cómo ambos buscan:
 - Entregas continuas
 - Mejora incremental
 - Retroalimentación constante
@@ -119,7 +119,7 @@ Se estableció la relación entre enfoques ágiles (como Kanban) y DevOps, desta
 ---
 
 ### Automatización
-Se introdujo el concepto de automatización como pilar de DevOps, con énfasis en:
+Introduje el concepto de automatización como pilar de DevOps, con énfasis en:
 - Integración continua (CI)
 - Validación automática de cambios
 - Preparación para futuras configuraciones de pipelines
@@ -142,7 +142,7 @@ https://github.com/users/luiscdano/projects/1
 ---
 
 ### Experiencia Personal — S2
-El uso del tablero Kanban permitió comprender cómo la planificación visual mejora la comunicación dentro de los equipos, facilita la priorización de tareas y crea una trazabilidad clara entre la planeación, el desarrollo y la validación del trabajo realizado.
+Usar el tablero Kanban me permitió comprender cómo la planificación visual mejora la comunicación dentro de los equipos, facilita la priorización de tareas y crea una trazabilidad clara entre la planeación, el desarrollo y la validación del trabajo realizado.
 
 ---
 
@@ -154,11 +154,11 @@ Crear una página web del proyecto y desplegarla automáticamente en la nube des
 ---
 
 ### Implementación Realizada
-- Se creó una web evolutiva en `docs/` para presentar el progreso DevOps del cuatrimestre.
-- Se configuró un workflow de GitHub Actions en `.github/workflows/pages.yml`.
+- Creé una web evolutiva en `docs/` para presentar el progreso DevOps del cuatrimestre.
+- Configuré un workflow de GitHub Actions en `.github/workflows/pages.yml`.
 - Cada push a `main` (con cambios en `docs/`, workflow o `README.md`) dispara el despliegue automático.
-- La web quedó diseñada para crecer por semanas sin rehacer toda la estructura.
-- Se integró el seguimiento general con enlace directo al tablero Kanban (`Projects/1`) y métricas dinámicas del repositorio (issues, PR y estado del último deploy).
+- Dejé la web diseñada para crecer por semanas sin rehacer toda la estructura.
+- Integré el seguimiento general con enlace directo al tablero Kanban (`Projects/1`) y métricas dinámicas del repositorio (issues, PR y estado del último deploy).
 
 ---
 
@@ -184,7 +184,7 @@ https://luiscdano.github.io/DevOps.E2/
 ---
 
 ### Sincronizacion automatica del Kanban Web
-La web ahora refleja automaticamente el estado real de **GitHub Projects** (`Project #1`) para evitar diferencias entre tablero y pagina.
+Mi web ahora refleja automaticamente el estado real de **GitHub Projects** (`Project #1`) para evitar diferencias entre tablero y pagina.
 
 Fuente oficial del estado:
 https://github.com/users/luiscdano/projects/1
@@ -207,7 +207,7 @@ Nota: para mantener consistencia, los cambios de estado deben hacerse en **GitHu
 ---
 
 ### Experiencia Personal — S3
-Esta semana permitió conectar teoría y práctica de CI/CD en un caso real: cada cambio en el repositorio puede transformarse en una entrega visible en línea, con trazabilidad y base para futuras automatizaciones del curso.
+Esta semana me permitió conectar teoría y práctica de CI/CD en un caso real: cada cambio en el repositorio puede transformarse en una entrega visible en línea, con trazabilidad y base para futuras automatizaciones del curso.
 
 ---
 
@@ -219,8 +219,8 @@ Implementar una integración continua con GitHub Actions que, al subir cambios a
 ---
 
 ### Implementación Realizada
-- Se mantiene el programa base del curso en `docs/index.html` (sitio ya publicado en GitHub Pages).
-- Se creó el workflow `.github/workflows/alerta.yml`.
+- Mantengo el programa base del curso en `docs/index.html` (sitio ya publicado en GitHub Pages).
+- Creé el workflow `.github/workflows/alerta.yml`.
 - El workflow se ejecuta en `push` a `main` y también permite prueba manual con `workflow_dispatch`.
 - En cada ejecución:
   1. valida que exista `docs/index.html`;
@@ -240,28 +240,28 @@ Implementar una integración continua con GitHub Actions que, al subir cambios a
 ---
 
 ### Experiencia Personal — S4
-Esta práctica fortalece la cultura DevOps al incorporar retroalimentación inmediata en cada integración a `main`, acercando el flujo académico a un escenario real de monitoreo y respuesta temprana.
+Esta práctica fortaleció mi enfoque DevOps al incorporar retroalimentación inmediata en cada integración a `main`, acercando el flujo académico a un escenario real de monitoreo y respuesta temprana.
 
 ---
 
 ## S5 — 1er Parcial: Integración Continua con Surge.sh y GitHub Actions
 
 ### Objetivo de la Semana
-Adaptar el proyecto existente para desplegar automáticamente la web en **Surge.sh** al hacer `push` a `main`, manteniendo la trazabilidad en GitHub Actions y la sincronización con el tablero Kanban.
+Adapté el proyecto existente para desplegar automáticamente la web en **Surge.sh** al hacer `push` a `main`, manteniendo la trazabilidad en GitHub Actions y la sincronización con el tablero Kanban.
 
 ---
 
 ### Implementación Realizada
-- Se creó el workflow de despliegue en `.github/workflows/main.yaml`.
-- El workflow se ejecuta en `push` a `main` (cambios en `docs/**`, workflow o `README.md`) y `workflow_dispatch`.
-- Se valida la presencia de secretos antes del despliegue para evitar exposiciones o ejecuciones ambiguas.
-- Se instala Surge CLI en CI y se publica `docs/` al dominio configurado en secret.
-- Se actualizaron las vistas web (`Home`, `Semanas`, `Kanban`) para evidenciar S5 y el nuevo flujo de deploy.
+- Creé el workflow de despliegue en `.github/workflows/main.yaml`.
+- Configuré el workflow para ejecutarse en `push` a `main` (cambios en `docs/**`, workflow o `README.md`) y `workflow_dispatch`.
+- Validé la presencia de secretos antes del despliegue para evitar exposiciones o ejecuciones ambiguas.
+- Instalé Surge CLI en CI y publiqué `docs/` al dominio configurado en secret.
+- Actualicé las vistas web (`Home`, `Semanas`, `Kanban`) para evidenciar S5 y el nuevo flujo de deploy.
 
 ---
 
 ### Secrets Requeridos en GitHub
-Para no exponer credenciales, configurar en **Settings > Secrets and variables > Actions**:
+Para no exponer mis credenciales, configuré en **Settings > Secrets and variables > Actions**:
 
 1. `SURGE_DOMAIN`
 2. `SURGE_TOKEN`
