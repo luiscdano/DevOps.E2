@@ -244,6 +244,56 @@ Esta práctica fortalece la cultura DevOps al incorporar retroalimentación inme
 
 ---
 
+## S5 — 1er Parcial: Integración Continua con Surge.sh y GitHub Actions
+
+### Objetivo de la Semana
+Adaptar el proyecto existente para desplegar automáticamente la web en **Surge.sh** al hacer `push` a `main`, manteniendo la trazabilidad en GitHub Actions y la sincronización con el tablero Kanban.
+
+---
+
+### Implementación Realizada
+- Se creó el workflow de despliegue en `.github/workflows/main.yaml`.
+- El workflow se ejecuta en `push` a `main` (cambios en `docs/**`, workflow o `README.md`) y `workflow_dispatch`.
+- Se valida la presencia de secretos antes del despliegue para evitar exposiciones o ejecuciones ambiguas.
+- Se instala Surge CLI en CI y se publica `docs/` al dominio configurado en secret.
+- Se actualizaron las vistas web (`Home`, `Semanas`, `Kanban`) para evidenciar S5 y el nuevo flujo de deploy.
+
+---
+
+### Secrets Requeridos en GitHub
+Para no exponer credenciales, configurar en **Settings > Secrets and variables > Actions**:
+
+1. `SURGE_DOMAIN`
+2. `SURGE_TOKEN`
+
+Obtención de token local:
+`surge token`
+
+Nota: el token de Surge **no** debe guardarse en código ni en archivos versionados.
+
+---
+
+### Evidencia Técnica — S5
+- Workflow de Surge:
+  - `.github/workflows/main.yaml`
+- Workflow de Pages (se mantiene activo):
+  - `.github/workflows/pages.yml`
+- Tablero oficial de seguimiento:
+  - `https://github.com/users/luiscdano/projects/1`
+- Sitio base del proyecto:
+  - `https://luiscdano.github.io/DevOps.E2/`
+
+---
+
+### Prueba Esperada del Parcial
+1. Realizar un cambio en `docs/`.
+2. Hacer `push` a `main`.
+3. Verificar ejecución satisfactoria en:
+   - `Actions > Deploy Surge`
+4. Confirmar publicación en el dominio `*.surge.sh` configurado.
+
+---
+
 ## Autor
 **Luis Emilio Cedano, Matr.2024-0128**  
 ITLA – Electiva 2 (DevOps)

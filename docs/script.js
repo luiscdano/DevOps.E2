@@ -46,12 +46,12 @@ const weeksData = [
   {
     id: "S5",
     title: "S5 - 1er Parcial",
-    status: "next",
-    goal: "Evaluar de forma integrada los temas trabajados de S1 a S4.",
+    status: "active",
+    goal: "Integrar despliegue continuo en Surge.sh con GitHub Actions y evidencias del parcial.",
     highlights: [
-      "Evaluacion conjunta de fundamentos, colaboracion y CI/CD",
-      "Revision de practicas implementadas",
-      "Validacion del dominio tecnico del flujo DevOps"
+      "Workflow principal main.yaml para despliegue automatico a Surge.sh",
+      "Secrets de GitHub para SURGE_DOMAIN y SURGE_TOKEN sin exponer credenciales",
+      "Trazabilidad sincronizada entre README, Kanban y sitio web"
     ]
   },
   {
@@ -104,6 +104,11 @@ const automationData = [
     title: "Deploy continuo en GitHub Pages",
     detail: "Cada push a main genera una version publicada automaticamente.",
     status: "done"
+  },
+  {
+    title: "Deploy continuo en Surge.sh",
+    detail: "S5 en curso: workflow main.yaml listo para publicar docs/ en dominio Surge con secrets.",
+    status: "active"
   },
   {
     title: "Integracion continua con alerta ntfy",
@@ -258,8 +263,8 @@ const defaultProgressData = {
       id: "s5-partial-evaluation",
       title: "S5: preparar evidencia integral para el primer parcial",
       week: "S5",
-      status: "todo",
-      details: "Consolidar practicas S1-S4 con trazabilidad y demostracion tecnica."
+      status: "in-progress",
+      details: "Integracion en curso: workflow de Surge, secrets seguros y evidencia sincronizada."
     },
     {
       id: "s6-docker-nginx",
@@ -719,7 +724,8 @@ async function loadTrackingMetrics() {
   const closedIssuesUrl = `${queryBase}is:issue+state:closed`;
   const openPrUrl = `${queryBase}is:pr+state:open`;
   const closedPrUrl = `${queryBase}is:pr+state:closed`;
-  const workflowUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/actions/workflows/pages.yml/runs?per_page=1`;
+  const pagesWorkflowUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/actions/workflows/pages.yml/runs?per_page=1`;
+  const surgeWorkflowUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/actions/workflows/main.yaml/runs?per_page=1`;
 
   try {
     const [
@@ -727,13 +733,15 @@ async function loadTrackingMetrics() {
       closedIssuesRes,
       openPrRes,
       closedPrRes,
-      workflowRes
+      pagesWorkflowRes,
+      surgeWorkflowRes
     ] = await Promise.all([
       fetch(openIssuesUrl, { headers: { Accept: "application/vnd.github+json" } }),
       fetch(closedIssuesUrl, { headers: { Accept: "application/vnd.github+json" } }),
       fetch(openPrUrl, { headers: { Accept: "application/vnd.github+json" } }),
       fetch(closedPrUrl, { headers: { Accept: "application/vnd.github+json" } }),
-      fetch(workflowUrl, { headers: { Accept: "application/vnd.github+json" } })
+      fetch(pagesWorkflowUrl, { headers: { Accept: "application/vnd.github+json" } }),
+      fetch(surgeWorkflowUrl, { headers: { Accept: "application/vnd.github+json" } })
     ]);
 
     if (
@@ -741,18 +749,24 @@ async function loadTrackingMetrics() {
       !closedIssuesRes.ok ||
       !openPrRes.ok ||
       !closedPrRes.ok ||
-      !workflowRes.ok
+      !pagesWorkflowRes.ok
     ) {
       throw new Error("No se pudieron consultar todas las metricas");
     }
 
-    const [openIssues, closedIssues, openPrs, closedPrs, workflow] = await Promise.all([
+    const [openIssues, closedIssues, openPrs, closedPrs, pagesWorkflow] = await Promise.all([
       openIssuesRes.json(),
       closedIssuesRes.json(),
       openPrRes.json(),
       closedPrRes.json(),
-      workflowRes.json()
+      pagesWorkflowRes.json()
     ]);
+
+    let surgeWorkflow = { workflow_runs: [] };
+
+    if (surgeWorkflowRes.ok) {
+      surgeWorkflow = await surgeWorkflowRes.json();
+    }
 
     repoMetrics.innerHTML = `
       <li class="metric-item"><strong>Issues abiertas</strong>${openIssues.total_count ?? 0}</li>
@@ -762,22 +776,27 @@ async function loadTrackingMetrics() {
       <li class="metric-item"><strong>Ruta Kanban</strong>Project #1 en GitHub</li>
     `;
 
-    const lastRun = workflow.workflow_runs?.[0];
+    const pagesRun = pagesWorkflow.workflow_runs?.[0];
+    const surgeRun = surgeWorkflow.workflow_runs?.[0];
 
-    if (!lastRun) {
-      deployMetrics.innerHTML = "<li class='metric-item'>No hay ejecuciones de deploy registradas aun.</li>";
-      return;
-    }
+    const runMarkup = (label, run) => {
+      if (!run) {
+        return `<li class="metric-item"><strong>${escapeHtml(label)}</strong>Sin ejecuciones registradas.</li>`;
+      }
 
-    const deployDate = formatDateTime(lastRun.updated_at);
+      return `
+        <li class="metric-item">
+          <strong>${escapeHtml(label)}</strong>
+          <span class="metric-detail"><strong>Workflow</strong>${escapeHtml(run.name)}</span>
+          <span class="metric-detail"><strong>Estado</strong>${escapeHtml(run.status)}</span>
+          <span class="metric-detail"><strong>Resultado</strong>${escapeHtml(run.conclusion ?? "En progreso")}</span>
+          <span class="metric-detail"><strong>Actualizado</strong>${escapeHtml(formatDateTime(run.updated_at))}</span>
+          <a class="metric-link" href="${escapeHtml(run.html_url)}" target="_blank" rel="noreferrer">Ver ejecucion</a>
+        </li>
+      `;
+    };
 
-    deployMetrics.innerHTML = `
-      <li class="metric-item"><strong>Workflow</strong>${escapeHtml(lastRun.name)}</li>
-      <li class="metric-item"><strong>Estado</strong>${escapeHtml(lastRun.status)}</li>
-      <li class="metric-item"><strong>Resultado</strong>${escapeHtml(lastRun.conclusion ?? "En progreso")}</li>
-      <li class="metric-item"><strong>Actualizado</strong>${escapeHtml(deployDate)}</li>
-      <li><a class="metric-link" href="${escapeHtml(lastRun.html_url)}" target="_blank" rel="noreferrer">Ver ejecucion en GitHub Actions</a></li>
-    `;
+    deployMetrics.innerHTML = `${runMarkup("Deploy Pages", pagesRun)}${runMarkup("Deploy Surge", surgeRun)}`;
   } catch (error) {
     repoMetrics.innerHTML = `
       <li class="metric-item">

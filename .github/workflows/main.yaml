@@ -1,0 +1,54 @@
+name: Deploy Surge
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - ".github/workflows/main.yaml"
+      - "README.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: surge
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate Surge secrets
+        env:
+          SURGE_DOMAIN: ${{ secrets.SURGE_DOMAIN }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        run: |
+          if [ -z "$SURGE_DOMAIN" ]; then
+            echo "Falta configurar el secret SURGE_DOMAIN."
+            exit 1
+          fi
+
+          if [ -z "$SURGE_TOKEN" ]; then
+            echo "Falta configurar el secret SURGE_TOKEN."
+            exit 1
+          fi
+
+      - name: Install Surge CLI
+        run: npm install -g surge
+
+      - name: Deploy docs to Surge
+        env:
+          SURGE_DOMAIN: ${{ secrets.SURGE_DOMAIN }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        run: surge ./docs "$SURGE_DOMAIN" --token "$SURGE_TOKEN"
