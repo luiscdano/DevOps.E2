@@ -46,7 +46,7 @@ const weeksData = [
   {
     id: "S5",
     title: "S5 - 1er Parcial",
-    status: "active",
+    status: "done",
     goal: "Integrar despliegue continuo en Surge.sh con GitHub Actions y evidencias del parcial.",
     highlights: [
       "Workflow principal main.yaml para despliegue automatico a Surge.sh",
@@ -107,8 +107,8 @@ const automationData = [
   },
   {
     title: "Deploy continuo en Surge.sh",
-    detail: "S5 en curso: workflow main.yaml listo para publicar docs/ en dominio Surge con secrets.",
-    status: "active"
+    detail: "S5 completada: workflow main.yaml despliega docs/ a Surge.sh usando secrets seguros.",
+    status: "done"
   },
   {
     title: "Integracion continua con alerta ntfy",
@@ -263,8 +263,8 @@ const defaultProgressData = {
       id: "s5-partial-evaluation",
       title: "S5: preparar evidencia integral para el primer parcial",
       week: "S5",
-      status: "in-progress",
-      details: "Integracion en curso: workflow de Surge, secrets seguros y evidencia sincronizada."
+      status: "done",
+      details: "Integracion completada: deploy en Surge, secrets activos y evidencia sincronizada."
     },
     {
       id: "s6-docker-nginx",
