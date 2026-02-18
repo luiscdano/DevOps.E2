@@ -1,23 +1,12 @@
 {
-  "lastUpdated": "2026-02-12T02:00:03Z",
+  "lastUpdated": "2026-02-18T05:34:18Z",
   "source": {
     "kind": "github-projects-public-html",
     "projectUrl": "https://github.com/users/luiscdano/projects/1",
     "projectTitle": "DevOps Workflow Board",
-    "syncedAt": "2026-02-12T02:00:03Z"
+    "syncedAt": "2026-02-18T05:34:18Z"
   },
   "cards": [
-    {
-      "id": "issue-11",
-      "title": "S6 · Servir pagina web con Nginx y Docker Compose",
-      "week": "S6",
-      "status": "todo",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
-      "proof": {
-        "label": "Issue",
-        "url": "https://github.com/luiscdano/DevOps.E2/issues/11"
-      }
-    },
     {
       "id": "issue-12",
       "title": "S7 · Conectar aplicacion web con MySQL usando Compose",
@@ -140,6 +129,17 @@
       }
     },
     {
+      "id": "issue-11",
+      "title": "S6 · Servir pagina web con Nginx y Docker Compose",
+      "week": "S6",
+      "status": "done",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/11"
+      }
+    },
+    {
       "id": "issue-3",
       "title": "Setup repository workflow (dev → main)",
       "week": "Sin semana",
@@ -152,6 +152,13 @@
     }
   ],
   "movements": [
+    {
+      "date": "2026-02-18T05:34:23.323Z",
+      "taskId": "issue-11",
+      "from": "todo",
+      "to": "done",
+      "note": "Estado actualizado por sincronizacion con GitHub Projects"
+    },
     {
       "date": "2026-02-12T02:00:09.431Z",
       "taskId": "issue-7",
