@@ -294,6 +294,47 @@ Nota: el token de Surge **no** debe guardarse en código ni en archivos versiona
 
 ---
 
+## S6 — Contenedores: Nginx con Docker Compose
+
+### Objetivo de la Semana
+Servir una pagina web usando `nginx` y `docker compose`, montando el contenido desde `src/`.
+
+---
+
+### Implementacion Realizada
+- Cree `src/index.html` con el contenido "Hola mundo".
+- Cree `docker-compose.yml` con servicio `nginx:alpine`.
+- Configure volumen de solo lectura:
+  - `./src:/usr/share/nginx/html:ro`
+- Expose puerto local:
+  - `8080:80`
+- Levante el servicio con:
+  - `docker compose up -d`
+
+---
+
+### Evidencia Tecnica — S6
+- Archivos:
+  - `docker-compose.yml`
+  - `src/index.html`
+- Verificacion:
+  - `docker compose ps` con contenedor `devops-e2-semana6` en estado `Up`
+  - respuesta HTTP valida en `http://localhost:8080`
+- Trazabilidad:
+  - Issue S6 cerrada: `https://github.com/luiscdano/DevOps.E2/issues/11`
+  - Comentario de evidencia: `https://github.com/luiscdano/DevOps.E2/issues/11#issuecomment-3918805032`
+  - Evidencia publicada en web: `docs/assets/evidencia-s6-nginx-compose.txt`
+
+---
+
+### Estado de la Semana 7
+- Se deja pendiente la siguiente practica:
+  - `S7 · Conectar aplicacion web con MySQL usando Compose`
+- Issue pendiente:
+  - `https://github.com/luiscdano/DevOps.E2/issues/12`
+
+---
+
 ## Autor
 **Luis Emilio Cedano, Matr.2024-0128**  
 ITLA – Electiva 2 (DevOps)

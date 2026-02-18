@@ -12,9 +12,9 @@
       "title": "S7 · Conectar aplicacion web con MySQL usando Compose",
       "week": "S7",
       "status": "todo",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "details": "Pendiente para semana 7: conectar aplicacion web y MySQL en Docker Compose.",
       "proof": {
-        "label": "Issue",
+        "label": "Issue S7",
         "url": "https://github.com/luiscdano/DevOps.E2/issues/12"
       }
     },
@@ -133,9 +133,9 @@
       "title": "S6 · Servir pagina web con Nginx y Docker Compose",
       "week": "S6",
       "status": "done",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "details": "Completada: Nginx en Docker Compose sirviendo src/index.html y evidencia registrada.",
       "proof": {
-        "label": "Issue",
+        "label": "Issue S6 + evidencia",
         "url": "https://github.com/luiscdano/DevOps.E2/issues/11"
       }
     },
@@ -153,7 +153,7 @@
   ],
   "movements": [
     {
-      "date": "2026-02-18T05:34:23.323Z",
+      "date": "2026-02-18T05:34:34.597Z",
       "taskId": "issue-11",
       "from": "todo",
       "to": "done",

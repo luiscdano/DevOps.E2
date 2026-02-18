@@ -1,0 +1,31 @@
+Semana 6 - Evidencia tecnica (Nginx + Docker Compose)
+
+Fecha de validacion: 2026-02-18
+Repositorio: https://github.com/luiscdano/DevOps.E2
+
+Objetivo:
+Servir una pagina web con Nginx usando Docker Compose y volumen de contenido.
+
+Archivos usados:
+- docker-compose.yml
+- src/index.html
+
+Configuracion aplicada:
+- Imagen: nginx:alpine
+- Puerto: 8080:80
+- Volumen: ./src:/usr/share/nginx/html:ro
+
+Comandos ejecutados:
+1) docker compose up -d
+2) docker compose ps
+3) curl http://localhost:8080
+
+Resultado esperado/obtenido:
+- Contenedor "devops-e2-semana6" en estado Up.
+- Respuesta HTML con el texto "Hola mundo".
+
+Trazabilidad:
+- Commit S6: 0001bcc
+- Issue S6 cerrada: https://github.com/luiscdano/DevOps.E2/issues/11
+- Comentario de evidencia: https://github.com/luiscdano/DevOps.E2/issues/11#issuecomment-3918805032
+- Issue S7 pendiente: https://github.com/luiscdano/DevOps.E2/issues/12

@@ -57,12 +57,13 @@ const weeksData = [
   {
     id: "S6",
     title: "S6 - Contenedores",
-    status: "next",
+    status: "done",
     goal: "Servir una pagina web con Nginx usando Docker Compose.",
     highlights: [
       "Introduccion a contenedores: Docker Desktop, Docker Hub y Play With Docker",
-      "Practica 6: montar src/index.html en /usr/share/nginx/html",
-      "Ejecucion y verificacion con docker compose up -d"
+      "Practica 6 completada: src/index.html montado en /usr/share/nginx/html",
+      "Ejecucion validada con docker compose up -d y docker compose ps",
+      "Evidencia registrada en docs/assets/evidencia-s6-nginx-compose.txt"
     ]
   },
   {
@@ -116,6 +117,11 @@ const automationData = [
     status: "done"
   },
   {
+    title: "Contenerizacion con Nginx y Docker Compose",
+    detail: "S6 completada: servicio web en contenedor con volumen de contenido y verificacion HTTP.",
+    status: "done"
+  },
+  {
     title: "Monitoreo y gestion de logs",
     detail: "Pendiente: incorporar observabilidad para medir salud y rendimiento.",
     status: "next"
@@ -148,7 +154,7 @@ const ntfyTopicUrl = "https://ntfy.sh/devops-itla";
 const ntfyLatestJsonUrl = `${ntfyTopicUrl}/json?poll=1&since=latest`;
 
 const defaultProgressData = {
-  lastUpdated: "2026-02-07T18:40:00Z",
+  lastUpdated: "2026-02-18T05:34:34Z",
   cards: [
     {
       id: "s1-repo-setup",
@@ -270,8 +276,12 @@ const defaultProgressData = {
       id: "s6-docker-nginx",
       title: "S6: publicar pagina en Nginx con Docker Compose",
       week: "S6",
-      status: "todo",
-      details: "Servir src/index.html montado en /usr/share/nginx/html."
+      status: "done",
+      details: "Completado: contenedor nginx levantado y pagina servida desde src con Docker Compose.",
+      proof: {
+        label: "Issue S6",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/11"
+      }
     },
     {
       id: "s7-app-mysql",
@@ -289,6 +299,13 @@ const defaultProgressData = {
     }
   ],
   movements: [
+    {
+      date: "2026-02-18T05:34:34Z",
+      taskId: "s6-docker-nginx",
+      from: "todo",
+      to: "done",
+      note: "Semana 6 completada con evidencia de Nginx + Docker Compose."
+    },
     {
       date: "2026-02-07T18:40:00Z",
       taskId: "s3-kanban-command",
