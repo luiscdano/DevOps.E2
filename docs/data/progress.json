@@ -1,23 +1,12 @@
 {
-  "lastUpdated": "2026-02-18T05:34:18Z",
+  "lastUpdated": "2026-02-26T03:32:46Z",
   "source": {
     "kind": "github-projects-public-html",
     "projectUrl": "https://github.com/users/luiscdano/projects/1",
     "projectTitle": "DevOps Workflow Board",
-    "syncedAt": "2026-02-18T05:34:18Z"
+    "syncedAt": "2026-02-26T03:32:46Z"
   },
   "cards": [
-    {
-      "id": "issue-12",
-      "title": "S7 · Conectar aplicacion web con MySQL usando Compose",
-      "week": "S7",
-      "status": "todo",
-      "details": "Pendiente para semana 7: conectar aplicacion web y MySQL en Docker Compose.",
-      "proof": {
-        "label": "Issue S7",
-        "url": "https://github.com/luiscdano/DevOps.E2/issues/12"
-      }
-    },
     {
       "id": "issue-13",
       "title": "S8 · Automatizar 5 servidores Ubuntu con Ansible",
@@ -140,6 +129,17 @@
       }
     },
     {
+      "id": "issue-12",
+      "title": "S7 · Conectar aplicacion web con MySQL usando Compose",
+      "week": "S7",
+      "status": "done",
+      "details": "Pendiente para semana 7: conectar aplicacion web y MySQL en Docker Compose.",
+      "proof": {
+        "label": "Issue S7",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/12"
+      }
+    },
+    {
       "id": "issue-3",
       "title": "Setup repository workflow (dev → main)",
       "week": "Sin semana",
@@ -152,6 +152,13 @@
     }
   ],
   "movements": [
+    {
+      "date": "2026-02-26T03:32:52.667Z",
+      "taskId": "issue-12",
+      "from": "todo",
+      "to": "done",
+      "note": "Estado actualizado por sincronizacion con GitHub Projects"
+    },
     {
       "date": "2026-02-18T05:34:34.597Z",
       "taskId": "issue-11",
