@@ -31,9 +31,46 @@ Validaciones ejecutadas:
    - Esperando MySQL (intento 1/30): getaddrinfo ENOTFOUND mysql
    - Esperando MySQL (intento 2/30): getaddrinfo ENOTFOUND mysql
 
-Ejecucion final esperada en entorno con Docker activo:
-- docker compose up -d --build
-- Abrir: http://localhost:8080
-- Healthcheck app: http://localhost:8080/healthz
-- docker compose logs -f app mysql
-- docker compose down
+4) Ejecucion real con Docker activo
+   Comandos:
+   - docker compose up -d --build --remove-orphans
+   - docker compose up -d --force-recreate app
+   - docker compose ps
+   Resultado:
+   - devops-e2-semana7-mysql: Up (healthy), puerto 3307->3306
+   - devops-e2-semana7-app: Up, puerto 8080->3000
+
+5) Verificacion HTTP de la aplicacion
+   Comando: curl http://localhost:8080
+   Resultado: responde HTML con
+   - "Hola mundo desde la Semana 7"
+   - "DB Host: mysql:3306"
+   - "DB Name: devopse2"
+   - "Hora en MySQL: ... UTC ..."
+
+6) Healthcheck de app y base de datos
+   Comando: curl http://localhost:8080/healthz
+   Resultado:
+   {"status":"ok","database":"connected"}
+
+7) Logs de contenedores
+   Comando: docker compose logs --tail=60 app mysql
+   Resultado relevante:
+   - app: "MySQL listo en intento 1."
+   - app: "App S7 escuchando en puerto 3000"
+   - mysql: "ready for connections. Version: '8.4.8'"
+
+8) Trazabilidad GitHub
+   - Commit implementacion S7:
+     https://github.com/luiscdano/DevOps.E2/commit/207a875
+   - Comentario de evidencia en issue:
+     https://github.com/luiscdano/DevOps.E2/issues/12#issuecomment-3963753765
+   - Sync de Projects ejecutado por evento issues:
+     https://github.com/luiscdano/DevOps.E2/actions/runs/22426651289
+   - Pages desplegado tras sync:
+     https://github.com/luiscdano/DevOps.E2/actions/runs/22426654575
+
+9) Estado final
+   - Issue #12 cerrada (S7 completada).
+   - Tarjeta S7 en Projects sincronizada a Done.
+   - data/progress.json actualizado con S7 = done.

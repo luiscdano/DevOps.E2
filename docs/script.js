@@ -69,7 +69,7 @@ const weeksData = [
   {
     id: "S7",
     title: "S7 - App web + MySQL con Compose",
-    status: "active",
+    status: "done",
     goal: "Conectar una app web con base de datos MySQL usando Compose.",
     highlights: [
       "Codigo fuente de app en src con Node.js, Express y mysql2",
@@ -123,8 +123,8 @@ const automationData = [
   },
   {
     title: "App Hola Mundo conectada a MySQL",
-    detail: "S7 en curso: implementacion app + mysql en Docker Compose lista para validacion final.",
-    status: "active"
+    detail: "S7 completada: app web conectada a MySQL y validada con docker compose.",
+    status: "done"
   },
   {
     title: "Monitoreo y gestion de logs",
@@ -292,8 +292,8 @@ const defaultProgressData = {
       id: "s7-app-mysql",
       title: "S7: app conectada a MySQL con Docker Compose",
       week: "S7",
-      status: "in-progress",
-      details: "Implementacion lista en codigo (app + mysql); pendiente cierre final en Projects #1."
+      status: "done",
+      details: "Completada: app + mysql en Compose validada con respuesta HTTP y healthcheck."
     },
     {
       id: "s8-ansible-automation",
