@@ -68,13 +68,13 @@ const weeksData = [
   },
   {
     id: "S7",
-    title: "S7 - Dockerfile y Docker Compose",
-    status: "next",
+    title: "S7 - App web + MySQL con Compose",
+    status: "active",
     goal: "Conectar una app web con base de datos MySQL usando Compose.",
     highlights: [
-      "Crear codigo fuente en src para app conectada a BD",
-      "Definir servicios de aplicacion y mysql en docker-compose.yml",
-      "Publicar codigo final en GitHub"
+      "Codigo fuente de app en src con Node.js, Express y mysql2",
+      "Servicios app + mysql definidos en docker-compose.yml con healthcheck",
+      "Evidencia S7 publicada en docs/assets/evidencia-s7-app-mysql-compose.txt"
     ]
   },
   {
@@ -120,6 +120,11 @@ const automationData = [
     title: "Contenerizacion con Nginx y Docker Compose",
     detail: "S6 completada: servicio web en contenedor con volumen de contenido y verificacion HTTP.",
     status: "done"
+  },
+  {
+    title: "App Hola Mundo conectada a MySQL",
+    detail: "S7 en curso: implementacion app + mysql en Docker Compose lista para validacion final.",
+    status: "active"
   },
   {
     title: "Monitoreo y gestion de logs",
@@ -287,8 +292,8 @@ const defaultProgressData = {
       id: "s7-app-mysql",
       title: "S7: app conectada a MySQL con Docker Compose",
       week: "S7",
-      status: "todo",
-      details: "Definir servicios de aplicacion y base de datos en docker-compose.yml."
+      status: "in-progress",
+      details: "Implementacion lista en codigo (app + mysql); pendiente cierre final en Projects #1."
     },
     {
       id: "s8-ansible-automation",

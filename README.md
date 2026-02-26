@@ -327,11 +327,63 @@ Servir una pagina web usando `nginx` y `docker compose`, montando el contenido d
 
 ---
 
-### Estado de la Semana 7
-- Se deja pendiente la siguiente practica:
-  - `S7 · Conectar aplicacion web con MySQL usando Compose`
-- Issue pendiente:
-  - `https://github.com/luiscdano/DevOps.E2/issues/12`
+## S7 — Docker Compose: App Hola Mundo + MySQL
+
+### Objetivo de la Semana
+Crear una aplicacion web "Hola mundo" conectada a una base de datos MySQL usando `docker compose`.
+
+---
+
+### Implementacion Realizada
+- Mantengo `src/` como directorio de codigo fuente de la app.
+- Cree aplicacion web con `Node.js + Express` en:
+  - `src/server.js`
+- Configure conexion a MySQL con `mysql2` y endpoint de salud:
+  - `GET /` (hola mundo + prueba de conexion a BD)
+  - `GET /healthz`
+- Cree imagen de aplicacion con:
+  - `src/Dockerfile`
+- Defini `docker-compose.yml` con dos servicios:
+  - `app` (servidor web)
+  - `mysql` (base de datos)
+- Agregue healthcheck en MySQL y dependencia controlada:
+  - `depends_on: condition: service_healthy`
+
+---
+
+### Evidencia Tecnica — S7
+- Archivos:
+  - `docker-compose.yml`
+  - `src/server.js`
+  - `src/package.json`
+  - `src/package-lock.json`
+  - `src/Dockerfile`
+- Validaciones realizadas:
+  - `node --check src/server.js`
+  - `docker compose config`
+  - arranque local de app verificando espera de MySQL
+- Evidencia publicada en web:
+  - `docs/assets/evidencia-s7-app-mysql-compose.txt`
+- Trazabilidad:
+  - Issue S7: `https://github.com/luiscdano/DevOps.E2/issues/12`
+  - Tablero oficial: `https://github.com/users/luiscdano/projects/1`
+
+---
+
+### Ejecucion Local (S7)
+1. `docker compose up -d --build`
+2. Abrir `http://localhost:8080`
+3. Verificar salud en `http://localhost:8080/healthz`
+4. Revisar logs con `docker compose logs -f app mysql`
+5. Detener con `docker compose down`
+
+---
+
+### Estado de la Semana 8
+- Proxima practica:
+  - `S8 · Automatizar 5 servidores Ubuntu con Ansible`
+- Issue abierta:
+  - `https://github.com/luiscdano/DevOps.E2/issues/13`
 
 ---
 

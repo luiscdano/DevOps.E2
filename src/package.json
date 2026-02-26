@@ -1,0 +1,13 @@
+{
+  "name": "devops-e2-semana7-app",
+  "version": "1.0.0",
+  "description": "Aplicacion Hola Mundo conectada a MySQL para practica S7",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mysql2": "^3.12.0"
+  }
+}

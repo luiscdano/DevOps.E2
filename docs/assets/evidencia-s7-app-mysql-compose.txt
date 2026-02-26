@@ -1,0 +1,39 @@
+Semana 7 - App Hola Mundo + MySQL con Docker Compose
+Fecha: 2026-02-26
+Repositorio: https://github.com/luiscdano/DevOps.E2
+Issue S7: https://github.com/luiscdano/DevOps.E2/issues/12
+
+Archivos implementados:
+- docker-compose.yml
+- src/server.js
+- src/package.json
+- src/package-lock.json
+- src/Dockerfile
+- src/.dockerignore
+
+Validaciones ejecutadas:
+1) Sintaxis Node.js
+   Comando: node --check src/server.js
+   Resultado: OK (sin errores)
+
+2) Validacion de Compose
+   Comando: docker compose config
+   Resultado: OK
+   Servicios detectados: app, mysql
+   Puerto app: 8080->3000
+   Puerto mysql: 3307->3306
+   Healthcheck MySQL: mysqladmin ping
+
+3) Arranque local del proceso Node (sin daemon de Docker)
+   Comando: npm start (prueba corta)
+   Resultado: la app inicia y espera MySQL correctamente.
+   Logs:
+   - Esperando MySQL (intento 1/30): getaddrinfo ENOTFOUND mysql
+   - Esperando MySQL (intento 2/30): getaddrinfo ENOTFOUND mysql
+
+Ejecucion final esperada en entorno con Docker activo:
+- docker compose up -d --build
+- Abrir: http://localhost:8080
+- Healthcheck app: http://localhost:8080/healthz
+- docker compose logs -f app mysql
+- docker compose down
