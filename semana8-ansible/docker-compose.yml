@@ -1,0 +1,67 @@
+name: devops-e2-semana8
+
+x-ubuntu-server: &ubuntu-server
+  image: devops-e2-ubuntu-ansible:latest
+  pull_policy: never
+  restart: unless-stopped
+
+services:
+  server1:
+    <<: *ubuntu-server
+    container_name: devops-e2-s8-server1
+    hostname: server1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      ansible_net:
+        ipv4_address: 172.30.0.11
+    ports:
+      - "2221:22"
+
+  server2:
+    <<: *ubuntu-server
+    container_name: devops-e2-s8-server2
+    hostname: server2
+    networks:
+      ansible_net:
+        ipv4_address: 172.30.0.12
+    ports:
+      - "2222:22"
+
+  server3:
+    <<: *ubuntu-server
+    container_name: devops-e2-s8-server3
+    hostname: server3
+    networks:
+      ansible_net:
+        ipv4_address: 172.30.0.13
+    ports:
+      - "2223:22"
+
+  server4:
+    <<: *ubuntu-server
+    container_name: devops-e2-s8-server4
+    hostname: server4
+    networks:
+      ansible_net:
+        ipv4_address: 172.30.0.14
+    ports:
+      - "2224:22"
+
+  server5:
+    <<: *ubuntu-server
+    container_name: devops-e2-s8-server5
+    hostname: server5
+    networks:
+      ansible_net:
+        ipv4_address: 172.30.0.15
+    ports:
+      - "2225:22"
+
+networks:
+  ansible_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24

@@ -1,0 +1,46 @@
+---
+- name: Practica 8 - Automatizacion con Ansible en 5 servidores Ubuntu
+  hosts: servidores_ubuntu
+  become: true
+  gather_facts: true
+
+  vars:
+    app_dir: /home/ansible/app
+    hola_file: /home/ansible/app/hola.txt
+
+  tasks:
+    - name: Actualizar indice de APT y paquetes del sistema
+      ansible.builtin.apt:
+        update_cache: true
+        upgrade: dist
+
+    - name: Crear usuario itla
+      ansible.builtin.user:
+        name: itla
+        shell: /bin/bash
+        create_home: true
+        state: present
+
+    - name: Crear carpeta app
+      ansible.builtin.file:
+        path: "{{ app_dir }}"
+        state: directory
+        owner: ansible
+        group: ansible
+        mode: "0755"
+
+    - name: Crear archivo hola.txt en carpeta app
+      ansible.builtin.copy:
+        dest: "{{ hola_file }}"
+        content: "Hola desde Ansible - Practica 8\n"
+        owner: ansible
+        group: ansible
+        mode: "0644"
+
+    - name: Instalar cowsay y htop
+      ansible.builtin.apt:
+        name:
+          - cowsay
+          - htop
+        state: present
+        update_cache: true

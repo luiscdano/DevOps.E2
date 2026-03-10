@@ -379,11 +379,69 @@ Crear una aplicacion web "Hola mundo" conectada a una base de datos MySQL usando
 
 ---
 
-### Estado de la Semana 8
-- Proxima practica:
-  - `S8 · Automatizar 5 servidores Ubuntu con Ansible`
-- Issue abierta:
-  - `https://github.com/luiscdano/DevOps.E2/issues/13`
+## S8 — Automatizacion con Ansible en 5 servidores Ubuntu
+
+### Objetivo de la Semana
+Usar Ansible para automatizar tareas de administracion en 5 servidores Ubuntu creados con Docker.
+
+---
+
+### Implementacion Realizada
+- Cree una imagen Ubuntu para laboratorios Ansible en:
+  - `semana8-ansible/Dockerfile`
+- La imagen incluye:
+  - `openssh-server`
+  - usuario `ansible` con password `ansible`
+  - privilegios `sudo` sin password
+  - `python3` para ejecucion de modulos de Ansible
+- Defini 5 servidores en:
+  - `semana8-ansible/docker-compose.yml`
+- Configure inventario y parametros de Ansible en:
+  - `semana8-ansible/inventario.ini`
+  - `semana8-ansible/ansible.cfg`
+- Cree playbook de automatizacion en:
+  - `semana8-ansible/playbook.yml`
+
+---
+
+### Automatizaciones Aplicadas con Ansible
+- Actualizacion de paquetes del sistema (`apt update` + `upgrade`)
+- Creacion del usuario `itla`
+- Creacion de carpeta `app` en `/home/ansible/app`
+- Creacion del archivo `/home/ansible/app/hola.txt`
+- Instalacion de `cowsay` y `htop`
+
+---
+
+### Ejecucion Local (S8)
+1. `cd semana8-ansible`
+2. `docker compose up -d --build`
+3. `docker compose ps`
+4. Instalar Ansible (Ubuntu/WSL):
+   - `sudo apt update && sudo apt install -y ansible sshpass`
+5. Probar conectividad:
+   - `ansible servidores_ubuntu -m ping`
+6. Ejecutar playbook:
+   - `ansible-playbook playbook.yml`
+7. Verificar resultados:
+   - `ansible servidores_ubuntu -m shell -a "id itla"`
+   - `ansible servidores_ubuntu -m shell -a "ls -l /home/ansible/app/hola.txt"`
+   - `ansible servidores_ubuntu -m shell -a "dpkg -l cowsay htop | grep '^ii'"`
+8. Detener entorno:
+   - `docker compose down`
+
+---
+
+### Evidencia Tecnica — S8
+- Archivos clave:
+  - `semana8-ansible/Dockerfile`
+  - `semana8-ansible/docker-compose.yml`
+  - `semana8-ansible/inventario.ini`
+  - `semana8-ansible/ansible.cfg`
+  - `semana8-ansible/playbook.yml`
+  - `semana8-ansible/README.md`
+- Evidencia publicada:
+  - `docs/assets/evidencia-s8-ansible.txt`
 
 ---
 

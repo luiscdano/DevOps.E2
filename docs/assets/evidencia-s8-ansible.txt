@@ -1,0 +1,64 @@
+Semana: S8
+Fecha: 2026-03-10
+Tema: Automatizacion de 5 servidores Ubuntu con Ansible
+
+Entorno:
+- Docker Compose: semana8-ansible/docker-compose.yml
+- Inventario: semana8-ansible/inventario.ini
+- Playbook: semana8-ansible/playbook.yml
+
+1) Levantar servidores
+$ docker compose -f semana8-ansible/docker-compose.yml up -d --build
+
+$ docker compose -f semana8-ansible/docker-compose.yml ps
+devops-e2-s8-server1  Up  ... 0.0.0.0:2221->22/tcp
+devops-e2-s8-server2  Up  ... 0.0.0.0:2222->22/tcp
+devops-e2-s8-server3  Up  ... 0.0.0.0:2223->22/tcp
+devops-e2-s8-server4  Up  ... 0.0.0.0:2224->22/tcp
+devops-e2-s8-server5  Up  ... 0.0.0.0:2225->22/tcp
+
+2) Conectividad Ansible
+$ source .venv-ansible/bin/activate
+$ cd semana8-ansible
+$ ansible servidores_ubuntu -m ping
+server1 | SUCCESS => {"ping": "pong"}
+server2 | SUCCESS => {"ping": "pong"}
+server3 | SUCCESS => {"ping": "pong"}
+server4 | SUCCESS => {"ping": "pong"}
+server5 | SUCCESS => {"ping": "pong"}
+
+3) Ejecutar playbook
+$ ansible-playbook playbook.yml
+
+PLAY RECAP (primera ejecucion)
+server1 : ok=6 changed=5 unreachable=0 failed=0
+server2 : ok=6 changed=5 unreachable=0 failed=0
+server3 : ok=6 changed=5 unreachable=0 failed=0
+server4 : ok=6 changed=5 unreachable=0 failed=0
+server5 : ok=6 changed=5 unreachable=0 failed=0
+
+PLAY RECAP (segunda ejecucion - idempotencia)
+server1 : ok=6 changed=0 unreachable=0 failed=0
+server2 : ok=6 changed=0 unreachable=0 failed=0
+server3 : ok=6 changed=0 unreachable=0 failed=0
+server4 : ok=6 changed=0 unreachable=0 failed=0
+server5 : ok=6 changed=0 unreachable=0 failed=0
+
+4) Verificaciones solicitadas
+$ ansible servidores_ubuntu -m shell -a "id itla"
+uid=1002(itla) gid=1002(itla) groups=1002(itla)
+
+$ ansible servidores_ubuntu -m shell -a "ls -l /home/ansible/app/hola.txt && cat /home/ansible/app/hola.txt"
+-rw-r--r-- 1 ansible ansible 32 ... /home/ansible/app/hola.txt
+Hola desde Ansible - Practica 8
+
+$ ansible servidores_ubuntu -m shell -a "dpkg -l cowsay htop | grep '^ii'"
+ii  cowsay  3.03+dfsg2-8   all
+ii  htop    3.3.0-4build1  arm64
+
+Resultado:
+- Paquetes APT actualizados
+- Usuario itla creado
+- Carpeta app creada
+- Archivo /home/ansible/app/hola.txt creado
+- Paquetes cowsay y htop instalados
