@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Evidencias visuales de la Semana 8: automatizacion con Ansible en 5 servidores Ubuntu."
+    />
+    <title>DevOps.E2 | Evidencias S8</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260310-01" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-dot"></span>
+        <span>DevOps.E2</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="semanas.html">Semanas</a>
+        <a href="kanban.html">Kanban</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="module evidence-module reveal">
+        <div class="section-head">
+          <p class="eyebrow">Semana 8 · Evidencia visual</p>
+          <h2>Automatizacion con Ansible en 5 servidores Ubuntu</h2>
+        </div>
+
+        <article class="kanban-card">
+          <p>
+            Esta galeria muestra la evidencia de ejecucion de la practica S8
+            (Docker + Ansible): build, ping, playbook, validaciones y apagado.
+          </p>
+          <div class="quick-actions">
+            <a class="btn btn-primary" href="assets/evidencia-s8-ansible.txt" target="_blank" rel="noreferrer">
+              Ver evidencia TXT
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/tree/main/semana8-ansible" target="_blank" rel="noreferrer">
+              Ver carpeta S8 en GitHub
+            </a>
+          </div>
+        </article>
+
+        <section class="evidence-grid" aria-label="Capturas Semana 8">
+          <button
+            class="evidence-card"
+            type="button"
+            data-evidence-src="assets/evidencia-s8-imagenes/Salida%20de%20docker%20compose%20ps%205%20contenedores%20Up.png"
+            data-evidence-caption="S8-01 · docker compose up -d --build + docker compose ps"
+          >
+            <img src="assets/evidencia-s8-imagenes/Salida%20de%20docker%20compose%20ps%205%20contenedores%20Up.png" alt="S8-01 docker compose up y ps" />
+            <span>S8-01 · Compose up + ps</span>
+          </button>
+
+          <button
+            class="evidence-card"
+            type="button"
+            data-evidence-src="assets/evidencia-s8-imagenes/pong%20en%20server1..server5.png"
+            data-evidence-caption="S8-02 · ansible servidores_ubuntu -m ping"
+          >
+            <img src="assets/evidencia-s8-imagenes/pong%20en%20server1..server5.png" alt="S8-02 ansible ping" />
+            <span>S8-02 · Ansible ping</span>
+          </button>
+
+          <button
+            class="evidence-card"
+            type="button"
+            data-evidence-src="assets/evidencia-s8-imagenes/Parte1_bloque%20final%20PLAY%20RECAP%20con%20failed=0.png"
+            data-evidence-caption="S8-03 · ansible-playbook (parte 1)"
+          >
+            <img src="assets/evidencia-s8-imagenes/Parte1_bloque%20final%20PLAY%20RECAP%20con%20failed=0.png" alt="S8-03 playbook parte 1" />
+            <span>S8-03 · Playbook parte 1</span>
+          </button>
+
+          <button
+            class="evidence-card"
+            type="button"
+            data-evidence-src="assets/evidencia-s8-imagenes/Parte2_bloque%20final%20PLAY%20RECAP%20con%20failed=0.png"
+            data-evidence-caption="S8-04 · ansible-playbook (recap)"
+          >
+            <img src="assets/evidencia-s8-imagenes/Parte2_bloque%20final%20PLAY%20RECAP%20con%20failed=0.png" alt="S8-04 playbook recap" />
+            <span>S8-04 · Playbook recap</span>
+          </button>
+
+          <button
+            class="evidence-card"
+            type="button"
+            data-evidence-src="assets/evidencia-s8-imagenes/validaciones%20finales.png"
+            data-evidence-caption="S8-05 · validaciones (id itla, hola.txt, cowsay y htop)"
+          >
+            <img src="assets/evidencia-s8-imagenes/validaciones%20finales.png" alt="S8-05 validaciones" />
+            <span>S8-05 · Validaciones</span>
+          </button>
+
+          <button
+            class="evidence-card"
+            type="button"
+            data-evidence-src="assets/evidencia-s8-imagenes/docker%20compose%20down.png"
+            data-evidence-caption="S8-06 · docker compose down"
+          >
+            <img src="assets/evidencia-s8-imagenes/docker%20compose%20down.png" alt="S8-06 compose down" />
+            <span>S8-06 · Compose down</span>
+          </button>
+        </section>
+      </section>
+    </main>
+
+    <div class="evidence-modal" id="evidence-modal" hidden>
+      <div class="evidence-modal-backdrop" data-evidence-close="true"></div>
+      <figure class="evidence-modal-content">
+        <button class="evidence-modal-close" type="button" data-evidence-close="true" aria-label="Cerrar evidencia">
+          Cerrar
+        </button>
+        <img id="evidence-modal-image" src="" alt="Captura ampliada" />
+        <figcaption id="evidence-modal-caption"></figcaption>
+      </figure>
+    </div>
+
+    <footer class="footer">
+      <p>
+        Luis Emilio Cedano · Matr. 2024-0128 · ITLA Electiva II (DevOps)
+      </p>
+    </footer>
+
+    <script src="script.js?v=20260310-01"></script>
+  </body>
+</html>

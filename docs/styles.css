@@ -682,6 +682,117 @@ main > .module:first-child {
   font-size: 0.84rem;
 }
 
+.week-card .quick-actions {
+  margin-top: 0.85rem;
+}
+
+.evidence-module {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.evidence-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.evidence-card {
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(12, 17, 39, 0.82);
+  color: var(--text);
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.evidence-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(111, 183, 255, 0.55);
+}
+
+.evidence-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--line);
+}
+
+.evidence-card span {
+  display: block;
+  padding: 0.58rem 0.7rem 0.72rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.evidence-modal[hidden] {
+  display: none;
+}
+
+.evidence-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.evidence-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 7, 20, 0.78);
+}
+
+.evidence-modal-content {
+  position: relative;
+  margin: 0;
+  width: min(1100px, 94vw);
+  max-height: 92vh;
+  display: grid;
+  gap: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(10, 14, 34, 0.96);
+  padding: 0.8rem;
+  z-index: 1;
+}
+
+.evidence-modal-content img {
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid rgba(107, 125, 197, 0.4);
+  background: rgba(6, 9, 23, 0.8);
+}
+
+.evidence-modal-content figcaption {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.evidence-modal-close {
+  justify-self: end;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(16, 22, 50, 0.92);
+  color: var(--text);
+  padding: 0.36rem 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
 .progress-wrap {
   margin-top: 0.9rem;
   display: grid;
@@ -1193,6 +1304,7 @@ main > .module:first-child {
   .exec-grid,
   .loop-grid,
   .weeks-grid,
+  .evidence-grid,
   .kanban-grid,
   .progress-wrap,
   .board-columns,

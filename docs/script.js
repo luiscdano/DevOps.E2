@@ -80,12 +80,25 @@ const weeksData = [
   {
     id: "S8",
     title: "S8 - Automatizacion de Infraestructura",
-    status: "next",
-    goal: "Automatizar 5 servidores Ubuntu con Ansible sobre Docker.",
+    status: "done",
+    goal: "Automatizar 5 servidores Ubuntu con Ansible sobre Docker (completado).",
     highlights: [
       "Crear imagen Ubuntu con SSH, usuario ansible y privilegios sudo",
       "Levantar 5 servidores con docker-compose",
-      "Playbooks: update apt, crear usuario itla, carpeta app, hola.txt, instalar cowsay y htop"
+      "Playbooks: update apt, crear usuario itla, carpeta app, hola.txt, instalar cowsay y htop",
+      "Evidencia visual y tecnica publicada en web y repositorio"
+    ],
+    actions: [
+      {
+        label: "Ver evidencias S8",
+        url: "evidencias-s8.html",
+        style: "primary"
+      },
+      {
+        label: "Evidencia TXT",
+        url: "assets/evidencia-s8-ansible.txt",
+        style: "ghost"
+      }
     ]
   }
 ];
@@ -133,8 +146,8 @@ const automationData = [
   },
   {
     title: "Automatizacion de infraestructura",
-    detail: "Pendiente: definir entornos con IaC para reproducibilidad completa.",
-    status: "next"
+    detail: "S8 completada: 5 servidores Ubuntu automatizados con Ansible y evidencia publicada.",
+    status: "done"
   }
 ];
 
@@ -439,8 +452,20 @@ function renderWeeks(filter = "all") {
   }
 
   weeksGrid.innerHTML = filtered
-    .map(
-      (week) => `
+    .map((week) => {
+      const actions = Array.isArray(week.actions)
+        ? week.actions
+            .filter((action) => action?.url && action?.label)
+            .map((action) => {
+              const btnClass = action.style === "ghost" ? "btn btn-ghost" : "btn btn-primary";
+              return `<a class="${escapeHtml(btnClass)}" href="${escapeHtml(action.url)}" target="_blank" rel="noreferrer">${escapeHtml(action.label)}</a>`;
+            })
+            .join("")
+        : "";
+
+      const actionsMarkup = actions ? `<div class="quick-actions">${actions}</div>` : "";
+
+      return `
       <article class="week-card">
         <header class="week-head">
           <h3>${escapeHtml(week.title)}</h3>
@@ -450,10 +475,59 @@ function renderWeeks(filter = "all") {
         <ul class="week-list">
           ${week.highlights.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
         </ul>
+        ${actionsMarkup}
       </article>
-    `
-    )
+    `;
+    })
     .join("");
+}
+
+function setupEvidenceGallery() {
+  const modal = document.querySelector("#evidence-modal");
+  const modalImage = document.querySelector("#evidence-modal-image");
+  const modalCaption = document.querySelector("#evidence-modal-caption");
+  const openers = document.querySelectorAll("[data-evidence-src]");
+
+  if (!modal || !modalImage || !modalCaption || !openers.length) {
+    return;
+  }
+
+  const closeElements = modal.querySelectorAll("[data-evidence-close='true']");
+
+  const closeModal = () => {
+    modal.hidden = true;
+    modalImage.src = "";
+    modalCaption.textContent = "";
+    document.body.classList.remove("modal-open");
+  };
+
+  const openModal = (src, caption) => {
+    modalImage.src = src;
+    modalCaption.textContent = caption || "Evidencia";
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  };
+
+  openers.forEach((item) => {
+    item.addEventListener("click", () => {
+      const src = item.dataset.evidenceSrc;
+      const caption = item.dataset.evidenceCaption || item.getAttribute("aria-label");
+
+      if (src) {
+        openModal(src, caption);
+      }
+    });
+  });
+
+  closeElements.forEach((item) => {
+    item.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) {
+      closeModal();
+    }
+  });
 }
 
 function renderAutomation() {
@@ -930,6 +1004,7 @@ if (filterButtons.length) {
 
 cycleStages();
 setupRevealOnScroll();
+setupEvidenceGallery();
 loadTrackingMetrics();
 loadLatestCiAlert();
 

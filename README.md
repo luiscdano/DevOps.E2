@@ -442,6 +442,7 @@ Usar Ansible para automatizar tareas de administracion en 5 servidores Ubuntu cr
   - `semana8-ansible/README.md`
 - Evidencia publicada:
   - `docs/assets/evidencia-s8-ansible.txt`
+  - `docs/evidencias-s8.html`
 
 ---
 
