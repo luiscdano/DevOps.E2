@@ -446,6 +446,68 @@ Usar Ansible para automatizar tareas de administracion en 5 servidores Ubuntu cr
 
 ---
 
+## S9 — Introduccion a Azure DevOps
+
+### Objetivo de la Semana
+Registrar una lectura guiada sobre **Azure DevOps** como aporte academico al cronograma del curso, aunque no corresponda a una practica tecnica obligatoria.
+
+---
+
+### Que es Azure DevOps
+Azure DevOps es un conjunto de herramientas de Microsoft orientado a planificar, desarrollar, probar y entregar software de manera colaborativa y automatizada.
+
+Su valor dentro de la materia es mostrar una plataforma integrada donde convergen desarrollo (`Dev`) y operaciones (`Ops`) en un mismo flujo de trabajo.
+
+---
+
+### Servicios Principales de Azure DevOps
+- **Azure Boards**: gestion de proyectos con tareas, bugs, historias de usuario y sprints.
+- **Azure Repos**: repositorios Git privados y colaborativos para control de versiones.
+- **Azure Pipelines**: automatizacion de integracion continua (CI) y entrega continua (CD).
+- **Azure Test Plans**: planificacion y ejecucion de pruebas manuales y automatizadas.
+- **Azure Artifacts**: gestion de paquetes como NuGet, npm y Maven para compartir componentes reutilizables.
+
+---
+
+### Para Que se Usa
+- Automatizar compilaciones y despliegues.
+- Gestionar codigo fuente con Git.
+- Dar seguimiento al progreso del desarrollo.
+- Integrar pruebas en el flujo de entrega.
+- Centralizar colaboracion y visibilidad del trabajo del equipo.
+
+---
+
+### Beneficios Identificados
+- Compatible con multiples lenguajes como .NET, Java, Node.js, Python y PHP.
+- Permite desplegar en Azure, AWS, Google Cloud o infraestructura on-premise.
+- Escala tanto para equipos pequenos como para equipos grandes.
+- Se integra con herramientas externas como Jira, Slack y Microsoft Teams.
+
+---
+
+### Flujo Simple de Trabajo
+1. El desarrollador sube codigo a **Azure Repos**.
+2. Se activa un pipeline en **Azure Pipelines**.
+3. El pipeline compila el proyecto y ejecuta pruebas automatizadas.
+4. Si todo sale bien, se realiza el despliegue.
+5. El seguimiento del avance y resultados puede visualizarse en **Azure Boards**.
+
+---
+
+### Nota de Cronograma
+Esta semana queda registrada como un bloque de lectura e introduccion conceptual. No agrega una nueva practica tecnica al repositorio, pero si amplia el marco de herramientas DevOps estudiadas durante el cuatrimestre.
+
+---
+
+### Trazabilidad
+- Issue S9:
+  `https://github.com/luiscdano/DevOps.E2/issues/15`
+- GitHub Projects #1:
+  `https://github.com/users/luiscdano/projects/1`
+
+---
+
 ## Autor
 **Luis Emilio Cedano, Matr.2024-0128**  
 ITLA – Electiva 2 (DevOps)

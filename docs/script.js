@@ -100,6 +100,18 @@ const weeksData = [
         style: "ghost"
       }
     ]
+  },
+  {
+    id: "S9",
+    title: "S9 - Introduccion a Azure DevOps",
+    status: "done",
+    goal: "Registrar la lectura guiada de Azure DevOps como aporte teorico ya analizado dentro del cronograma.",
+    highlights: [
+      "Azure DevOps como suite para planificar, desarrollar, probar y entregar software",
+      "Servicios clave: Boards, Repos, Pipelines, Test Plans y Artifacts",
+      "Uso practico para CI/CD, control de versiones, trazabilidad y trabajo colaborativo",
+      "Semana informativa agregada al cronograma con evidencia en README, issue y GitHub Projects"
+    ]
   }
 ];
 
@@ -147,6 +159,11 @@ const automationData = [
   {
     title: "Automatizacion de infraestructura",
     detail: "S8 completada: 5 servidores Ubuntu automatizados con Ansible y evidencia publicada.",
+    status: "done"
+  },
+  {
+    title: "Plataforma integrada Azure DevOps",
+    detail: "S9 registrada: lectura analizada sobre Boards, Repos, Pipelines, Test Plans y Artifacts como ecosistema DevOps.",
     status: "done"
   }
 ];
@@ -314,9 +331,27 @@ const defaultProgressData = {
       week: "S8",
       status: "todo",
       details: "Aplicar playbooks para usuarios, paquetes, archivos y configuracion base."
+    },
+    {
+      id: "issue-15",
+      title: "S9: analizar introduccion a Azure DevOps",
+      week: "S9",
+      status: "done",
+      details: "Lectura guiada registrada como evidencia academica en README, issue y GitHub Projects.",
+      proof: {
+        label: "Issue S9",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/15"
+      }
     }
   ],
   movements: [
+    {
+      date: "2026-03-14T01:31:20Z",
+      taskId: "issue-15",
+      from: "todo",
+      to: "done",
+      note: "Semana 9 registrada como lectura analizada en GitHub Projects."
+    },
     {
       date: "2026-02-18T05:34:34Z",
       taskId: "s6-docker-nginx",
@@ -747,7 +782,7 @@ function renderKanbanExecutive(progressData) {
     <article class="exec-item tone-total">
       <p class="exec-label">Total de tareas</p>
       <p class="exec-value">${totalCount}</p>
-      <p class="exec-foot">Ruta S1 -> S8</p>
+      <p class="exec-foot">Ruta S1 -> S9</p>
     </article>
     <article class="exec-item tone-moves">
       <p class="exec-label">Movimientos</p>

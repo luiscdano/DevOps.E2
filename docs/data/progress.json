@@ -144,9 +144,9 @@
       "title": "S9 · Analizar introduccion a Azure DevOps",
       "week": "S9",
       "status": "done",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "details": "Lectura guiada analizada y registrada como evidencia academica en README, issue y GitHub Projects.",
       "proof": {
-        "label": "Issue",
+        "label": "Issue S9",
         "url": "https://github.com/luiscdano/DevOps.E2/issues/15"
       }
     },
