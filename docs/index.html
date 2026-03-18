@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@500;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260318-01" />
+    <link rel="stylesheet" href="styles.css?v=20260318-02" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -71,7 +71,7 @@
               <ul class="meta-strip">
                 <li><span class="label">Rama estable</span><span class="value">main</span></li>
                 <li><span class="label">Rama de trabajo</span><span class="value">dev</span></li>
-                <li><span class="label">Semana actual</span><span class="value">S9 · Azure DevOps (foco activo)</span></li>
+                <li><span class="label">Semana actual</span><span class="value">S9 · Azure DevOps (pendiente por acceso institucional)</span></li>
               </ul>
             </div>
           </div>
@@ -88,24 +88,28 @@
 
         <section class="reveal">
           <div class="section-head">
-            <p class="eyebrow">Semana 9 · Foco actual</p>
+            <p class="eyebrow">Semana 9 · Estado real</p>
             <h2>Introduccion a Azure DevOps</h2>
           </div>
 
           <div class="weeks-grid">
             <article class="kanban-card">
-              <h3>Estado de transicion S8 -> S9</h3>
+              <h3>Estado de la practica S9</h3>
               <p>
-                La lectura base de S9 queda cerrada en la issue <code>#15</code> y
-                se abre la issue <code>#16</code> para ejecutar el plan inicial
-                de trabajo con Azure Boards y Azure Pipelines durante esta semana.
+                La lectura base S9 fue completada (<code>#15</code>), pero la
+                practica operativa en Azure DevOps permanece en
+                <code>todo</code> mediante la issue <code>#16</code> por
+                limitacion de acceso con cuenta institucional ITLA.
               </p>
               <div class="quick-actions">
                 <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2/issues/16" target="_blank" rel="noreferrer">
-                  Ver issue #16 activa
+                  Ver issue #16 (pendiente)
                 </a>
                 <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/issues/15" target="_blank" rel="noreferrer">
                   Ver issue #15 cerrada
+                </a>
+                <a class="btn btn-ghost" href="evidencias-s9.html">
+                  Ver modulo evidencia S9
                 </a>
                 <a class="btn btn-ghost" href="https://github.com/users/luiscdano/projects/1" target="_blank" rel="noreferrer">
                   Ver Projects #1
@@ -114,22 +118,42 @@
             </article>
 
             <article class="kanban-card">
-              <h3>Servicios principales</h3>
+              <h3>Brecha contra lo solicitado en S9</h3>
               <p>
-                El entorno se organiza alrededor de <code>Azure Boards</code>,
-                <code>Azure Repos</code>, <code>Azure Pipelines</code>,
-                <code>Azure Test Plans</code> y <code>Azure Artifacts</code>,
-                cubriendo gestion, versionado, CI/CD, pruebas y paquetes.
+                Pendientes los 4 entregables practicos: crear organizacion/proyecto,
+                tablero con 5 issues y movimientos, push de app "hola mundo" a Azure Repos
+                y publicacion de URL del proyecto en el foro.
               </p>
             </article>
 
             <article class="kanban-card">
-              <h3>Valor para el flujo DevOps</h3>
+              <h3>Siguiente paso inmediato</h3>
               <p>
-                Su uso permite automatizar compilaciones y despliegues, mantener
-                trazabilidad del trabajo, ejecutar pruebas y conectar el equipo
-                con una plataforma unica compatible con distintos lenguajes y nubes.
+                Mantener S9 en pendiente hasta recibir lineamiento del profesor
+                sobre acceso institucional. En paralelo, queda abierta S10 como
+                siguiente bloque de ejecucion (2do parcial con Ansible).
               </p>
+              <div class="quick-actions">
+                <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2/issues/17" target="_blank" rel="noreferrer">
+                  Ver issue #17 (S10)
+                </a>
+              </div>
+            </article>
+
+            <article class="kanban-card">
+              <h3>Semana 10 · 2do parcial asignado</h3>
+              <p>
+                Se registra la tarea S10 para automatizar un servidor web con Ansible,
+                subir codigo al repo y dejar evidencia integral alineada con Kanban y web.
+              </p>
+              <div class="quick-actions">
+                <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2/issues/17" target="_blank" rel="noreferrer">
+                  Abrir issue S10
+                </a>
+                <a class="btn btn-ghost" href="https://chatgpt.com/share/68767f33-a24c-8000-aec5-c15b67c512d3" target="_blank" rel="noreferrer">
+                  Ver guia base
+                </a>
+              </div>
             </article>
           </div>
         </section>
@@ -237,6 +261,6 @@
       </p>
     </footer>
 
-    <script src="script.js?v=20260318-01"></script>
+    <script src="script.js?v=20260318-02"></script>
   </body>
 </html>

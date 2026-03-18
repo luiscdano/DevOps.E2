@@ -106,12 +106,12 @@ const weeksData = [
     id: "S9",
     title: "S9 - Introduccion a Azure DevOps",
     status: "active",
-    goal: "Pasar el foco semanal a S9 con un plan inicial de trabajo en Azure DevOps.",
+    goal: "Ejecutar la practica S9 de Azure DevOps; actualmente en proceso con bloqueo de acceso institucional.",
     highlights: [
       "Azure DevOps como suite para planificar, desarrollar, probar y entregar software",
       "Servicios clave: Boards, Repos, Pipelines, Test Plans y Artifacts",
       "Issue #15 cerrada como lectura base ya completada",
-      "Issue #16 abierta para continuar la semana 9 con foco en Boards y Pipelines"
+      "Issue #16 abierta en TODO: practica pendiente por acceso con cuenta institucional ITLA"
     ],
     actions: [
       {
@@ -120,8 +120,31 @@ const weeksData = [
         style: "primary"
       },
       {
-        label: "Ver issue #15",
-        url: "https://github.com/luiscdano/DevOps.E2/issues/15",
+        label: "Ver evidencia S9",
+        url: "evidencias-s9.html",
+        style: "ghost"
+      }
+    ]
+  },
+  {
+    id: "S10",
+    title: "S10 - 2do Parcial (Ansible)",
+    status: "next",
+    goal: "Automatizar la implementacion de servidor web con Ansible y publicar evidencia completa.",
+    highlights: [
+      "Issue #17 creada y sincronizada en Kanban como TODO",
+      "Se integra carpeta base semana10-ansible-parcial en el repositorio",
+      "Referencia base del parcial disponible para ejecucion guiada"
+    ],
+    actions: [
+      {
+        label: "Abrir issue #17",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/17",
+        style: "primary"
+      },
+      {
+        label: "Ver carpeta S10",
+        url: "https://github.com/luiscdano/DevOps.E2/tree/main/semana10-ansible-parcial",
         style: "ghost"
       }
     ]
@@ -176,8 +199,13 @@ const automationData = [
   },
   {
     title: "Plataforma integrada Azure DevOps",
-    detail: "S9 en curso: lectura base cerrada (#15) y plan inicial activo en issue #16 para avanzar en Boards/Pipelines.",
+    detail: "S9 en proceso con bloqueo: lectura base completada (#15) y practica operativa pendiente en issue #16.",
     status: "active"
+  },
+  {
+    title: "2do Parcial Ansible",
+    detail: "S10 registrada en issue #17 para automatizar servidor web con Ansible y documentar evidencia.",
+    status: "next"
   }
 ];
 
@@ -202,7 +230,7 @@ const ntfyTopicUrl = "https://ntfy.sh/devops-itla";
 const ntfyLatestJsonUrl = `${ntfyTopicUrl}/json?poll=1&since=latest`;
 
 const defaultProgressData = {
-  lastUpdated: "2026-03-18T21:13:54Z",
+  lastUpdated: "2026-03-18T21:29:35Z",
   cards: [
     {
       id: "s1-repo-setup",
@@ -351,13 +379,24 @@ const defaultProgressData = {
     },
     {
       id: "issue-16",
-      title: "S9: definir plan inicial de trabajo en Azure DevOps",
+      title: "S9: practica Azure DevOps (pendiente por acceso institucional ITLA)",
       week: "S9",
       status: "todo",
-      details: "Issue activa para avanzar el foco semanal en Boards y Pipelines.",
+      details: "Practica pendiente por bloqueo de acceso institucional. En espera de lineamiento del profesor.",
       proof: {
-        label: "Issue S9 activa",
+        label: "Issue S9 pendiente",
         url: "https://github.com/luiscdano/DevOps.E2/issues/16"
+      }
+    },
+    {
+      id: "issue-17",
+      title: "S10: 2do parcial automatizar servidor web con Ansible",
+      week: "S10",
+      status: "todo",
+      details: "Siguiente entrega del curso. Preparacion tecnica inicial registrada y trazada en issue #17.",
+      proof: {
+        label: "Issue S10",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/17"
       }
     },
     {
@@ -385,14 +424,21 @@ const defaultProgressData = {
   ],
   movements: [
     {
-      date: "2026-03-18T21:13:54.999Z",
+      date: "2026-03-18T21:29:35.389Z",
+      taskId: "issue-17",
+      from: "backlog",
+      to: "todo",
+      note: "Semana 10 creada y sincronizada desde GitHub Projects."
+    },
+    {
+      date: "2026-03-18T21:13:34.282Z",
       taskId: "issue-16",
       from: "backlog",
       to: "todo",
-      note: "Semana 9 activada con nueva issue de plan inicial en Azure DevOps."
+      note: "Semana 9 marcada en pendiente por bloqueo de acceso institucional."
     },
     {
-      date: "2026-03-18T21:13:54.999Z",
+      date: "2026-03-18T21:13:21.918Z",
       taskId: "issue-13",
       from: "todo",
       to: "done",
@@ -835,7 +881,7 @@ function renderKanbanExecutive(progressData) {
     <article class="exec-item tone-total">
       <p class="exec-label">Total de tareas</p>
       <p class="exec-value">${totalCount}</p>
-      <p class="exec-foot">Ruta S1 -> S9</p>
+      <p class="exec-foot">Ruta S1 -> S10</p>
     </article>
     <article class="exec-item tone-moves">
       <p class="exec-label">Movimientos</p>

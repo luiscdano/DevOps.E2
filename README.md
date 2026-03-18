@@ -454,7 +454,7 @@ Usar Ansible para automatizar tareas de administracion en 5 servidores Ubuntu cr
 ## S9 — Introduccion a Azure DevOps
 
 ### Objetivo de la Semana
-Consolidar la lectura guiada de **Azure DevOps** y abrir una tarea activa de seguimiento para la semana 9 dentro del flujo Kanban del curso.
+Cumplir la practica operativa de Azure DevOps y dejar evidencia completa en repo, Kanban y foro.
 
 ---
 
@@ -500,16 +500,69 @@ Su valor dentro de la materia es mostrar una plataforma integrada donde converge
 
 ---
 
+### Requerimientos de la Practica S9 (foro)
+- [ ] a) Crear organizacion y proyecto en Azure DevOps.
+- [ ] b) Crear tablero con al menos 5 issues y mover tareas a Doing/Done.
+- [ ] c) Inicializar app "hola mundo" local y hacer push al repositorio de Azure DevOps.
+- [ ] d) Publicar URL del proyecto de Azure DevOps en el foro.
+
+---
+
+### Estado y Bloqueo Actual (2026-03-18)
+- La lectura base de S9 se completo y cerro en issue `#15`.
+- La practica operativa se mantiene abierta en issue `#16` y en `todo`.
+- Bloqueante reportado: acceso no habilitado con cuenta institucional ITLA (Office 365), pendiente de indicacion del profesor.
+
+---
+
+### Evidencia Disponible Hoy
+- Estado consolidado de S9:
+  - `docs/assets/evidencia-s9-estado-pendiente.txt`
+- Material de apoyo de aula virtual:
+  - `docs/assets/evidencia-s9-azure-material.pdf`
+- Modulo web de evidencia S9:
+  - `docs/evidencias-s9.html`
+
+---
+
 ### Nota de Cronograma
-La lectura base de S9 fue cerrada el **14 de marzo de 2026** (issue #15). El **18 de marzo de 2026** se abre una nueva tarea S9 (#16) para continuar el trabajo semanal en estado activo.
+La lectura base de S9 fue cerrada el **14 de marzo de 2026** (issue #15). El **18 de marzo de 2026** se abre/actualiza la issue #16 para gestionar la practica en estado pendiente hasta resolver el acceso institucional.
 
 ---
 
 ### Trazabilidad
 - Issue S9 (lectura cerrada, 2026-03-14):
   `https://github.com/luiscdano/DevOps.E2/issues/15`
-- Issue S9 (foco activo, 2026-03-18):
+- Issue S9 (practica pendiente, 2026-03-18):
   `https://github.com/luiscdano/DevOps.E2/issues/16`
+- GitHub Projects #1:
+  `https://github.com/users/luiscdano/projects/1`
+
+---
+
+## S10 — 2do Parcial: Servidor Web con Ansible
+
+### Objetivo de la Semana
+Automatizar la implementacion de un servidor web con Ansible, publicar el codigo en GitHub y registrar evidencia integral.
+
+---
+
+### Estado Inicial
+- Se crea la issue `#17` como inicio del 2do parcial (estado `todo`).
+- Se agrega base de carpeta tecnica:
+  - `semana10-ansible-parcial/README.md`
+
+---
+
+### Referencia Base
+- Guia de apoyo:
+  - `https://chatgpt.com/share/68767f33-a24c-8000-aec5-c15b67c512d3`
+
+---
+
+### Trazabilidad
+- Issue S10:
+  `https://github.com/luiscdano/DevOps.E2/issues/17`
 - GitHub Projects #1:
   `https://github.com/users/luiscdano/projects/1`
 
