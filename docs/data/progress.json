@@ -1,23 +1,12 @@
 {
-  "lastUpdated": "2026-03-14T01:30:37Z",
+  "lastUpdated": "2026-03-18T21:13:15Z",
   "source": {
     "kind": "github-projects-public-html",
     "projectUrl": "https://github.com/users/luiscdano/projects/1",
     "projectTitle": "DevOps Workflow Board",
-    "syncedAt": "2026-03-14T01:30:37Z"
+    "syncedAt": "2026-03-18T21:13:15Z"
   },
   "cards": [
-    {
-      "id": "issue-13",
-      "title": "S8 · Automatizar 5 servidores Ubuntu con Ansible",
-      "week": "S8",
-      "status": "todo",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
-      "proof": {
-        "label": "Issue",
-        "url": "https://github.com/luiscdano/DevOps.E2/issues/13"
-      }
-    },
     {
       "id": "issue-14",
       "title": "S8 · Observabilidad y seguridad DevOps (ruta futura)",
@@ -140,6 +129,17 @@
       }
     },
     {
+      "id": "issue-13",
+      "title": "S8 · Automatizar 5 servidores Ubuntu con Ansible",
+      "week": "S8",
+      "status": "done",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/13"
+      }
+    },
+    {
       "id": "issue-15",
       "title": "S9 · Analizar introduccion a Azure DevOps",
       "week": "S9",
@@ -163,6 +163,13 @@
     }
   ],
   "movements": [
+    {
+      "date": "2026-03-18T21:13:21.918Z",
+      "taskId": "issue-13",
+      "from": "todo",
+      "to": "done",
+      "note": "Estado actualizado por sincronizacion con GitHub Projects"
+    },
     {
       "date": "2026-03-14T01:30:51.165Z",
       "taskId": "issue-15",
