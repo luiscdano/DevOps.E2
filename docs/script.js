@@ -86,7 +86,8 @@ const weeksData = [
       "Crear imagen Ubuntu con SSH, usuario ansible y privilegios sudo",
       "Levantar 5 servidores con docker-compose",
       "Playbooks: update apt, crear usuario itla, carpeta app, hola.txt, instalar cowsay y htop",
-      "Evidencia visual y tecnica publicada en web y repositorio"
+      "Issue #13 cerrada en done y sincronizada en GitHub Projects",
+      "Issue #14 permanece en todo como ruta futura de observabilidad y seguridad"
     ],
     actions: [
       {
@@ -104,13 +105,25 @@ const weeksData = [
   {
     id: "S9",
     title: "S9 - Introduccion a Azure DevOps",
-    status: "done",
-    goal: "Registrar la lectura guiada de Azure DevOps como aporte teorico ya analizado dentro del cronograma.",
+    status: "active",
+    goal: "Pasar el foco semanal a S9 con un plan inicial de trabajo en Azure DevOps.",
     highlights: [
       "Azure DevOps como suite para planificar, desarrollar, probar y entregar software",
       "Servicios clave: Boards, Repos, Pipelines, Test Plans y Artifacts",
-      "Uso practico para CI/CD, control de versiones, trazabilidad y trabajo colaborativo",
-      "Semana informativa agregada al cronograma con evidencia en README, issue y GitHub Projects"
+      "Issue #15 cerrada como lectura base ya completada",
+      "Issue #16 abierta para continuar la semana 9 con foco en Boards y Pipelines"
+    ],
+    actions: [
+      {
+        label: "Abrir issue #16",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/16",
+        style: "primary"
+      },
+      {
+        label: "Ver issue #15",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/15",
+        style: "ghost"
+      }
     ]
   }
 ];
@@ -163,8 +176,8 @@ const automationData = [
   },
   {
     title: "Plataforma integrada Azure DevOps",
-    detail: "S9 registrada: lectura analizada sobre Boards, Repos, Pipelines, Test Plans y Artifacts como ecosistema DevOps.",
-    status: "done"
+    detail: "S9 en curso: lectura base cerrada (#15) y plan inicial activo en issue #16 para avanzar en Boards/Pipelines.",
+    status: "active"
   }
 ];
 
@@ -189,7 +202,7 @@ const ntfyTopicUrl = "https://ntfy.sh/devops-itla";
 const ntfyLatestJsonUrl = `${ntfyTopicUrl}/json?poll=1&since=latest`;
 
 const defaultProgressData = {
-  lastUpdated: "2026-02-18T05:34:34Z",
+  lastUpdated: "2026-03-18T21:13:54Z",
   cards: [
     {
       id: "s1-repo-setup",
@@ -326,11 +339,37 @@ const defaultProgressData = {
       details: "Completada: app + mysql en Compose validada con respuesta HTTP y healthcheck."
     },
     {
-      id: "s8-ansible-automation",
-      title: "S8: automatizacion de 5 servidores Ubuntu con Ansible",
+      id: "issue-14",
+      title: "S8: observabilidad y seguridad DevOps (ruta futura)",
       week: "S8",
       status: "todo",
-      details: "Aplicar playbooks para usuarios, paquetes, archivos y configuracion base."
+      details: "Pendiente como ruta futura: definir monitoreo, logs, alertas y practicas DevSecOps.",
+      proof: {
+        label: "Issue S8 futura",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/14"
+      }
+    },
+    {
+      id: "issue-16",
+      title: "S9: definir plan inicial de trabajo en Azure DevOps",
+      week: "S9",
+      status: "todo",
+      details: "Issue activa para avanzar el foco semanal en Boards y Pipelines.",
+      proof: {
+        label: "Issue S9 activa",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/16"
+      }
+    },
+    {
+      id: "issue-13",
+      title: "S8: automatizar 5 servidores Ubuntu con Ansible",
+      week: "S8",
+      status: "done",
+      details: "Implementacion completada y cerrada con evidencia tecnica en README y docs/evidencias-s8.html.",
+      proof: {
+        label: "Issue S8 completada",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/13"
+      }
     },
     {
       id: "issue-15",
@@ -339,12 +378,26 @@ const defaultProgressData = {
       status: "done",
       details: "Lectura guiada registrada como evidencia academica en README, issue y GitHub Projects.",
       proof: {
-        label: "Issue S9",
+        label: "Issue S9 lectura",
         url: "https://github.com/luiscdano/DevOps.E2/issues/15"
       }
     }
   ],
   movements: [
+    {
+      date: "2026-03-18T21:13:54.999Z",
+      taskId: "issue-16",
+      from: "backlog",
+      to: "todo",
+      note: "Semana 9 activada con nueva issue de plan inicial en Azure DevOps."
+    },
+    {
+      date: "2026-03-18T21:13:54.999Z",
+      taskId: "issue-13",
+      from: "todo",
+      to: "done",
+      note: "Semana 8 validada y cerrada por evidencia tecnica en repositorio y web."
+    },
     {
       date: "2026-03-14T01:31:20Z",
       taskId: "issue-15",

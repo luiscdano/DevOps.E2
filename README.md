@@ -443,13 +443,18 @@ Usar Ansible para automatizar tareas de administracion en 5 servidores Ubuntu cr
 - Evidencia publicada:
   - `docs/assets/evidencia-s8-ansible.txt`
   - `docs/evidencias-s8.html`
+- Trazabilidad:
+  - Issue S8 implementacion cerrada (2026-03-18):
+    `https://github.com/luiscdano/DevOps.E2/issues/13`
+  - Issue S8 ruta futura aun en TODO:
+    `https://github.com/luiscdano/DevOps.E2/issues/14`
 
 ---
 
 ## S9 — Introduccion a Azure DevOps
 
 ### Objetivo de la Semana
-Registrar una lectura guiada sobre **Azure DevOps** como aporte academico al cronograma del curso, aunque no corresponda a una practica tecnica obligatoria.
+Consolidar la lectura guiada de **Azure DevOps** y abrir una tarea activa de seguimiento para la semana 9 dentro del flujo Kanban del curso.
 
 ---
 
@@ -496,13 +501,15 @@ Su valor dentro de la materia es mostrar una plataforma integrada donde converge
 ---
 
 ### Nota de Cronograma
-Esta semana queda registrada como un bloque de lectura e introduccion conceptual. No agrega una nueva practica tecnica al repositorio, pero si amplia el marco de herramientas DevOps estudiadas durante el cuatrimestre.
+La lectura base de S9 fue cerrada el **14 de marzo de 2026** (issue #15). El **18 de marzo de 2026** se abre una nueva tarea S9 (#16) para continuar el trabajo semanal en estado activo.
 
 ---
 
 ### Trazabilidad
-- Issue S9:
+- Issue S9 (lectura cerrada, 2026-03-14):
   `https://github.com/luiscdano/DevOps.E2/issues/15`
+- Issue S9 (foco activo, 2026-03-18):
+  `https://github.com/luiscdano/DevOps.E2/issues/16`
 - GitHub Projects #1:
   `https://github.com/users/luiscdano/projects/1`
 
