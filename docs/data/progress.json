@@ -1,23 +1,12 @@
 {
-  "lastUpdated": "2026-03-18T21:29:18Z",
+  "lastUpdated": "2026-03-19T00:43:40Z",
   "source": {
     "kind": "github-projects-public-html",
     "projectUrl": "https://github.com/users/luiscdano/projects/1",
     "projectTitle": "DevOps Workflow Board",
-    "syncedAt": "2026-03-18T21:29:18Z"
+    "syncedAt": "2026-03-19T00:43:40Z"
   },
   "cards": [
-    {
-      "id": "issue-17",
-      "title": "S10 · 2do Parcial: Automatizar servidor web con Ansible",
-      "week": "S10",
-      "status": "todo",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
-      "proof": {
-        "label": "Issue",
-        "url": "https://github.com/luiscdano/DevOps.E2/issues/17"
-      }
-    },
     {
       "id": "issue-14",
       "title": "S8 · Observabilidad y seguridad DevOps (ruta futura)",
@@ -49,6 +38,17 @@
       "proof": {
         "label": "Issue",
         "url": "https://github.com/luiscdano/DevOps.E2/issues/2"
+      }
+    },
+    {
+      "id": "issue-17",
+      "title": "S10 · 2do Parcial: Automatizar servidor web con Ansible",
+      "week": "S10",
+      "status": "done",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/17"
       }
     },
     {
@@ -185,6 +185,13 @@
     }
   ],
   "movements": [
+    {
+      "date": "2026-03-19T00:43:46.947Z",
+      "taskId": "issue-17",
+      "from": "todo",
+      "to": "done",
+      "note": "Estado actualizado por sincronizacion con GitHub Projects"
+    },
     {
       "date": "2026-03-18T21:29:24.635Z",
       "taskId": "issue-17",
