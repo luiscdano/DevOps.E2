@@ -1,12 +1,67 @@
 {
-  "lastUpdated": "2026-03-19T00:43:40Z",
+  "lastUpdated": "2026-03-19T01:19:25Z",
   "source": {
     "kind": "github-projects-public-html",
     "projectUrl": "https://github.com/users/luiscdano/projects/1",
     "projectTitle": "DevOps Workflow Board",
-    "syncedAt": "2026-03-19T00:43:40Z"
+    "syncedAt": "2026-03-19T01:19:25Z"
   },
   "cards": [
+    {
+      "id": "issue-18",
+      "title": "S12 · Monitoreo y Observabilidad",
+      "week": "S12",
+      "status": "todo",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/18"
+      }
+    },
+    {
+      "id": "issue-19",
+      "title": "S13 · Despliegue a Produccion",
+      "week": "S13",
+      "status": "todo",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/19"
+      }
+    },
+    {
+      "id": "issue-20",
+      "title": "S14 · Continuidad de Despliegue a Produccion",
+      "week": "S14",
+      "status": "todo",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/20"
+      }
+    },
+    {
+      "id": "issue-21",
+      "title": "S15 · Mejores Practicas en DevOps",
+      "week": "S15",
+      "status": "todo",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/21"
+      }
+    },
+    {
+      "id": "issue-22",
+      "title": "S16 · Proyecto Final de DevOps",
+      "week": "S16",
+      "status": "todo",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/22"
+      }
+    },
     {
       "id": "issue-14",
       "title": "S8 · Observabilidad y seguridad DevOps (ruta futura)",
@@ -185,6 +240,41 @@
     }
   ],
   "movements": [
+    {
+      "date": "2026-03-19T01:21:25.199Z",
+      "taskId": "issue-18",
+      "from": "backlog",
+      "to": "todo",
+      "note": "Tarea importada desde GitHub Projects"
+    },
+    {
+      "date": "2026-03-19T01:21:25.199Z",
+      "taskId": "issue-19",
+      "from": "backlog",
+      "to": "todo",
+      "note": "Tarea importada desde GitHub Projects"
+    },
+    {
+      "date": "2026-03-19T01:21:25.199Z",
+      "taskId": "issue-20",
+      "from": "backlog",
+      "to": "todo",
+      "note": "Tarea importada desde GitHub Projects"
+    },
+    {
+      "date": "2026-03-19T01:21:25.199Z",
+      "taskId": "issue-21",
+      "from": "backlog",
+      "to": "todo",
+      "note": "Tarea importada desde GitHub Projects"
+    },
+    {
+      "date": "2026-03-19T01:21:25.199Z",
+      "taskId": "issue-22",
+      "from": "backlog",
+      "to": "todo",
+      "note": "Tarea importada desde GitHub Projects"
+    },
     {
       "date": "2026-03-19T00:43:46.947Z",
       "taskId": "issue-17",

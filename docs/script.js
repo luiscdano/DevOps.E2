@@ -149,6 +149,62 @@ const weeksData = [
         style: "ghost"
       }
     ]
+  },
+  {
+    id: "S12",
+    title: "S12 - Monitoreo y Observabilidad",
+    status: "next",
+    goal: "Preparar enfoque de monitoreo integral para salud, rendimiento y trazabilidad del entorno.",
+    highlights: [
+      "Definir estrategia de metricas, logs y alertas",
+      "Evaluar stack objetivo (Prometheus/Grafana o equivalente)",
+      "Semana de previsualizacion registrada como ruta futura (sujeta a cambios)"
+    ]
+  },
+  {
+    id: "S13",
+    title: "S13 - Despliegue a Produccion",
+    status: "next",
+    goal: "Preparar flujo de release/deploy a produccion con validaciones controladas.",
+    highlights: [
+      "Definir pipeline de despliegue productivo",
+      "Establecer checks pre/post despliegue",
+      "Mantener trazabilidad de ejecucion en repo y web"
+    ]
+  },
+  {
+    id: "S14",
+    title: "S14 - Cont. Despliegue a Produccion",
+    status: "next",
+    goal: "Fortalecer continuidad de despliegue a produccion y confiabilidad operativa.",
+    highlights: [
+      "Refinar estrategia de continuidad del deploy",
+      "Reducir riesgo en cambios productivos",
+      "Consolidar evidencia tecnica del proceso"
+    ]
+  },
+  {
+    id: "S15",
+    title: "S15 - Mejores Practicas en DevOps",
+    status: "next",
+    goal: "Aplicar buenas practicas DevOps para entrega eficiente, segura y confiable.",
+    highlights: [
+      "Cultura/colaboracion, automatizacion e IaC",
+      "DevSecOps, supervision con metricas y feedback continuo",
+      "Escalabilidad, resiliencia, documentacion y nube",
+      "Contenido base ya disponible para estudio anticipado"
+    ]
+  },
+  {
+    id: "S16",
+    title: "S16 - Proyecto Final de DevOps",
+    status: "next",
+    goal: "Integrar aprendizajes del cuatrimestre en un entregable final consolidado.",
+    highlights: [
+      "Integracion de CI/CD, infraestructura, seguridad y observabilidad",
+      "Preparacion de evidencia final",
+      "Cierre del ciclo academico DevOps"
+    ]
   }
 ];
 
@@ -207,6 +263,11 @@ const automationData = [
     title: "2do Parcial Ansible",
     detail: "S10 completada: servidor web automatizado con Ansible, validado y cerrado en issue #17.",
     status: "done"
+  },
+  {
+    title: "Ruta futura S12-S16",
+    detail: "Semanas registradas para previsualizacion del tramo final del curso (contenido sujeto a cambios).",
+    status: "next"
   }
 ];
 
@@ -231,7 +292,7 @@ const ntfyTopicUrl = "https://ntfy.sh/devops-itla";
 const ntfyLatestJsonUrl = `${ntfyTopicUrl}/json?poll=1&since=latest`;
 
 const defaultProgressData = {
-  lastUpdated: "2026-03-19T00:43:49Z",
+  lastUpdated: "2026-03-19T01:19:25Z",
   cards: [
     {
       id: "s1-repo-setup",
@@ -401,6 +462,61 @@ const defaultProgressData = {
       }
     },
     {
+      id: "issue-18",
+      title: "S12: monitoreo y observabilidad",
+      week: "S12",
+      status: "todo",
+      details: "Semana futura registrada como previsualizacion del tramo final del curso.",
+      proof: {
+        label: "Issue S12",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/18"
+      }
+    },
+    {
+      id: "issue-19",
+      title: "S13: despliegue a produccion",
+      week: "S13",
+      status: "todo",
+      details: "Semana futura registrada como previsualizacion del tramo final del curso.",
+      proof: {
+        label: "Issue S13",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/19"
+      }
+    },
+    {
+      id: "issue-20",
+      title: "S14: continuidad de despliegue a produccion",
+      week: "S14",
+      status: "todo",
+      details: "Semana futura registrada como previsualizacion del tramo final del curso.",
+      proof: {
+        label: "Issue S14",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/20"
+      }
+    },
+    {
+      id: "issue-21",
+      title: "S15: mejores practicas en DevOps",
+      week: "S15",
+      status: "todo",
+      details: "Semana futura registrada con contenido base para estudio anticipado.",
+      proof: {
+        label: "Issue S15",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/21"
+      }
+    },
+    {
+      id: "issue-22",
+      title: "S16: proyecto final de DevOps",
+      week: "S16",
+      status: "todo",
+      details: "Semana futura registrada como cierre del cuatrimestre.",
+      proof: {
+        label: "Issue S16",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/22"
+      }
+    },
+    {
       id: "issue-13",
       title: "S8: automatizar 5 servidores Ubuntu con Ansible",
       week: "S8",
@@ -424,6 +540,41 @@ const defaultProgressData = {
     }
   ],
   movements: [
+    {
+      date: "2026-03-19T01:21:25.199Z",
+      taskId: "issue-18",
+      from: "backlog",
+      to: "todo",
+      note: "Semana 12 registrada en GitHub Projects."
+    },
+    {
+      date: "2026-03-19T01:21:25.199Z",
+      taskId: "issue-19",
+      from: "backlog",
+      to: "todo",
+      note: "Semana 13 registrada en GitHub Projects."
+    },
+    {
+      date: "2026-03-19T01:21:25.199Z",
+      taskId: "issue-20",
+      from: "backlog",
+      to: "todo",
+      note: "Semana 14 registrada en GitHub Projects."
+    },
+    {
+      date: "2026-03-19T01:21:25.199Z",
+      taskId: "issue-21",
+      from: "backlog",
+      to: "todo",
+      note: "Semana 15 registrada en GitHub Projects."
+    },
+    {
+      date: "2026-03-19T01:21:25.199Z",
+      taskId: "issue-22",
+      from: "backlog",
+      to: "todo",
+      note: "Semana 16 registrada en GitHub Projects."
+    },
     {
       date: "2026-03-19T00:43:49.323Z",
       taskId: "issue-17",
@@ -889,7 +1040,7 @@ function renderKanbanExecutive(progressData) {
     <article class="exec-item tone-total">
       <p class="exec-label">Total de tareas</p>
       <p class="exec-value">${totalCount}</p>
-      <p class="exec-foot">Ruta S1 -> S10</p>
+      <p class="exec-foot">Ruta S1 -> S16</p>
     </article>
     <article class="exec-item tone-moves">
       <p class="exec-label">Movimientos</p>
