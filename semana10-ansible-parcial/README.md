@@ -1,20 +1,36 @@
 # Semana 10 · 2do Parcial (Ansible)
 
-Estado: TODO
+Estado: DONE
 
 ## Objetivo
-Automatizar la implementacion de un servidor web usando Ansible, documentar evidencia y subir el codigo al repositorio GitHub del curso.
+Automatizar la implementacion de un servidor web con Ansible, validarlo localmente y dejar evidencia trazable en el repositorio.
 
-## Referencia de apoyo
-- https://chatgpt.com/share/68767f33-a24c-8000-aec5-c15b67c512d3
+## Implementacion realizada
+- Infraestructura de laboratorio en Docker con 2 nodos Ubuntu:
+  - `Dockerfile`
+  - `docker-compose.yml`
+- Inventario y configuracion Ansible:
+  - `inventory.ini`
+  - `ansible.cfg`
+- Automatizacion del servidor web:
+  - `playbook.yml`
+  - `templates/index.html.j2`
 
-## Alcance inicial previsto
-1. Definir estructura del laboratorio en esta carpeta.
-2. Crear inventario e `ansible.cfg`.
-3. Crear playbook de instalacion/configuracion de servidor web.
-4. Validar con ejecucion local y evidencia.
-5. Publicar trazabilidad en issue y web del curso.
+## Flujo aplicado
+1. Levantar nodos (`docker compose up -d --build`).
+2. Validar conectividad (`ansible webservers -m ping`).
+3. Ejecutar playbook para instalar y configurar Nginx.
+4. Verificar endpoints HTTP en puertos `8081` y `8082`.
+5. Bajar entorno (`docker compose down`).
+
+## Evidencia tecnica
+- Salida completa de ejecucion:
+  - `docs/assets/evidencia-s10-ansible-web.txt`
 
 ## Trazabilidad
 - Issue S10: https://github.com/luiscdano/DevOps.E2/issues/17
-- Project: https://github.com/users/luiscdano/projects/1
+- Kanban: https://github.com/users/luiscdano/projects/1
+- Repo: https://github.com/luiscdano/DevOps.E2
+
+## Referencia de apoyo
+- https://chatgpt.com/share/68767f33-a24c-8000-aec5-c15b67c512d3

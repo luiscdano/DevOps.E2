@@ -129,22 +129,23 @@ const weeksData = [
   {
     id: "S10",
     title: "S10 - 2do Parcial (Ansible)",
-    status: "next",
-    goal: "Automatizar la implementacion de servidor web con Ansible y publicar evidencia completa.",
+    status: "done",
+    goal: "Automatizacion completada: servidor web con Ansible validado y evidenciado.",
     highlights: [
-      "Issue #17 creada y sincronizada en Kanban como TODO",
-      "Se integra carpeta base semana10-ansible-parcial en el repositorio",
-      "Referencia base del parcial disponible para ejecucion guiada"
+      "Infraestructura con 2 nodos Ubuntu en Docker y acceso SSH para Ansible",
+      "Playbook ejecutado: instalacion de Nginx y despliegue de pagina del parcial",
+      "Validacion HTTP en puertos 8081 y 8082 con evidencia tecnica publicada",
+      "Issue #17 cerrada y sincronizada en Projects como done"
     ],
     actions: [
       {
-        label: "Abrir issue #17",
-        url: "https://github.com/luiscdano/DevOps.E2/issues/17",
+        label: "Ver evidencia S10",
+        url: "evidencias-s10.html",
         style: "primary"
       },
       {
-        label: "Ver carpeta S10",
-        url: "https://github.com/luiscdano/DevOps.E2/tree/main/semana10-ansible-parcial",
+        label: "Evidencia TXT",
+        url: "assets/evidencia-s10-ansible-web.txt",
         style: "ghost"
       }
     ]
@@ -204,8 +205,8 @@ const automationData = [
   },
   {
     title: "2do Parcial Ansible",
-    detail: "S10 registrada en issue #17 para automatizar servidor web con Ansible y documentar evidencia.",
-    status: "next"
+    detail: "S10 completada: servidor web automatizado con Ansible, validado y cerrado en issue #17.",
+    status: "done"
   }
 ];
 
@@ -230,7 +231,7 @@ const ntfyTopicUrl = "https://ntfy.sh/devops-itla";
 const ntfyLatestJsonUrl = `${ntfyTopicUrl}/json?poll=1&since=latest`;
 
 const defaultProgressData = {
-  lastUpdated: "2026-03-18T21:29:35Z",
+  lastUpdated: "2026-03-19T00:43:49Z",
   cards: [
     {
       id: "s1-repo-setup",
@@ -392,8 +393,8 @@ const defaultProgressData = {
       id: "issue-17",
       title: "S10: 2do parcial automatizar servidor web con Ansible",
       week: "S10",
-      status: "todo",
-      details: "Siguiente entrega del curso. Preparacion tecnica inicial registrada y trazada en issue #17.",
+      status: "done",
+      details: "Implementacion validada: Nginx automatizado con Ansible en 2 nodos Docker y evidencia publicada.",
       proof: {
         label: "Issue S10",
         url: "https://github.com/luiscdano/DevOps.E2/issues/17"
@@ -423,6 +424,13 @@ const defaultProgressData = {
     }
   ],
   movements: [
+    {
+      date: "2026-03-19T00:43:49.323Z",
+      taskId: "issue-17",
+      from: "todo",
+      to: "done",
+      note: "Semana 10 completada y cerrada en GitHub Projects."
+    },
     {
       date: "2026-03-18T21:29:35.389Z",
       taskId: "issue-17",

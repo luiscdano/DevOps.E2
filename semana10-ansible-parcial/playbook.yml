@@ -1,0 +1,46 @@
+---
+- name: S10 - Automatizar servidor web con Ansible
+  hosts: webservers
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Actualizar indice APT
+      ansible.builtin.apt:
+        update_cache: true
+
+    - name: Instalar Nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: Publicar pagina web del parcial
+      ansible.builtin.template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Iniciar Nginx cuando no este activo
+      ansible.builtin.shell: "pgrep nginx >/dev/null || nginx"
+      args:
+        executable: /bin/bash
+      changed_when: false
+
+    - name: Verificar endpoint HTTP de cada nodo
+      ansible.builtin.uri:
+        url: "http://127.0.0.1:{{ web_port }}"
+        method: GET
+        return_content: true
+        status_code: 200
+      delegate_to: localhost
+      become: false
+      register: endpoint_check
+
+    - name: Confirmar contenido esperado del sitio
+      ansible.builtin.assert:
+        that:
+          - "'Hola desde Ansible · S10' in endpoint_check.content"
+        fail_msg: "No se detecto el contenido esperado en el servidor web de {{ inventory_hostname }}"
+        success_msg: "Servidor web validado en {{ inventory_hostname }}"

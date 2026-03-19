@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>S10 · 2do Parcial Ansible</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem; }
+      .card { border: 1px solid #ccc; border-radius: 10px; padding: 1rem; max-width: 640px; }
+      h1 { margin-top: 0; }
+      code { background: #f5f5f5; padding: 0.1rem 0.3rem; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Hola desde Ansible · S10</h1>
+      <p>Servidor: <strong>{{ inventory_hostname }}</strong></p>
+      <p>Fecha de despliegue: <strong>{{ ansible_date_time.iso8601 }}</strong></p>
+      <p>Parcial: <code>2do parcial - servidor web automatizado</code></p>
+    </div>
+  </body>
+</html>

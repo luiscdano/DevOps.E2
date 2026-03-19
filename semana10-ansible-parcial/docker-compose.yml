@@ -1,0 +1,26 @@
+name: devops-e2-semana10
+
+x-web-node: &web-node
+  image: devops-e2-s10-webnode:latest
+  pull_policy: never
+  restart: unless-stopped
+
+services:
+  node1:
+    <<: *web-node
+    container_name: devops-e2-s10-node1
+    hostname: node1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "2231:22"
+      - "8081:80"
+
+  node2:
+    <<: *web-node
+    container_name: devops-e2-s10-node2
+    hostname: node2
+    ports:
+      - "2232:22"
+      - "8082:80"

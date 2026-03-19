@@ -547,10 +547,30 @@ Automatizar la implementacion de un servidor web con Ansible, publicar el codigo
 
 ---
 
-### Estado Inicial
-- Se crea la issue `#17` como inicio del 2do parcial (estado `todo`).
-- Se agrega base de carpeta tecnica:
-  - `semana10-ansible-parcial/README.md`
+### Implementacion Realizada
+- Laboratorio tecnico creado en:
+  - `semana10-ansible-parcial/`
+- Archivos principales:
+  - `semana10-ansible-parcial/Dockerfile`
+  - `semana10-ansible-parcial/docker-compose.yml`
+  - `semana10-ansible-parcial/inventory.ini`
+  - `semana10-ansible-parcial/ansible.cfg`
+  - `semana10-ansible-parcial/playbook.yml`
+  - `semana10-ansible-parcial/templates/index.html.j2`
+- Flujo validado:
+  1. `docker compose up -d --build`
+  2. `ansible webservers -m ping`
+  3. `ansible-playbook playbook.yml`
+  4. `curl http://127.0.0.1:8081` y `curl http://127.0.0.1:8082`
+  5. `docker compose down`
+
+---
+
+### Evidencia Tecnica — S10
+- Salida completa de comandos y validaciones:
+  - `docs/assets/evidencia-s10-ansible-web.txt`
+- Modulo web de evidencia:
+  - `docs/evidencias-s10.html`
 
 ---
 
@@ -561,7 +581,7 @@ Automatizar la implementacion de un servidor web con Ansible, publicar el codigo
 ---
 
 ### Trazabilidad
-- Issue S10:
+- Issue S10 (cerrada, 2026-03-19):
   `https://github.com/luiscdano/DevOps.E2/issues/17`
 - GitHub Projects #1:
   `https://github.com/users/luiscdano/projects/1`
