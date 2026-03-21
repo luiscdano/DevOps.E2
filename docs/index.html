@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@500;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260319-02" />
+    <link rel="stylesheet" href="styles.css?v=20260320-01" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -71,7 +71,7 @@
               <ul class="meta-strip">
                 <li><span class="label">Rama estable</span><span class="value">main</span></li>
                 <li><span class="label">Rama de trabajo</span><span class="value">dev</span></li>
-                <li><span class="label">Semana actual</span><span class="value">S10 · 2do Parcial Ansible (completado)</span></li>
+                <li><span class="label">Semana actual</span><span class="value">S12 · Monitoreo y Observabilidad</span></li>
               </ul>
             </div>
           </div>
@@ -88,77 +88,74 @@
 
         <section class="reveal">
           <div class="section-head">
-            <p class="eyebrow">Semana 9 · Estado real</p>
-            <h2>Introduccion a Azure DevOps</h2>
+            <p class="eyebrow">Semana 12 · Estado real</p>
+            <h2>Monitoreo con Prometheus y Grafana</h2>
           </div>
 
           <div class="weeks-grid">
             <article class="kanban-card">
-              <h3>Estado de la practica S9</h3>
+              <h3>Arquitectura de la practica</h3>
               <p>
-                La lectura base S9 fue completada (<code>#15</code>), pero la
-                practica operativa en Azure DevOps permanece en
-                <code>todo</code> mediante la issue <code>#16</code> por
-                limitacion de acceso con cuenta institucional ITLA.
+                La implementacion S12 levanta tres servicios en
+                <code>Docker Compose</code>: <code>prometheus</code>,
+                <code>grafana</code> y <code>node-exporter</code>. Todo queda
+                aislado en <code>semana12-monitoreo/</code> para no tocar las
+                practicas anteriores.
               </p>
               <div class="quick-actions">
-                <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2/issues/16" target="_blank" rel="noreferrer">
-                  Ver issue #16 (pendiente)
+                <a class="btn btn-primary" href="evidencias-s12.html">
+                  Ver evidencia S12
                 </a>
-                <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/issues/15" target="_blank" rel="noreferrer">
-                  Ver issue #15 cerrada
+                <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/tree/main/semana12-monitoreo" target="_blank" rel="noreferrer">
+                  Ver carpeta S12
                 </a>
-                <a class="btn btn-ghost" href="evidencias-s9.html">
-                  Ver modulo evidencia S9
+                <a class="btn btn-ghost" href="assets/evidencia-s12-prometheus-grafana.txt" target="_blank" rel="noreferrer">
+                  Ver evidencia TXT
+                </a>
+              </div>
+            </article>
+
+            <article class="kanban-card">
+              <h3>Validaciones ejecutadas</h3>
+              <p>
+                Prometheus responde en <code>:9090</code>, Grafana en
+                <code>:3000</code> y <code>node-exporter</code> en
+                <code>:9100</code>. La API de Prometheus reporta ambos
+                targets en estado <code>up</code>.
+              </p>
+            </article>
+
+            <article class="kanban-card">
+              <h3>Provisioning automatico</h3>
+              <p>
+                Grafana ya trae lista la fuente de datos
+                <code>Prometheus</code> y el dashboard
+                <code>S12 - Observabilidad Base</code>, eliminando la necesidad
+                de configurarlo manualmente en cada demostracion.
+              </p>
+              <div class="quick-actions">
+                <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2/blob/main/semana12-monitoreo/grafana/provisioning/datasources/prometheus.yml" target="_blank" rel="noreferrer">
+                  Ver datasource
+                </a>
+              </div>
+            </article>
+
+            <article class="kanban-card">
+              <h3>Trazabilidad en GitHub</h3>
+              <p>
+                La practica S12 queda publicada en repositorio, web y modulo de
+                evidencia. La issue <code>#18</code> concentra la referencia de
+                esta semana dentro del ciclo del curso.
+              </p>
+              <div class="quick-actions">
+                <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2/issues/18" target="_blank" rel="noreferrer">
+                  Ver issue #18
                 </a>
                 <a class="btn btn-ghost" href="https://github.com/users/luiscdano/projects/1" target="_blank" rel="noreferrer">
                   Ver Projects #1
                 </a>
-              </div>
-            </article>
-
-            <article class="kanban-card">
-              <h3>Brecha contra lo solicitado en S9</h3>
-              <p>
-                Pendientes los 4 entregables practicos: crear organizacion/proyecto,
-                tablero con 5 issues y movimientos, push de app "hola mundo" a Azure Repos
-                y publicacion de URL del proyecto en el foro.
-              </p>
-            </article>
-
-            <article class="kanban-card">
-              <h3>Siguiente paso inmediato</h3>
-              <p>
-                Mantener S9 en pendiente hasta recibir lineamiento del profesor
-                sobre acceso institucional. La S10 ya fue ejecutada y cerrada
-                con evidencia tecnica en repositorio y web.
-              </p>
-              <div class="quick-actions">
-                <a class="btn btn-primary" href="evidencias-s10.html">
-                  Ver evidencia S10
-                </a>
-              </div>
-            </article>
-
-            <article class="kanban-card">
-              <h3>Semana 10 · 2do parcial completado</h3>
-              <p>
-                Automatizacion finalizada: 2 nodos Ubuntu en Docker, instalacion
-                de Nginx con Ansible, validacion HTTP en ambos nodos y cierre de
-                issue <code>#17</code> en Kanban como <code>done</code>.
-              </p>
-              <div class="quick-actions">
-                <a class="btn btn-primary" href="evidencias-s10.html">
-                  Ver modulo evidencia S10
-                </a>
-                <a class="btn btn-ghost" href="assets/evidencia-s10-ansible-web.txt" target="_blank" rel="noreferrer">
-                  Ver evidencia TXT
-                </a>
-                <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/issues/17" target="_blank" rel="noreferrer">
-                  Ver issue #17 cerrada
-                </a>
-                <a class="btn btn-ghost" href="https://chatgpt.com/share/68767f33-a24c-8000-aec5-c15b67c512d3" target="_blank" rel="noreferrer">
-                  Ver guia base
+                <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/blob/main/semana12-monitoreo/docker-compose.yml" target="_blank" rel="noreferrer">
+                  Ver docker-compose S12
                 </a>
               </div>
             </article>
@@ -268,6 +265,6 @@
       </p>
     </footer>
 
-    <script src="script.js?v=20260319-02"></script>
+    <script src="script.js?v=20260320-01"></script>
   </body>
 </html>

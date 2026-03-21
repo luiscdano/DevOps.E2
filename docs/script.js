@@ -153,12 +153,25 @@ const weeksData = [
   {
     id: "S12",
     title: "S12 - Monitoreo y Observabilidad",
-    status: "next",
-    goal: "Preparar enfoque de monitoreo integral para salud, rendimiento y trazabilidad del entorno.",
+    status: "active",
+    goal: "Implementar monitoreo basico con Prometheus y Grafana sobre Docker Compose.",
     highlights: [
-      "Definir estrategia de metricas, logs y alertas",
-      "Evaluar stack objetivo (Prometheus/Grafana o equivalente)",
-      "Semana de previsualizacion registrada como ruta futura (sujeta a cambios)"
+      "Stack operativo con Prometheus, Grafana y node-exporter en semana12-monitoreo/",
+      "Prometheus detecta los targets prometheus:9090 y node-exporter:9100 en estado up",
+      "Grafana queda provisionado con datasource Prometheus y dashboard S12 - Observabilidad Base",
+      "Evidencia publicada en TXT y modulo web"
+    ],
+    actions: [
+      {
+        label: "Ver evidencia S12",
+        url: "evidencias-s12.html",
+        style: "primary"
+      },
+      {
+        label: "Evidencia TXT",
+        url: "assets/evidencia-s12-prometheus-grafana.txt",
+        style: "ghost"
+      }
     ]
   },
   {
@@ -246,8 +259,8 @@ const automationData = [
   },
   {
     title: "Monitoreo y gestion de logs",
-    detail: "Pendiente: incorporar observabilidad para medir salud y rendimiento.",
-    status: "next"
+    detail: "S12 implementada: Prometheus, Grafana y node-exporter operativos con dashboard aprovisionado.",
+    status: "done"
   },
   {
     title: "Automatizacion de infraestructura",
@@ -265,8 +278,8 @@ const automationData = [
     status: "done"
   },
   {
-    title: "Ruta futura S12-S16",
-    detail: "Semanas registradas para previsualizacion del tramo final del curso (contenido sujeto a cambios).",
+    title: "Ruta futura S13-S16",
+    detail: "Semanas registradas para previsualizacion del tramo final del curso despues de completar S12.",
     status: "next"
   }
 ];
@@ -465,8 +478,8 @@ const defaultProgressData = {
       id: "issue-18",
       title: "S12: monitoreo y observabilidad",
       week: "S12",
-      status: "todo",
-      details: "Semana futura registrada como previsualizacion del tramo final del curso.",
+      status: "in-progress",
+      details: "Implementacion S12 publicada en repo y web; pendiente sincronizacion administrativa final con GitHub Projects.",
       proof: {
         label: "Issue S12",
         url: "https://github.com/luiscdano/DevOps.E2/issues/18"
@@ -540,6 +553,13 @@ const defaultProgressData = {
     }
   ],
   movements: [
+    {
+      date: "2026-03-20T22:12:01-04:00",
+      taskId: "issue-18",
+      from: "todo",
+      to: "in-progress",
+      note: "Implementacion S12 publicada en el repositorio con evidencia tecnica y modulo web."
+    },
     {
       date: "2026-03-19T01:21:25.199Z",
       taskId: "issue-18",

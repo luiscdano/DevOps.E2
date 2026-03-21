@@ -1,0 +1,89 @@
+S12 · Evidencia tecnica monitoreo con Prometheus y Grafana
+
+Fecha local de captura: 2026-03-20 22:12:01 AST
+Repositorio: DevOps.E2
+Carpeta de trabajo: semana12-monitoreo/
+
+[1] Levantar servicios
+$ docker compose up -d
+ Container devops-e2-s12-node-exporter Running
+ Container devops-e2-s12-prometheus Running
+ Container devops-e2-s12-grafana Running
+
+[2] Verificar contenedores
+$ docker compose ps
+NAME                          IMAGE                       COMMAND                  SERVICE         CREATED          STATUS          PORTS
+devops-e2-s12-grafana         grafana/grafana:latest      "/run.sh"                grafana         39 seconds ago   Up 38 seconds   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+devops-e2-s12-node-exporter   prom/node-exporter:latest   "/bin/node_exporter"     node-exporter   40 seconds ago   Up 39 seconds   0.0.0.0:9100->9100/tcp, [::]:9100->9100/tcp
+devops-e2-s12-prometheus      prom/prometheus:latest      "/bin/prometheus --c…"   prometheus      40 seconds ago   Up 39 seconds   0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
+
+[3] Prometheus listo
+$ curl -fsS http://127.0.0.1:9090/-/ready
+Prometheus Server is Ready.
+
+[4] Targets activos en Prometheus
+$ curl -fsS http://127.0.0.1:9090/api/v1/targets | jq -r '.data.activeTargets[] | "\(.labels.job) -> \(.scrapeUrl) [\(.health)]"'
+node-exporter -> http://node-exporter:9100/metrics [up]
+prometheus -> http://prometheus:9090/metrics [up]
+
+[5] Salud de Grafana
+$ curl -fsS -u admin:admin http://127.0.0.1:3000/api/health
+{
+  "database": "ok",
+  "version": "12.4.1",
+  "commit": "46a02dc12a085445ab105b72fa159248f7d1dc9d"
+}
+
+[6] Fuente de datos aprovisionada
+$ curl -fsS -u admin:admin http://127.0.0.1:3000/api/datasources | jq -r '.[] | "\(.name) type=\(.type) url=\(.url) uid=\(.uid) default=\(.isDefault)"'
+Prometheus type=prometheus url=http://prometheus:9090 uid=prometheus default=true
+
+[7] Dashboard detectado en Grafana
+$ curl -fsS -u admin:admin 'http://127.0.0.1:3000/api/search?query=S12'
+[{"id":4053323264102400,"uid":"s12-observabilidad-base","orgId":1,"title":"S12 - Observabilidad Base","uri":"db/s12-observabilidad-base","url":"/d/s12-observabilidad-base/s12-observabilidad-base","slug":"","type":"dash-db","tags":["devops","grafana","prometheus","s12"],"isStarred":false,"folderId":4053323207159808,"folderUid":"afgn5y67usni8f","folderTitle":"Semana 12","folderUrl":"/dashboards/f/afgn5y67usni8f/semana-12","sortMeta":0,"isDeleted":false}]
+
+[8] Paneles cargados en el dashboard
+$ curl -fsS -u admin:admin http://127.0.0.1:3000/api/dashboards/uid/s12-observabilidad-base | jq -r '.dashboard.panels[] | .title'
+Node Exporter UP
+Uso CPU
+Uso Memoria
+Uptime
+CPU en el tiempo
+Memoria usada
+Carga del sistema
+Espacio disponible en disco
+
+[9] Consultas de ejemplo desde Prometheus
+$ curl -fsSG 'http://127.0.0.1:9090/api/v1/query' --data-urlencode 'query=100 * (1 - avg(rate(node_cpu_seconds_total{mode="idle"}[5m])))' | jq -r '.data.result[] | "cpu_used_pct=\(.value[1])"'
+cpu_used_pct=32.266253264692445
+
+$ curl -fsSG 'http://127.0.0.1:9090/api/v1/query' --data-urlencode 'query=100 * (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes))' | jq -r '.data.result[] | "mem_used_pct=\(.value[1]) instance=\(.metric.instance)"'
+mem_used_pct=9.033654390144086 instance=node-exporter:9100
+
+$ curl -fsSG 'http://127.0.0.1:9090/api/v1/query' --data-urlencode 'query=node_load1' | jq -r '.data.result[] | "load1=\(.value[1]) instance=\(.metric.instance)"'
+load1=0.95 instance=node-exporter:9100
+
+$ curl -fsSG 'http://127.0.0.1:9090/api/v1/query' --data-urlencode 'query=node_time_seconds - node_boot_time_seconds' | jq -r '.data.result[] | "uptime_seconds=\(.value[1]) instance=\(.metric.instance)"'
+uptime_seconds=387.2918565273285 instance=node-exporter:9100
+
+[10] Conclusion
+- La practica S12 queda funcional.
+- Prometheus recopila metricas de si mismo y de node-exporter.
+- Grafana queda listo con datasource y dashboard sin configuracion manual adicional.
+
+[11] Limpieza del entorno despues de validar
+$ docker compose down
+ Container devops-e2-s12-grafana Stopping
+ Container devops-e2-s12-grafana Stopped
+ Container devops-e2-s12-grafana Removing
+ Container devops-e2-s12-grafana Removed
+ Container devops-e2-s12-node-exporter Stopping
+ Container devops-e2-s12-prometheus Stopping
+ Container devops-e2-s12-prometheus Stopped
+ Container devops-e2-s12-prometheus Removing
+ Container devops-e2-s12-prometheus Removed
+ Container devops-e2-s12-node-exporter Stopped
+ Container devops-e2-s12-node-exporter Removing
+ Container devops-e2-s12-node-exporter Removed
+ Network semana12-monitoreo_default Removing
+ Network semana12-monitoreo_default Removed

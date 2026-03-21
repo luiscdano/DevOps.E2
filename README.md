@@ -588,20 +588,80 @@ Automatizar la implementacion de un servidor web con Ansible, publicar el codigo
 
 ---
 
-## Ruta Futura (S12-S16) · Sujeta a Cambios
+## Ruta Futura (S13-S16) · Sujeta a Cambios
 
-Nota: en la planificacion actual se presenta salto de S10 a S12.
+Nota: la Semana 12 ya fue implementada y documentada en este repositorio.
 
 ---
 
 ## S12 — Monitoreo y Observabilidad
 
-### Objetivo Preliminar
-Preparar la capa de monitoreo y observabilidad para detectar incidentes, medir rendimiento y mejorar tiempos de respuesta.
+### Objetivo de la Semana
+Habilitar un sistema basico de monitoreo para aplicaciones y servicios usando `Prometheus`, `Grafana` y `node-exporter` con `Docker Compose`.
+
+---
+
+### Implementacion Realizada
+- Laboratorio tecnico creado en:
+  - `semana12-monitoreo/`
+- Archivos principales:
+  - `semana12-monitoreo/docker-compose.yml`
+  - `semana12-monitoreo/prometheus/prometheus.yml`
+  - `semana12-monitoreo/grafana/provisioning/datasources/prometheus.yml`
+  - `semana12-monitoreo/grafana/provisioning/dashboards/dashboards.yml`
+  - `semana12-monitoreo/grafana/dashboards/s12-observabilidad.json`
+  - `semana12-monitoreo/README.md`
+- Flujo validado:
+  1. `cd semana12-monitoreo`
+  2. `docker compose up -d`
+  3. `curl http://127.0.0.1:9090/-/ready`
+  4. `curl -u admin:admin http://127.0.0.1:3000/api/health`
+  5. `curl http://127.0.0.1:9090/api/v1/targets`
+  6. `curl -u admin:admin http://127.0.0.1:3000/api/datasources`
+  7. `curl -u admin:admin "http://127.0.0.1:3000/api/search?query=S12"`
+
+---
+
+### Resultado Tecnico
+- Prometheus quedo escuchando en `http://localhost:9090`.
+- Grafana quedo escuchando en `http://localhost:3000` con credenciales `admin/admin`.
+- `node-exporter` quedo exponiendo metricas en `http://localhost:9100/metrics`.
+- Grafana se aprovisiona automaticamente con:
+  - Fuente de datos `Prometheus`
+  - Dashboard `S12 - Observabilidad Base`
+- El dashboard inicial incluye paneles de:
+  - Estado `up` del exporter
+  - Uso de CPU
+  - Uso de memoria
+  - Uptime
+  - Load average
+  - Espacio disponible en disco
+
+---
+
+### Evidencia Tecnica — S12
+- Salida completa de comandos y validaciones:
+  - `docs/assets/evidencia-s12-prometheus-grafana.txt`
+- Modulo web de evidencia:
+  - `docs/evidencias-s12.html`
+
+---
+
+### Ajuste Tecnico Aplicado
+La guia base del docente usaba un `docker-compose.yml` minimo con configuracion manual dentro de Grafana. En esta entrega deje la misma practica, pero adaptada a un flujo mas reproducible:
+- La carpeta S12 esta aislada para no afectar el `docker-compose.yml` de semanas anteriores.
+- Se omitio el campo `version` porque `Docker Compose` actual trabaja con Compose Specification.
+- Grafana queda preconfigurado para evitar pasos manuales repetitivos durante la demostracion.
+
+---
 
 ### Trazabilidad
 - Issue S12:
   `https://github.com/luiscdano/DevOps.E2/issues/18`
+- GitHub Projects #1:
+  `https://github.com/users/luiscdano/projects/1`
+- Modulo web S12:
+  `https://luiscdano.github.io/DevOps.E2/evidencias-s12.html`
 
 ---
 

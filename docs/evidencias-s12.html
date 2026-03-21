@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Evidencia tecnica de la Semana 12: monitoreo con Prometheus, Grafana y node-exporter."
+    />
+    <title>DevOps.E2 | Evidencias S12</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260320-01" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-dot"></span>
+        <span>DevOps.E2</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="semanas.html">Semanas</a>
+        <a href="kanban.html">Kanban</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="module evidence-module reveal">
+        <div class="section-head">
+          <p class="eyebrow">Semana 12 · Monitoreo y Observabilidad</p>
+          <h2>Prometheus + Grafana + node-exporter</h2>
+        </div>
+
+        <article class="kanban-card">
+          <p>
+            Implementacion validada en Docker Compose con tres servicios:
+            <code>prometheus</code>, <code>grafana</code> y
+            <code>node-exporter</code>. Grafana queda aprovisionado
+            automaticamente con la fuente de datos y un dashboard base.
+          </p>
+          <div class="quick-actions">
+            <a class="btn btn-primary" href="assets/evidencia-s12-prometheus-grafana.txt" target="_blank" rel="noreferrer">
+              Ver evidencia TXT
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/tree/main/semana12-monitoreo" target="_blank" rel="noreferrer">
+              Ver carpeta S12
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/issues/18" target="_blank" rel="noreferrer">
+              Ver issue #18
+            </a>
+          </div>
+        </article>
+
+        <div class="weeks-grid">
+          <article class="kanban-card">
+            <h3>Servicios expuestos</h3>
+            <ul class="metric-list">
+              <li class="metric-item">
+                <strong>Prometheus</strong>
+                <span class="metric-detail">URL: <code>http://localhost:9090</code></span>
+              </li>
+              <li class="metric-item">
+                <strong>Grafana</strong>
+                <span class="metric-detail">URL: <code>http://localhost:3000</code></span>
+                <span class="metric-detail">Credenciales: <code>admin/admin</code></span>
+              </li>
+              <li class="metric-item">
+                <strong>Node Exporter</strong>
+                <span class="metric-detail">Metricas: <code>http://localhost:9100/metrics</code></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="kanban-card">
+            <h3>Validaciones registradas</h3>
+            <ul class="metric-list">
+              <li class="metric-item">
+                <strong>Targets</strong>
+                Prometheus detecta <code>node-exporter</code> y <code>prometheus</code> en estado <code>up</code>.
+              </li>
+              <li class="metric-item">
+                <strong>Datasource</strong>
+                Grafana expone la fuente <code>Prometheus</code> como predeterminada.
+              </li>
+              <li class="metric-item">
+                <strong>Dashboard</strong>
+                Se carga el dashboard <code>S12 - Observabilidad Base</code> dentro de la carpeta <code>Semana 12</code>.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Luis Emilio Cedano · Matr. 2024-0128 · ITLA Electiva II (DevOps)
+      </p>
+    </footer>
+
+    <script src="script.js?v=20260320-01"></script>
+  </body>
+</html>
