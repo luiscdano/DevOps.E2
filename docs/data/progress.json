@@ -1,23 +1,12 @@
 {
-  "lastUpdated": "2026-03-21T02:20:00Z",
+  "lastUpdated": "2026-03-21T02:23:10Z",
   "source": {
     "kind": "github-projects-public-html",
     "projectUrl": "https://github.com/users/luiscdano/projects/1",
     "projectTitle": "DevOps Workflow Board",
-    "syncedAt": "2026-03-21T02:20:00Z"
+    "syncedAt": "2026-03-21T02:23:10Z"
   },
   "cards": [
-    {
-      "id": "issue-18",
-      "title": "S12 · Monitoreo y Observabilidad",
-      "week": "S12",
-      "status": "done",
-      "details": "Implementacion S12 publicada en repo, web y evidencia tecnica; semana completada.",
-      "proof": {
-        "label": "Issue",
-        "url": "https://github.com/luiscdano/DevOps.E2/issues/18"
-      }
-    },
     {
       "id": "issue-19",
       "title": "S13 · Despliegue a Produccion",
@@ -104,6 +93,17 @@
       "proof": {
         "label": "Issue",
         "url": "https://github.com/luiscdano/DevOps.E2/issues/17"
+      }
+    },
+    {
+      "id": "issue-18",
+      "title": "S12 · Monitoreo y Observabilidad",
+      "week": "S12",
+      "status": "done",
+      "details": "Implementacion S12 publicada en repo, web y evidencia tecnica; semana completada.",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/18"
       }
     },
     {
