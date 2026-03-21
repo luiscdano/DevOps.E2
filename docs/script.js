@@ -153,7 +153,7 @@ const weeksData = [
   {
     id: "S12",
     title: "S12 - Monitoreo y Observabilidad",
-    status: "active",
+    status: "done",
     goal: "Implementar monitoreo basico con Prometheus y Grafana sobre Docker Compose.",
     highlights: [
       "Stack operativo con Prometheus, Grafana y node-exporter en semana12-monitoreo/",
@@ -478,8 +478,8 @@ const defaultProgressData = {
       id: "issue-18",
       title: "S12: monitoreo y observabilidad",
       week: "S12",
-      status: "in-progress",
-      details: "Implementacion S12 publicada en repo y web; pendiente sincronizacion administrativa final con GitHub Projects.",
+      status: "done",
+      details: "Implementacion S12 publicada en repo, web y evidencia tecnica; semana completada.",
       proof: {
         label: "Issue S12",
         url: "https://github.com/luiscdano/DevOps.E2/issues/18"
@@ -553,6 +553,13 @@ const defaultProgressData = {
     }
   ],
   movements: [
+    {
+      date: "2026-03-21T02:20:00Z",
+      taskId: "issue-18",
+      from: "in-progress",
+      to: "done",
+      note: "Semana 12 marcada como completada en la web publica."
+    },
     {
       date: "2026-03-20T22:12:01-04:00",
       taskId: "issue-18",
