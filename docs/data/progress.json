@@ -1,23 +1,12 @@
 {
-  "lastUpdated": "2026-03-21T02:23:10Z",
+  "lastUpdated": "2026-03-25T23:58:45Z",
   "source": {
     "kind": "github-projects-public-html",
     "projectUrl": "https://github.com/users/luiscdano/projects/1",
     "projectTitle": "DevOps Workflow Board",
-    "syncedAt": "2026-03-21T02:23:10Z"
+    "syncedAt": "2026-03-25T23:58:45Z"
   },
   "cards": [
-    {
-      "id": "issue-19",
-      "title": "S13 · Despliegue a Produccion",
-      "week": "S13",
-      "status": "todo",
-      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
-      "proof": {
-        "label": "Issue",
-        "url": "https://github.com/luiscdano/DevOps.E2/issues/19"
-      }
-    },
     {
       "id": "issue-20",
       "title": "S14 · Continuidad de Despliegue a Produccion",
@@ -64,7 +53,7 @@
     },
     {
       "id": "issue-16",
-      "title": "S9 · Practica Azure DevOps (pendiente por acceso institucional ITLA)",
+      "title": "S9 · Practica Azure DevOps (suspendida por decision docente)",
       "week": "S9",
       "status": "todo",
       "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
@@ -104,6 +93,17 @@
       "proof": {
         "label": "Issue",
         "url": "https://github.com/luiscdano/DevOps.E2/issues/18"
+      }
+    },
+    {
+      "id": "issue-19",
+      "title": "S13 · Despliegue a Produccion (app + Docker + Docker Hub)",
+      "week": "S13",
+      "status": "done",
+      "details": "Sincronizado automaticamente desde GitHub Projects (DevOps Workflow Board).",
+      "proof": {
+        "label": "Issue",
+        "url": "https://github.com/luiscdano/DevOps.E2/issues/19"
       }
     },
     {
@@ -240,6 +240,13 @@
     }
   ],
   "movements": [
+    {
+      "date": "2026-03-25T23:58:50.096Z",
+      "taskId": "issue-19",
+      "from": "todo",
+      "to": "done",
+      "note": "Estado actualizado por sincronizacion con GitHub Projects"
+    },
     {
       "date": "2026-03-21T02:20:00Z",
       "taskId": "issue-18",
