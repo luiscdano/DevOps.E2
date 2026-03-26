@@ -105,23 +105,23 @@ const weeksData = [
   {
     id: "S9",
     title: "S9 - Introduccion a Azure DevOps",
-    status: "active",
-    goal: "Ejecutar la practica S9 de Azure DevOps; actualmente en proceso con bloqueo de acceso institucional.",
+    status: "suspended",
+    goal: "Semana suspendida por decision docente; se conserva el contenido tecnico y la trazabilidad.",
     highlights: [
       "Azure DevOps como suite para planificar, desarrollar, probar y entregar software",
       "Servicios clave: Boards, Repos, Pipelines, Test Plans y Artifacts",
       "Issue #15 cerrada como lectura base ya completada",
-      "Issue #16 abierta en TODO: practica pendiente por acceso con cuenta institucional ITLA"
+      "Issue #16 cerrada como suspendida por decision docente, conservando evidencia"
     ],
     actions: [
       {
-        label: "Abrir issue #16",
-        url: "https://github.com/luiscdano/DevOps.E2/issues/16",
+        label: "Ver evidencia S9",
+        url: "evidencias-s9.html",
         style: "primary"
       },
       {
-        label: "Ver evidencia S9",
-        url: "evidencias-s9.html",
+        label: "Ver issue #16",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/16",
         style: "ghost"
       }
     ]
@@ -177,12 +177,25 @@ const weeksData = [
   {
     id: "S13",
     title: "S13 - Despliegue a Produccion",
-    status: "next",
-    goal: "Preparar flujo de release/deploy a produccion con validaciones controladas.",
+    status: "done",
+    goal: "Implementar el flujo solicitado: app Hola Mundo + Dockerfile + publicacion en Docker Hub.",
     highlights: [
-      "Definir pipeline de despliegue productivo",
-      "Establecer checks pre/post despliegue",
-      "Mantener trazabilidad de ejecucion en repo y web"
+      "App web desplegable creada en semana13-despliegue-produccion/app/server.js",
+      "Imagen Docker construida y validada localmente en localhost:8083",
+      "Imagen publicada en Docker Hub con tags 2026.03.25 y latest",
+      "Issue #19 cerrada y sincronizada en GitHub Projects como done"
+    ],
+    actions: [
+      {
+        label: "Ver evidencia S13",
+        url: "evidencias-s13.html",
+        style: "primary"
+      },
+      {
+        label: "Ver issue #19",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/19",
+        style: "ghost"
+      }
     ]
   },
   {
@@ -269,8 +282,8 @@ const automationData = [
   },
   {
     title: "Plataforma integrada Azure DevOps",
-    detail: "S9 en proceso con bloqueo: lectura base completada (#15) y practica operativa pendiente en issue #16.",
-    status: "active"
+    detail: "S9 suspendida por decision docente: lectura base completada (#15) y material historico conservado en issue #16.",
+    status: "suspended"
   },
   {
     title: "2do Parcial Ansible",
@@ -278,8 +291,13 @@ const automationData = [
     status: "done"
   },
   {
-    title: "Ruta futura S13-S16",
-    detail: "Semanas registradas para previsualizacion del tramo final del curso despues de completar S12.",
+    title: "Despliegue a produccion S13",
+    detail: "Semana 13 completada: app Hola Mundo, Dockerfile y push a Docker Hub con evidencia tecnica.",
+    status: "done"
+  },
+  {
+    title: "Ruta futura S14-S16",
+    detail: "Semanas registradas para continuidad del tramo final del curso luego de completar S13.",
     status: "next"
   }
 ];
@@ -287,6 +305,7 @@ const automationData = [
 const statusLabels = {
   done: "Completado",
   active: "En curso",
+  suspended: "Suspendida",
   next: "Proximo"
 };
 
@@ -305,7 +324,7 @@ const ntfyTopicUrl = "https://ntfy.sh/devops-itla";
 const ntfyLatestJsonUrl = `${ntfyTopicUrl}/json?poll=1&since=latest`;
 
 const defaultProgressData = {
-  lastUpdated: "2026-03-19T01:19:25Z",
+  lastUpdated: "2026-03-25T23:59:03Z",
   cards: [
     {
       id: "s1-repo-setup",
@@ -454,12 +473,12 @@ const defaultProgressData = {
     },
     {
       id: "issue-16",
-      title: "S9: practica Azure DevOps (pendiente por acceso institucional ITLA)",
+      title: "S9: practica Azure DevOps (suspendida por decision docente)",
       week: "S9",
-      status: "todo",
-      details: "Practica pendiente por bloqueo de acceso institucional. En espera de lineamiento del profesor.",
+      status: "done",
+      details: "Semana suspendida por decision docente; se conserva documentacion y evidencia historica.",
       proof: {
-        label: "Issue S9 pendiente",
+        label: "Issue S9 suspendida",
         url: "https://github.com/luiscdano/DevOps.E2/issues/16"
       }
     },
@@ -487,10 +506,10 @@ const defaultProgressData = {
     },
     {
       id: "issue-19",
-      title: "S13: despliegue a produccion",
+      title: "S13: despliegue a produccion (app + Docker + Docker Hub)",
       week: "S13",
-      status: "todo",
-      details: "Semana futura registrada como previsualizacion del tramo final del curso.",
+      status: "done",
+      details: "Semana 13 completada con app web, Dockerfile y publicacion de imagen en Docker Hub.",
       proof: {
         label: "Issue S13",
         url: "https://github.com/luiscdano/DevOps.E2/issues/19"
@@ -553,6 +572,20 @@ const defaultProgressData = {
     }
   ],
   movements: [
+    {
+      date: "2026-03-25T23:59:03Z",
+      taskId: "issue-19",
+      from: "todo",
+      to: "done",
+      note: "Semana 13 completada: app Hola Mundo, Dockerfile y push a Docker Hub."
+    },
+    {
+      date: "2026-03-25T23:59:03Z",
+      taskId: "issue-16",
+      from: "todo",
+      to: "done",
+      note: "Semana 9 marcada como suspendida por decision docente."
+    },
     {
       date: "2026-03-21T02:20:00Z",
       taskId: "issue-18",
@@ -621,7 +654,7 @@ const defaultProgressData = {
       taskId: "issue-16",
       from: "backlog",
       to: "todo",
-      note: "Semana 9 marcada en pendiente por bloqueo de acceso institucional."
+      note: "Semana 9 registrada inicialmente en backlog operativo."
     },
     {
       date: "2026-03-18T21:13:21.918Z",

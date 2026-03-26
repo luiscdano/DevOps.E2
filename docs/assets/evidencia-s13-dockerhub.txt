@@ -1,0 +1,163 @@
+S13 · Evidencia tecnica despliegue a produccion con Docker
+Fecha local de captura: 2026-03-25 19:57:21 AST
+Repositorio: DevOps.E2
+Carpeta de trabajo: semana13-despliegue-produccion/
+
+[1] Versiones
+Docker version 29.2.1, build a5c7197
+Docker Compose version v5.0.2
+v22.16.0
+
+[2] Build de imagen
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 308B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:22-alpine
+#2 ...
+
+#3 [auth] library/node:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:22-alpine
+#2 DONE 7.3s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 88B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 1.81kB done
+#5 DONE 0.0s
+
+#6 [1/3] FROM docker.io/library/node:22-alpine@sha256:8094c002d08262dba12645a3b4a15cd6cd627d30bc782f53229a2ec13ee22a00
+#6 resolve docker.io/library/node:22-alpine@sha256:8094c002d08262dba12645a3b4a15cd6cd627d30bc782f53229a2ec13ee22a00 done
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 0B / 52.70MB 0.1s
+#6 sha256:8cfef817bf411fcace99981e76ca078620fbc962709bdc7afd6aca7f64454b4c 0B / 1.26MB 0.1s
+#6 sha256:a815c829c0e513e4f2bd69aa767e422f08342609bdef13751ac6da4fb1452c5b 0B / 442B 0.1s
+#6 sha256:8094c002d08262dba12645a3b4a15cd6cd627d30bc782f53229a2ec13ee22a00 6.41kB / 6.41kB done
+#6 sha256:86961ea56cf2f0fb3ab06be4f3881714980413c57ef0b8d3860d69234d94bcbf 1.72kB / 1.72kB done
+#6 sha256:1a7be9dc24f5295100252c234bbb67d29d687a6229a8eafb1875d21ac22eb044 6.54kB / 6.54kB done
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 3.15MB / 52.70MB 1.0s
+#6 sha256:8cfef817bf411fcace99981e76ca078620fbc962709bdc7afd6aca7f64454b4c 1.26MB / 1.26MB 0.9s done
+#6 sha256:a815c829c0e513e4f2bd69aa767e422f08342609bdef13751ac6da4fb1452c5b 442B / 442B 1.1s done
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 9.44MB / 52.70MB 1.8s
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 12.58MB / 52.70MB 2.3s
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 15.73MB / 52.70MB 2.9s
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 18.87MB / 52.70MB 3.4s
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 22.02MB / 52.70MB 3.8s
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 25.17MB / 52.70MB 4.3s
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 28.31MB / 52.70MB 4.7s
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 31.46MB / 52.70MB 5.1s
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 34.60MB / 52.70MB 5.8s
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 37.75MB / 52.70MB 6.1s
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 40.89MB / 52.70MB 6.6s
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 44.04MB / 52.70MB 7.1s
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 47.19MB / 52.70MB 7.6s
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 50.33MB / 52.70MB 8.2s
+#6 sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 52.70MB / 52.70MB 8.4s done
+#6 extracting sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 0.1s
+#6 extracting sha256:442512ab2742e656cb5a8c7443a3ee91500a6f9dc29096578cf83de1383a805c 0.9s done
+#6 extracting sha256:8cfef817bf411fcace99981e76ca078620fbc962709bdc7afd6aca7f64454b4c 0.0s done
+#6 extracting sha256:a815c829c0e513e4f2bd69aa767e422f08342609bdef13751ac6da4fb1452c5b done
+#6 DONE 9.5s
+
+#7 [2/3] WORKDIR /app
+#7 DONE 0.2s
+
+#8 [3/3] COPY app/server.js ./server.js
+#8 DONE 0.0s
+
+#9 exporting to image
+#9 exporting layers done
+#9 writing image sha256:5ba2a46fbe7c175aaef71efca461950272942db8762a8133d59545ef280a072c done
+#9 naming to docker.io/luiscdano/devops-e2-s13-hola-mundo:2026.03.25 done
+#9 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/cwotjiagby1e536sbvsv6vhz1
+Build exit code: 0
+
+[3] Ejecucion de contenedor
+78eb7deecfeedb7b6ae0494bec1da1fb12143da962dd7cc909df12e261d4f888
+Run exit code: 0
+
+[4] Validaciones HTTP
+$ curl -fsS http://127.0.0.1:8083/
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DevOps.E2 · S13</title>
+    <style>
+      body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; min-height: 100vh; display: grid; place-items: center; background: linear-gradient(140deg, #0e1a3f, #132a6b 45%, #173f8f); color: #f6fbff; }
+      main { width: min(92vw, 700px); border: 1px solid rgba(255,255,255,.2); border-radius: 14px; padding: 28px; background: rgba(12, 18, 45, .65); box-shadow: 0 16px 44px rgba(0,0,0,.28); }
+      h1 { margin: 0 0 10px; font-size: 2rem; }
+      p { margin: 0 0 10px; line-height: 1.5; }
+      code { background: rgba(255,255,255,.12); border-radius: 7px; padding: 2px 8px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Hola Mundo desde Producción</h1>
+      <p>Semana <code>S13</code> · Despliegue a Producción · DevOps.E2</p>
+      <p>Servicio ejecutándose en contenedor Docker.</p>
+    </main>
+  </body>
+</html>Home exit code: 0
+
+$ curl -fsS http://127.0.0.1:8083/health
+{"status":"ok","week":"S13","service":"hola-mundo-prod"}Health exit code: 0
+
+[5] Estado del contenedor
+CONTAINER ID   IMAGE                                           COMMAND                  CREATED         STATUS                            PORTS                                         NAMES
+78eb7deecfee   luiscdano/devops-e2-s13-hola-mundo:2026.03.25   "docker-entrypoint.s…"   2 seconds ago   Up 2 seconds (health: starting)   0.0.0.0:8083->8080/tcp, [::]:8083->8080/tcp   devops-e2-s13-hola
+S13 app escuchando en http://0.0.0.0:8080
+
+[6] Etiquetado para Docker Hub
+Tag exit code: 0
+
+[7] Push a Docker Hub
+$ docker push luiscdano/devops-e2-s13-hola-mundo:2026.03.25
+The push refers to repository [docker.io/luiscdano/devops-e2-s13-hola-mundo]
+4fed417edfec: Preparing
+50ad49572830: Preparing
+0cdb1bbf7ed4: Preparing
+33d9a783c42d: Preparing
+daf355f30b90: Preparing
+45f3ea5848e8: Preparing
+45f3ea5848e8: Waiting
+0cdb1bbf7ed4: Mounted from library/node
+33d9a783c42d: Mounted from library/node
+daf355f30b90: Mounted from library/node
+45f3ea5848e8: Mounted from library/node
+4fed417edfec: Pushed
+50ad49572830: Pushed
+2026.03.25: digest: sha256:58cbf272e982227bf9996cc695c282c3b97917643201ff3bdac76fb903fb6890 size: 1572
+Push fecha exit code: 0
+
+$ docker push luiscdano/devops-e2-s13-hola-mundo:latest
+The push refers to repository [docker.io/luiscdano/devops-e2-s13-hola-mundo]
+4fed417edfec: Preparing
+50ad49572830: Preparing
+0cdb1bbf7ed4: Preparing
+33d9a783c42d: Preparing
+daf355f30b90: Preparing
+45f3ea5848e8: Preparing
+45f3ea5848e8: Waiting
+daf355f30b90: Layer already exists
+33d9a783c42d: Layer already exists
+4fed417edfec: Layer already exists
+50ad49572830: Layer already exists
+45f3ea5848e8: Layer already exists
+0cdb1bbf7ed4: Layer already exists
+latest: digest: sha256:58cbf272e982227bf9996cc695c282c3b97917643201ff3bdac76fb903fb6890 size: 1572
+Push latest exit code: 0
+
+[8] Limpieza
+devops-e2-s13-hola
+
+[9] Resumen
+build=0 run=0 home=0 health=0 tag=0 push_date=0 push_latest=0

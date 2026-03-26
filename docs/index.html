@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@500;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260320-01" />
+    <link rel="stylesheet" href="styles.css?v=20260325-01" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -71,7 +71,7 @@
               <ul class="meta-strip">
                 <li><span class="label">Rama estable</span><span class="value">main</span></li>
                 <li><span class="label">Rama de trabajo</span><span class="value">dev</span></li>
-                <li><span class="label">Semana actual</span><span class="value">S12 · Monitoreo y Observabilidad (completada)</span></li>
+                <li><span class="label">Semana actual</span><span class="value">S13 · Despliegue a Produccion (completada)</span></li>
               </ul>
             </div>
           </div>
@@ -88,54 +88,50 @@
 
         <section class="reveal">
           <div class="section-head">
-            <p class="eyebrow">Semana 12 · Estado real</p>
-            <h2>Monitoreo con Prometheus y Grafana</h2>
+            <p class="eyebrow">Semana 13 · Estado real</p>
+            <h2>Despliegue a Produccion con Docker Hub</h2>
           </div>
 
           <div class="weeks-grid">
             <article class="kanban-card">
               <h3>Arquitectura de la practica</h3>
               <p>
-                La implementacion S12 levanta tres servicios en
-                <code>Docker Compose</code>: <code>prometheus</code>,
-                <code>grafana</code> y <code>node-exporter</code>. Todo queda
-                aislado en <code>semana12-monitoreo/</code> para no tocar las
-                practicas anteriores.
+                La implementacion S13 define una app web Hola Mundo en
+                <code>Node.js</code>, la contiene en una imagen Docker y
+                documenta el flujo de despliegue hacia Docker Hub.
               </p>
               <div class="quick-actions">
-                <a class="btn btn-primary" href="evidencias-s12.html">
-                  Ver evidencia S12
+                <a class="btn btn-primary" href="evidencias-s13.html">
+                  Ver evidencia S13
                 </a>
-                <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/tree/main/semana12-monitoreo" target="_blank" rel="noreferrer">
-                  Ver carpeta S12
+                <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/tree/main/semana13-despliegue-produccion" target="_blank" rel="noreferrer">
+                  Ver carpeta S13
                 </a>
-                <a class="btn btn-ghost" href="assets/evidencia-s12-prometheus-grafana.txt" target="_blank" rel="noreferrer">
+                <a class="btn btn-ghost" href="assets/evidencia-s13-dockerhub.txt" target="_blank" rel="noreferrer">
                   Ver evidencia TXT
                 </a>
               </div>
             </article>
 
             <article class="kanban-card">
-              <h3>Validaciones ejecutadas</h3>
+              <h3>Imagen publicada</h3>
               <p>
-                Prometheus responde en <code>:9090</code>, Grafana en
-                <code>:3000</code> y <code>node-exporter</code> en
-                <code>:9100</code>. La API de Prometheus reporta ambos
-                targets en estado <code>up</code>.
+                El repositorio publicado en Docker Hub es
+                <code>luiscdano/devops-e2-s13-hola-mundo</code>, con tags
+                <code>2026.03.25</code> y <code>latest</code>.
               </p>
             </article>
 
             <article class="kanban-card">
-              <h3>Provisioning automatico</h3>
+              <h3>Validaciones de runtime</h3>
               <p>
-                Grafana ya trae lista la fuente de datos
-                <code>Prometheus</code> y el dashboard
-                <code>S12 - Observabilidad Base</code>, eliminando la necesidad
-                de configurarlo manualmente en cada demostracion.
+                La imagen se ejecuta en <code>localhost:8083</code> y responde
+                en <code>/</code> y <code>/health</code>, validando el ciclo
+                de build + run + smoke tests.
               </p>
               <div class="quick-actions">
-                <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2/blob/main/semana12-monitoreo/grafana/provisioning/datasources/prometheus.yml" target="_blank" rel="noreferrer">
-                  Ver datasource
+                <a class="btn btn-primary" href="https://hub.docker.com/r/luiscdano/devops-e2-s13-hola-mundo" target="_blank" rel="noreferrer">
+                  Ver Docker Hub
                 </a>
               </div>
             </article>
@@ -143,19 +139,19 @@
             <article class="kanban-card">
               <h3>Trazabilidad en GitHub</h3>
               <p>
-                La practica S12 queda publicada en repositorio, web y modulo de
-                evidencia. La issue <code>#18</code> concentra la referencia de
-                esta semana dentro del ciclo del curso.
+                La practica S13 queda publicada en repositorio, web, issue y
+                Projects. La issue <code>#19</code> queda cerrada con evidencia
+                tecnica y registro de Docker Hub.
               </p>
               <div class="quick-actions">
-                <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2/issues/18" target="_blank" rel="noreferrer">
-                  Ver issue #18
+                <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2/issues/19" target="_blank" rel="noreferrer">
+                  Ver issue #19
                 </a>
                 <a class="btn btn-ghost" href="https://github.com/users/luiscdano/projects/1" target="_blank" rel="noreferrer">
                   Ver Projects #1
                 </a>
-                <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/blob/main/semana12-monitoreo/docker-compose.yml" target="_blank" rel="noreferrer">
-                  Ver docker-compose S12
+                <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/blob/main/semana13-despliegue-produccion/Dockerfile" target="_blank" rel="noreferrer">
+                  Ver Dockerfile S13
                 </a>
               </div>
             </article>
@@ -265,6 +261,6 @@
       </p>
     </footer>
 
-    <script src="script.js?v=20260320-01"></script>
+    <script src="script.js?v=20260325-01"></script>
   </body>
 </html>

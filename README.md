@@ -508,16 +508,16 @@ Su valor dentro de la materia es mostrar una plataforma integrada donde converge
 
 ---
 
-### Estado y Bloqueo Actual (2026-03-18)
+### Estado Actual (2026-03-25)
 - La lectura base de S9 se completo y cerro en issue `#15`.
-- La practica operativa se mantiene abierta en issue `#16` y en `todo`.
-- Bloqueante reportado: acceso no habilitado con cuenta institucional ITLA (Office 365), pendiente de indicacion del profesor.
+- La practica operativa de S9 fue suspendida por decision docente y la issue `#16` queda cerrada.
+- Se conserva el material academico de S9 para referencia historica.
 
 ---
 
 ### Evidencia Disponible Hoy
 - Estado consolidado de S9:
-  - `docs/assets/evidencia-s9-estado-pendiente.txt`
+  - `docs/assets/evidencia-s9-estado-suspendida.txt`
 - Material de apoyo de aula virtual:
   - `docs/assets/evidencia-s9-azure-material.pdf`
 - Modulo web de evidencia S9:
@@ -526,14 +526,14 @@ Su valor dentro de la materia es mostrar una plataforma integrada donde converge
 ---
 
 ### Nota de Cronograma
-La lectura base de S9 fue cerrada el **14 de marzo de 2026** (issue #15). El **18 de marzo de 2026** se abre/actualiza la issue #16 para gestionar la practica en estado pendiente hasta resolver el acceso institucional.
+La lectura base de S9 fue cerrada el **14 de marzo de 2026** (issue #15). El **25 de marzo de 2026** la practica queda marcada como **suspendida** por decision docente y la issue #16 se cierra conservando toda la documentacion.
 
 ---
 
 ### Trazabilidad
 - Issue S9 (lectura cerrada, 2026-03-14):
   `https://github.com/luiscdano/DevOps.E2/issues/15`
-- Issue S9 (practica pendiente, 2026-03-18):
+- Issue S9 (practica suspendida, 2026-03-25):
   `https://github.com/luiscdano/DevOps.E2/issues/16`
 - GitHub Projects #1:
   `https://github.com/users/luiscdano/projects/1`
@@ -588,9 +588,9 @@ Automatizar la implementacion de un servidor web con Ansible, publicar el codigo
 
 ---
 
-## Ruta Futura (S13-S16) · Sujeta a Cambios
+## Ruta Futura (S14-S16) · Sujeta a Cambios
 
-Nota: la Semana 12 ya fue implementada y documentada en este repositorio.
+Nota: las Semanas 12 y 13 ya fueron implementadas y documentadas en este repositorio.
 
 ---
 
@@ -667,12 +667,57 @@ La guia base del docente usaba un `docker-compose.yml` minimo con configuracion 
 
 ## S13 — Despliegue a Produccion
 
-### Objetivo Preliminar
-Definir y ejecutar un flujo controlado de despliegue a produccion, con validaciones previas y posteriores.
+### Objetivo de la Semana
+Completar el ciclo solicitado: app web Hola Mundo, contenerizacion con Docker y publicacion en Docker Hub.
+
+---
+
+### Implementacion Realizada
+- Laboratorio tecnico creado en:
+  - `semana13-despliegue-produccion/`
+- Archivos principales:
+  - `semana13-despliegue-produccion/app/server.js`
+  - `semana13-despliegue-produccion/Dockerfile`
+  - `semana13-despliegue-produccion/docker-compose.yml`
+  - `semana13-despliegue-produccion/README.md`
+- Flujo validado:
+  1. `cd semana13-despliegue-produccion`
+  2. `docker build -t luiscdano/devops-e2-s13-hola-mundo:2026.03.25 .`
+  3. `docker run -d --name devops-e2-s13-hola -p 8083:8080 luiscdano/devops-e2-s13-hola-mundo:2026.03.25`
+  4. `curl http://127.0.0.1:8083/` y `curl http://127.0.0.1:8083/health`
+  5. `docker push luiscdano/devops-e2-s13-hola-mundo:2026.03.25`
+  6. `docker push luiscdano/devops-e2-s13-hola-mundo:latest`
+
+---
+
+### Resultado Tecnico
+- Imagen publicada en Docker Hub:
+  - `luiscdano/devops-e2-s13-hola-mundo:2026.03.25`
+  - `luiscdano/devops-e2-s13-hola-mundo:latest`
+- Digest publicado:
+  - `sha256:58cbf272e982227bf9996cc695c282c3b97917643201ff3bdac76fb903fb6890`
+- Validaciones completadas:
+  - Build local `OK`
+  - Endpoints `/` y `/health` `OK`
+  - Push a Docker Hub `OK`
+
+---
+
+### Evidencia Tecnica — S13
+- Salida completa de comandos y validaciones:
+  - `docs/assets/evidencia-s13-dockerhub.txt`
+- Modulo web de evidencia:
+  - `docs/evidencias-s13.html`
+
+---
 
 ### Trazabilidad
-- Issue S13:
+- Issue S13 (cerrada, 2026-03-25):
   `https://github.com/luiscdano/DevOps.E2/issues/19`
+- Docker Hub:
+  `https://hub.docker.com/r/luiscdano/devops-e2-s13-hola-mundo`
+- GitHub Projects #1:
+  `https://github.com/users/luiscdano/projects/1`
 
 ---
 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Evidencia tecnica de la Semana 13: app Hola Mundo, Dockerfile y publicacion en Docker Hub."
+    />
+    <title>DevOps.E2 | Evidencias S13</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260325-01" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-dot"></span>
+        <span>DevOps.E2</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="semanas.html">Semanas</a>
+        <a href="kanban.html">Kanban</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="module evidence-module reveal">
+        <div class="section-head">
+          <p class="eyebrow">Semana 13 · Despliegue a Produccion</p>
+          <h2>App Hola Mundo + Docker + Docker Hub</h2>
+        </div>
+
+        <article class="kanban-card">
+          <p>
+            Implementacion completada con el ciclo solicitado: app web Hola Mundo,
+            Dockerfile funcional, build local validado y publicacion de imagen en Docker Hub.
+          </p>
+          <div class="quick-actions">
+            <a class="btn btn-primary" href="assets/evidencia-s13-dockerhub.txt" target="_blank" rel="noreferrer">
+              Ver evidencia TXT
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/tree/main/semana13-despliegue-produccion" target="_blank" rel="noreferrer">
+              Ver carpeta S13
+            </a>
+            <a class="btn btn-ghost" href="https://hub.docker.com/r/luiscdano/devops-e2-s13-hola-mundo" target="_blank" rel="noreferrer">
+              Ver imagen en Docker Hub
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/issues/19" target="_blank" rel="noreferrer">
+              Ver issue #19
+            </a>
+          </div>
+        </article>
+
+        <div class="weeks-grid">
+          <article class="kanban-card">
+            <h3>Imagen publicada</h3>
+            <ul class="metric-list">
+              <li class="metric-item">
+                <strong>Repositorio Docker Hub</strong>
+                <span class="metric-detail"><code>luiscdano/devops-e2-s13-hola-mundo</code></span>
+              </li>
+              <li class="metric-item">
+                <strong>Tags</strong>
+                <span class="metric-detail"><code>2026.03.25</code> y <code>latest</code></span>
+              </li>
+              <li class="metric-item">
+                <strong>Digest</strong>
+                <span class="metric-detail"><code>sha256:58cbf272e982227bf9996cc695c282c3b97917643201ff3bdac76fb903fb6890</code></span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="kanban-card">
+            <h3>Validaciones ejecutadas</h3>
+            <ul class="metric-list">
+              <li class="metric-item">
+                <strong>Build local</strong>
+                Imagen construida con <code>docker build</code> sin errores.
+              </li>
+              <li class="metric-item">
+                <strong>Pruebas HTTP</strong>
+                Endpoints <code>/</code> y <code>/health</code> respondiendo correctamente en <code>http://127.0.0.1:8083</code>.
+              </li>
+              <li class="metric-item">
+                <strong>Push</strong>
+                Publicacion de tags versionados y <code>latest</code> completada en Docker Hub.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Luis Emilio Cedano · Matr. 2024-0128 · ITLA Electiva II (DevOps)
+      </p>
+    </footer>
+
+    <script src="script.js?v=20260325-01"></script>
+  </body>
+</html>

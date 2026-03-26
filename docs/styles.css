@@ -1073,6 +1073,11 @@ body.modal-open {
   background: #ffbf93;
 }
 
+.badge.suspended {
+  color: #2f1800;
+  background: #ffd08f;
+}
+
 .badge.next {
   color: #06162f;
   background: #9eccff;
@@ -1125,6 +1130,11 @@ body.modal-open {
 .status-pill.active {
   background: rgba(255, 191, 147, 0.2);
   color: #ffc7a6;
+}
+
+.status-pill.suspended {
+  background: rgba(255, 208, 143, 0.2);
+  color: #ffcf8a;
 }
 
 .status-pill.next {

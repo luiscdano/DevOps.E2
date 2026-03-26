@@ -1,24 +1,25 @@
-S9 · Practica Azure DevOps — Estado Pendiente/En Proceso (Bloqueada)
-Fecha de actualizacion: 2026-03-18
+S9 · Practica Azure DevOps — Estado: Suspendida (material conservado)
+Fecha de actualizacion: 2026-03-25
 
 Contexto:
 - La semana 9 solicita una practica operativa en Azure DevOps (organizacion/proyecto, tablero con 5 issues, push de app hola mundo y URL publica en foro).
-- Actualmente existe una limitacion con la cuenta institucional ITLA (Office 365) que impide completar el acceso operativo.
+- El profesor indico suspender S9, por lo que no se continua su ejecucion operativa.
 
-Estado actual de cumplimiento (S9 practica):
+Estado de cumplimiento (S9 practica):
 - [ ] a) Crear organizacion y proyecto en Azure DevOps
 - [ ] b) Crear tablero con >= 5 issues y mover a Doing/Done
 - [ ] c) Hacer push de app hola mundo al repo de Azure DevOps
 - [ ] d) Publicar URL del proyecto en el foro
 
-Bloqueante:
-- Acceso institucional pendiente de resolucion/indicacion del profesor.
+Motivo de suspension:
+- Semana suspendida por decision docente.
+- Se mantiene toda la evidencia y el material academico para trazabilidad historica.
 
 Evidencia y trazabilidad asociada:
-- Issue practica bloqueada: https://github.com/luiscdano/DevOps.E2/issues/16
+- Issue practica suspendida: https://github.com/luiscdano/DevOps.E2/issues/16
 - Issue lectura base completada: https://github.com/luiscdano/DevOps.E2/issues/15
 - Kanban oficial: https://github.com/users/luiscdano/projects/1
 - Material de apoyo S9 (PDF): docs/assets/evidencia-s9-azure-material.pdf
 
-Criterio de cierre:
-- Se cierra cuando el flujo se ejecute realmente en Azure DevOps y la URL del proyecto quede publicada en el foro.
+Nota:
+- El contenido de S9 no se elimina; queda archivado como referencia.

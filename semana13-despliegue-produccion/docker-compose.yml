@@ -1,0 +1,10 @@
+services:
+  hola-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: luiscdano/devops-e2-s13-hola-mundo:latest
+    container_name: devops-e2-s13-hola-prod
+    ports:
+      - "8083:8080"
+    restart: unless-stopped
