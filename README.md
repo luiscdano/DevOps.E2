@@ -748,6 +748,25 @@ Automatizar el ciclo de entrega para que cada `push` a `main`:
 - Evidencia web S14:
   - `docs/evidencias-s14.html`
 
+### Ejecucion Real de la Semana (2026-04-02)
+1. Se hizo `push` a `main` con el workflow S14.
+2. Primer run fallido:
+   - Run: `https://github.com/luiscdano/DevOps.E2/actions/runs/23877424134`
+   - Causa: token de Docker Hub sin permisos de push
+   - Error clave: `unauthorized: access token has insufficient scopes`
+3. Se reemplazo `DOCKER_PASSWORD` por un token Docker Hub con scope correcto.
+4. Segundo run ejecutado manualmente y completado en `success`:
+   - Run: `https://github.com/luiscdano/DevOps.E2/actions/runs/23878576731`
+   - Job `build-and-push`: `success`
+   - Job `deploy-render`: `success`
+5. Resultado Docker Hub validado:
+   - `latest`
+   - `787906e`
+   - `20260402`
+6. Resultado Render:
+   - trigger de deploy via API completado en workflow
+   - endpoint publico en revision operativa (`/health` con timeout durante esta evidencia)
+
 ### Secrets Requeridos (GitHub Actions)
 Configurar en `Settings > Secrets and variables > Actions`:
 - `DOCKER_USERNAME`: usuario de Docker Hub.
@@ -755,9 +774,27 @@ Configurar en `Settings > Secrets and variables > Actions`:
 - `RENDER_API_KEY`: API Key de Render.
 - `RENDER_SERVICE_ID`: ID del servicio en Render (ej. `srv-xxxxxxxxxxxx`).
 
+### Paso a Paso de Verificacion en Render
+1. Abrir el servicio en Render y entrar a la pestana `Deploys`.
+2. Confirmar que el ultimo deploy este en estado `Live`.
+3. Abrir el deploy mas reciente y revisar `Logs`.
+4. Verificar que la app este escuchando en `PORT` (variable de entorno de Render).
+5. Revisar en `Settings` el `Health Check Path` (usar `/health` si corresponde).
+6. Si usa Docker image, confirmar imagen/tag de Docker Hub y ejecutar `Manual Deploy`.
+7. Validar publicamente:
+   - `https://devops-e2.onrender.com/`
+   - `https://devops-e2.onrender.com/health`
+8. Al responder HTTP 200, marcar S14 como completada en Issue + Project.
+
 ### Trazabilidad
 - Issue S14:
   `https://github.com/luiscdano/DevOps.E2/issues/20`
+- Run fallido (diagnostico):
+  `https://github.com/luiscdano/DevOps.E2/actions/runs/23877424134`
+- Run exitoso (evidencia principal):
+  `https://github.com/luiscdano/DevOps.E2/actions/runs/23878576731`
+- Evidencia TXT S14:
+  `docs/assets/evidencia-s14-docker-render.txt`
 
 ---
 

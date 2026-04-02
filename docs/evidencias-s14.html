@@ -47,7 +47,10 @@
             y luego activa despliegue de Render por API.
           </p>
           <div class="quick-actions">
-            <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2/actions/workflows/s14-docker-render.yml" target="_blank" rel="noreferrer">
+            <a class="btn btn-primary" href="assets/evidencia-s14-docker-render.txt" target="_blank" rel="noreferrer">
+              Ver evidencia TXT S14
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/actions/workflows/s14-docker-render.yml" target="_blank" rel="noreferrer">
               Ver workflow S14
             </a>
             <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/blob/main/.github/workflows/s14-docker-render.yml" target="_blank" rel="noreferrer">
@@ -97,7 +100,53 @@
                 <strong>Paso 3</strong>
                 Trigger de deploy en Render con <code>POST /v1/services/{service}/deploys</code>.
               </li>
+              <li class="metric-item">
+                <strong>Paso 4</strong>
+                Validacion operativa por endpoint publico <code>/health</code>.
+              </li>
             </ul>
+          </article>
+
+          <article class="kanban-card">
+            <h3>Ejecucion real en Actions</h3>
+            <ul class="metric-list">
+              <li class="metric-item">
+                <strong>Run inicial (fallido)</strong>
+                <span class="metric-detail">
+                  <a href="https://github.com/luiscdano/DevOps.E2/actions/runs/23877424134" target="_blank" rel="noreferrer">
+                    #23877424134
+                  </a>
+                  · Error: token Docker con scopes insuficientes.
+                </span>
+              </li>
+              <li class="metric-item">
+                <strong>Run corregido (exitoso)</strong>
+                <span class="metric-detail">
+                  <a href="https://github.com/luiscdano/DevOps.E2/actions/runs/23878576731" target="_blank" rel="noreferrer">
+                    #23878576731
+                  </a>
+                  · build-and-push OK · deploy-render OK.
+                </span>
+              </li>
+              <li class="metric-item">
+                <strong>Docker Hub</strong>
+                <span class="metric-detail">
+                  tags actualizados: <code>latest</code>, <code>787906e</code>, <code>20260402</code>.
+                </span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="kanban-card">
+            <h3>Paso a paso para cerrar Render</h3>
+            <ol class="objectives-list">
+              <li>Abrir el servicio en Render y revisar <code>Deploys</code>; confirmar que el ultimo deploy este en estado <code>Live</code>.</li>
+              <li>Entrar al deploy mas reciente y revisar <code>Logs</code>; verificar mensaje de app escuchando en <code>$PORT</code>.</li>
+              <li>En <code>Settings</code>, confirmar tipo de servicio y fuente correcta (Docker image o repo).</li>
+              <li>Si usas imagen, validar nombre/tag publicado en Docker Hub y ejecutar <code>Manual Deploy</code>.</li>
+              <li>Confirmar <code>Health Check Path</code> (si aplica) apuntando a <code>/health</code>.</li>
+              <li>Reprobar URL publica: <code>https://devops-e2.onrender.com/health</code> y esperar HTTP 200.</li>
+            </ol>
           </article>
         </div>
       </section>
@@ -109,6 +158,6 @@
       </p>
     </footer>
 
-    <script src="script.js?v=20260401-01"></script>
+    <script src="script.js?v=20260402-02"></script>
   </body>
 </html>

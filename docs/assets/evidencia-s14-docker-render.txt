@@ -1,0 +1,62 @@
+S14 - Evidencia tecnica
+Proyecto: DevOps.E2
+Fecha de registro: 2026-04-02 (UTC)
+
+Objetivo semanal
+- Automatizar build/push de imagen Docker a Docker Hub.
+- Disparar despliegue automatico en Render desde GitHub Actions.
+
+Repositorio base reutilizado
+- Carpeta app: semana13-despliegue-produccion/
+- Dockerfile: semana13-despliegue-produccion/Dockerfile
+
+Workflow implementado
+- Archivo: .github/workflows/s14-docker-render.yml
+- Nombre: S14 - Build Docker Image and Deploy to Render
+
+Secrets configurados en GitHub Actions
+- DOCKER_USERNAME
+- DOCKER_PASSWORD
+- RENDER_API_KEY
+- RENDER_SERVICE_ID
+
+Historial de ejecucion real
+
+1) Primer run (fallido por token Docker sin scope de push)
+- Run ID: 23877424134
+- URL: https://github.com/luiscdano/DevOps.E2/actions/runs/23877424134
+- Resultado: failure
+- Error clave (log): unauthorized: access token has insufficient scopes
+
+2) Correccion aplicada
+- Se reemplazo DOCKER_PASSWORD por un token Docker Hub con permisos adecuados.
+
+3) Segundo run (exitoso)
+- Run ID: 23878576731
+- URL: https://github.com/luiscdano/DevOps.E2/actions/runs/23878576731
+- Evento: workflow_dispatch
+- Resultado final: success
+- Job build-and-push: success
+- Job deploy-render: success
+
+Evidencia Docker Hub (tags actualizados por workflow)
+- Repositorio: https://hub.docker.com/r/luiscdano/devops-e2-s13-hola-mundo
+- Tag latest:    2026-04-02T01:05:13.841568Z
+- Tag 787906e:   2026-04-02T01:05:15.42677Z
+- Tag 20260402:  2026-04-02T01:05:16.925Z
+
+Evidencia Render (trigger)
+- Servicio: devops-e2
+- URL publica: https://devops-e2.onrender.com
+- Health endpoint esperado: /health
+- Trigger API en workflow: ejecutado con exito (job deploy-render = success)
+
+Observacion operativa posterior
+- Verificacion HTTP externa desde CLI (curl) devolvio timeout:
+  curl: (28) Operation timed out after 30006 milliseconds with 0 bytes received
+- Conclusión: el trigger de deploy queda validado, y la disponibilidad HTTP del servicio
+  debe confirmarse desde Dashboard/Logs de Render.
+
+Trazabilidad
+- Issue S14: https://github.com/luiscdano/DevOps.E2/issues/20
+- Project #1: https://github.com/users/luiscdano/projects/1

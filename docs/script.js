@@ -205,8 +205,9 @@ const weeksData = [
     goal: "Automatizar build/push de imagen Docker y despliegue a Render con GitHub Actions.",
     highlights: [
       "Workflow S14 creado en .github/workflows/s14-docker-render.yml",
-      "Build y push a Docker Hub con tags latest, SHA corto y fecha UTC",
-      "Trigger de deploy a Render por API con RENDER_API_KEY y RENDER_SERVICE_ID"
+      "Run #23877424134 fallo por token Docker sin scope; token reemplazado",
+      "Run #23878576731 completo en success (build/push Docker Hub + trigger Render)",
+      "Endpoint publico Render pendiente de validacion final en dashboard/logs"
     ],
     actions: [
       {
@@ -309,7 +310,7 @@ const automationData = [
   },
   {
     title: "Pipeline S14 Docker Hub + Render",
-    detail: "Workflow s14-docker-render.yml automatiza build/push de imagen y despliegue en Render.",
+    detail: "Automatizacion ejecutada con run exitoso #23878576731 y evidencia tecnica publicada en modulo S14.",
     status: "active"
   },
   {
