@@ -723,8 +723,37 @@ Completar el ciclo solicitado: app web Hola Mundo, contenerizacion con Docker y 
 
 ## S14 — Cont. Despliegue a Produccion
 
-### Objetivo Preliminar
-Fortalecer la continuidad del despliegue a produccion, reduciendo riesgo y mejorando confiabilidad operativa.
+### Objetivo de la Semana
+Automatizar el ciclo de entrega para que cada `push` a `main`:
+1. construya y publique imagen Docker en Docker Hub;
+2. dispare despliegue automatico del servicio en Render.
+
+### Implementacion Realizada
+- Workflow creado:
+  - `.github/workflows/s14-docker-render.yml`
+- Flujo configurado:
+  1. `build-and-push`
+     - valida `DOCKER_USERNAME` y `DOCKER_PASSWORD`;
+     - construye imagen desde `semana13-despliegue-produccion/Dockerfile`;
+     - publica tags:
+       - `latest`
+       - `sha corto del commit`
+       - `fecha UTC (YYYYMMDD)`
+  2. `deploy-render`
+     - valida `RENDER_API_KEY` y `RENDER_SERVICE_ID`;
+     - ejecuta `POST /v1/services/{serviceId}/deploys` en API Render.
+- Trigger del workflow:
+  - `push` a `main`.
+  - `workflow_dispatch` para ejecucion manual.
+- Evidencia web S14:
+  - `docs/evidencias-s14.html`
+
+### Secrets Requeridos (GitHub Actions)
+Configurar en `Settings > Secrets and variables > Actions`:
+- `DOCKER_USERNAME`: usuario de Docker Hub.
+- `DOCKER_PASSWORD`: Access Token de Docker Hub.
+- `RENDER_API_KEY`: API Key de Render.
+- `RENDER_SERVICE_ID`: ID del servicio en Render (ej. `srv-xxxxxxxxxxxx`).
 
 ### Trazabilidad
 - Issue S14:

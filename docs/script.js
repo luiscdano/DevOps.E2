@@ -201,12 +201,24 @@ const weeksData = [
   {
     id: "S14",
     title: "S14 - Cont. Despliegue a Produccion",
-    status: "next",
-    goal: "Fortalecer continuidad de despliegue a produccion y confiabilidad operativa.",
+    status: "active",
+    goal: "Automatizar build/push de imagen Docker y despliegue a Render con GitHub Actions.",
     highlights: [
-      "Refinar estrategia de continuidad del deploy",
-      "Reducir riesgo en cambios productivos",
-      "Consolidar evidencia tecnica del proceso"
+      "Workflow S14 creado en .github/workflows/s14-docker-render.yml",
+      "Build y push a Docker Hub con tags latest, SHA corto y fecha UTC",
+      "Trigger de deploy a Render por API con RENDER_API_KEY y RENDER_SERVICE_ID"
+    ],
+    actions: [
+      {
+        label: "Ver evidencia S14",
+        url: "evidencias-s14.html",
+        style: "primary"
+      },
+      {
+        label: "Ver issue #20",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/20",
+        style: "ghost"
+      }
     ]
   },
   {
@@ -296,8 +308,13 @@ const automationData = [
     status: "done"
   },
   {
-    title: "Ruta futura S14-S16",
-    detail: "Semanas registradas para continuidad del tramo final del curso luego de completar S13.",
+    title: "Pipeline S14 Docker Hub + Render",
+    detail: "Workflow s14-docker-render.yml automatiza build/push de imagen y despliegue en Render.",
+    status: "active"
+  },
+  {
+    title: "Ruta futura S15-S16",
+    detail: "Semanas registradas para continuidad del tramo final del curso despues de S14.",
     status: "next"
   }
 ];
@@ -1175,6 +1192,8 @@ async function loadTrackingMetrics() {
   const closedPrUrl = `${queryBase}is:pr+state:closed`;
   const pagesWorkflowUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/actions/workflows/pages.yml/runs?per_page=1`;
   const surgeWorkflowUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/actions/workflows/main.yaml/runs?per_page=1`;
+  const s14WorkflowUrl =
+    `https://api.github.com/repos/${repoOwner}/${repoName}/actions/workflows/s14-docker-render.yml/runs?per_page=1`;
 
   try {
     const [
@@ -1183,14 +1202,16 @@ async function loadTrackingMetrics() {
       openPrRes,
       closedPrRes,
       pagesWorkflowRes,
-      surgeWorkflowRes
+      surgeWorkflowRes,
+      s14WorkflowRes
     ] = await Promise.all([
       fetch(openIssuesUrl, { headers: { Accept: "application/vnd.github+json" } }),
       fetch(closedIssuesUrl, { headers: { Accept: "application/vnd.github+json" } }),
       fetch(openPrUrl, { headers: { Accept: "application/vnd.github+json" } }),
       fetch(closedPrUrl, { headers: { Accept: "application/vnd.github+json" } }),
       fetch(pagesWorkflowUrl, { headers: { Accept: "application/vnd.github+json" } }),
-      fetch(surgeWorkflowUrl, { headers: { Accept: "application/vnd.github+json" } })
+      fetch(surgeWorkflowUrl, { headers: { Accept: "application/vnd.github+json" } }),
+      fetch(s14WorkflowUrl, { headers: { Accept: "application/vnd.github+json" } })
     ]);
 
     if (
@@ -1212,9 +1233,14 @@ async function loadTrackingMetrics() {
     ]);
 
     let surgeWorkflow = { workflow_runs: [] };
+    let s14Workflow = { workflow_runs: [] };
 
     if (surgeWorkflowRes.ok) {
       surgeWorkflow = await surgeWorkflowRes.json();
+    }
+
+    if (s14WorkflowRes.ok) {
+      s14Workflow = await s14WorkflowRes.json();
     }
 
     repoMetrics.innerHTML = `
@@ -1227,6 +1253,7 @@ async function loadTrackingMetrics() {
 
     const pagesRun = pagesWorkflow.workflow_runs?.[0];
     const surgeRun = surgeWorkflow.workflow_runs?.[0];
+    const s14Run = s14Workflow.workflow_runs?.[0];
 
     const runMarkup = (label, run) => {
       if (!run) {
@@ -1245,7 +1272,10 @@ async function loadTrackingMetrics() {
       `;
     };
 
-    deployMetrics.innerHTML = `${runMarkup("Deploy Pages", pagesRun)}${runMarkup("Deploy Surge", surgeRun)}`;
+    deployMetrics.innerHTML =
+      `${runMarkup("Deploy Pages", pagesRun)}` +
+      `${runMarkup("Deploy Surge", surgeRun)}` +
+      `${runMarkup("Docker Hub + Render (S14)", s14Run)}`;
   } catch (error) {
     repoMetrics.innerHTML = `
       <li class="metric-item">

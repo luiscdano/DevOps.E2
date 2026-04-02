@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Evidencia tecnica de la Semana 13: app Hola Mundo, Dockerfile y publicacion en Docker Hub."
+      content="Evidencia tecnica de la Semana 14: automatizacion Docker Hub + deploy Render con GitHub Actions."
     />
-    <title>DevOps.E2 | Evidencias S13</title>
+    <title>DevOps.E2 | Evidencias S14</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -35,64 +35,67 @@
     <main>
       <section class="module evidence-module reveal">
         <div class="section-head">
-          <p class="eyebrow">Semana 13 · Despliegue a Produccion</p>
-          <h2>App Hola Mundo + Docker + Docker Hub</h2>
+          <p class="eyebrow">Semana 14 · Cont. Despliegue a Produccion</p>
+          <h2>GitHub Actions: Docker Hub + Render</h2>
         </div>
 
         <article class="kanban-card">
           <p>
-            Implementacion completada con el ciclo solicitado: app web Hola Mundo,
-            Dockerfile funcional, build local validado y publicacion de imagen en Docker Hub.
+            Implementacion S14 basada en la practica S13: el workflow
+            <code>s14-docker-render.yml</code> construye la imagen desde
+            <code>semana13-despliegue-produccion/</code>, la publica en Docker Hub
+            y luego activa despliegue de Render por API.
           </p>
           <div class="quick-actions">
-            <a class="btn btn-primary" href="assets/evidencia-s13-dockerhub.txt" target="_blank" rel="noreferrer">
-              Ver evidencia TXT
+            <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2/actions/workflows/s14-docker-render.yml" target="_blank" rel="noreferrer">
+              Ver workflow S14
             </a>
-            <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/tree/main/semana13-despliegue-produccion" target="_blank" rel="noreferrer">
-              Ver carpeta S13
+            <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/blob/main/.github/workflows/s14-docker-render.yml" target="_blank" rel="noreferrer">
+              Ver YAML en repo
             </a>
-            <a class="btn btn-ghost" href="https://hub.docker.com/r/luiscdano/devops-e2-s13-hola-mundo" target="_blank" rel="noreferrer">
-              Ver imagen en Docker Hub
-            </a>
-            <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/issues/19" target="_blank" rel="noreferrer">
-              Ver issue #19
+            <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/issues/20" target="_blank" rel="noreferrer">
+              Ver issue #20
             </a>
           </div>
         </article>
 
         <div class="weeks-grid">
           <article class="kanban-card">
-            <h3>Imagen publicada</h3>
+            <h3>Secrets requeridos</h3>
             <ul class="metric-list">
               <li class="metric-item">
-                <strong>Repositorio Docker Hub</strong>
-                <span class="metric-detail"><code>luiscdano/devops-e2-s13-hola-mundo</code></span>
+                <strong>DOCKER_USERNAME</strong>
+                Usuario de Docker Hub.
               </li>
               <li class="metric-item">
-                <strong>Tags</strong>
-                <span class="metric-detail"><code>2026.03.25</code> y <code>latest</code></span>
+                <strong>DOCKER_PASSWORD</strong>
+                Access Token de Docker Hub (recomendado).
               </li>
               <li class="metric-item">
-                <strong>Digest</strong>
-                <span class="metric-detail"><code>sha256:58cbf272e982227bf9996cc695c282c3b97917643201ff3bdac76fb903fb6890</code></span>
+                <strong>RENDER_API_KEY</strong>
+                API key del dashboard de Render.
+              </li>
+              <li class="metric-item">
+                <strong>RENDER_SERVICE_ID</strong>
+                ID del servicio web en Render.
               </li>
             </ul>
           </article>
 
           <article class="kanban-card">
-            <h3>Validaciones ejecutadas</h3>
+            <h3>Flujo automatizado</h3>
             <ul class="metric-list">
               <li class="metric-item">
-                <strong>Build local</strong>
-                Imagen construida con <code>docker build</code> sin errores.
+                <strong>Paso 1</strong>
+                Login en Docker Hub y build de imagen con tags <code>latest</code>, <code>sha</code> y <code>fecha</code>.
               </li>
               <li class="metric-item">
-                <strong>Pruebas HTTP</strong>
-                Endpoints <code>/</code> y <code>/health</code> respondiendo correctamente en <code>http://127.0.0.1:8083</code>.
+                <strong>Paso 2</strong>
+                Push de tags al repositorio <code>luiscdano/devops-e2-s13-hola-mundo</code>.
               </li>
               <li class="metric-item">
-                <strong>Push</strong>
-                Publicacion de tags versionados y <code>latest</code> completada en Docker Hub.
+                <strong>Paso 3</strong>
+                Trigger de deploy en Render con <code>POST /v1/services/{service}/deploys</code>.
               </li>
             </ul>
           </article>
