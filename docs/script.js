@@ -207,6 +207,7 @@ const weeksData = [
       "Workflow S14 creado en .github/workflows/s14-docker-render.yml",
       "Run #23877424134 fallo por token Docker sin scope; token reemplazado",
       "Run #23879182714 completo en success (build/push Docker Hub + trigger Render)",
+      "Fix Render repo-build: Dockerfile y .dockerignore agregados en la raiz",
       "Endpoint publico Render pendiente de validacion final en dashboard/logs"
     ],
     actions: [

@@ -769,6 +769,11 @@ Automatizar el ciclo de entrega para que cada `push` a `main`:
    - `20260402`
 7. Resultado Render:
    - trigger de deploy via API completado en workflow
+   - en build por repo aparecio error inicial:
+     - `failed to read dockerfile: open Dockerfile: no such file or directory`
+   - correccion aplicada en repo:
+     - `Dockerfile` en raiz reutilizando `semana13-despliegue-produccion/app/server.js`
+     - `.dockerignore` en raiz para contexto minimo de build
    - endpoint publico en revision operativa (`/health` con timeout durante esta evidencia)
 
 ### Secrets Requeridos (GitHub Actions)
@@ -785,10 +790,13 @@ Configurar en `Settings > Secrets and variables > Actions`:
 4. Verificar que la app este escuchando en `PORT` (variable de entorno de Render).
 5. Revisar en `Settings` el `Health Check Path` (usar `/health` si corresponde).
 6. Si usa Docker image, confirmar imagen/tag de Docker Hub y ejecutar `Manual Deploy`.
-7. Validar publicamente:
+7. Si Render construye desde repo, asegurar:
+   - Root Directory correcto
+   - Dockerfile Path apuntando al `Dockerfile` valido
+8. Validar publicamente:
    - `https://devops-e2.onrender.com/`
    - `https://devops-e2.onrender.com/health`
-8. Al responder HTTP 200, marcar S14 como completada en Issue + Project.
+9. Al responder HTTP 200, marcar S14 como completada en Issue + Project.
 
 ### Trazabilidad
 - Issue S14:

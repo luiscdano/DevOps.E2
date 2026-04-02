@@ -58,6 +58,11 @@ Evidencia Render (trigger)
 - URL publica: https://devops-e2.onrender.com
 - Health endpoint esperado: /health
 - Trigger API en workflow: ejecutado con exito (job deploy-render = success)
+- Log de error detectado en Render (build por repo):
+  error: failed to solve: failed to read dockerfile: open Dockerfile: no such file or directory
+- Correccion aplicada:
+  - se agrego Dockerfile en raiz del repo para compatibilidad con build de Render
+  - se agrego .dockerignore en raiz para reducir contexto y acelerar build
 
 Observacion operativa posterior
 - Verificacion HTTP externa desde CLI (curl) devolvio timeout:
