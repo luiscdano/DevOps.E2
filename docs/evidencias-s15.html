@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Evidencia de la Semana 15: mapa mental sobre mejores practicas en DevOps."
+    />
+    <title>DevOps.E2 | Evidencias S15</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260325-01" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-dot"></span>
+        <span>DevOps.E2</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="semanas.html">Semanas</a>
+        <a href="kanban.html">Kanban</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="module evidence-module reveal">
+        <div class="section-head">
+          <p class="eyebrow">Semana 15 · Mejores Practicas en DevOps</p>
+          <h2>Mapa mental de conexiones clave</h2>
+        </div>
+
+        <article class="kanban-card">
+          <p>
+            Evidencia S15: mapa mental elaborado a partir de la lectura del
+            tema. Resume cultura y colaboracion, automatizacion, DevSecOps,
+            supervision, resiliencia, documentacion y adaptacion a la nube.
+          </p>
+          <div class="quick-actions">
+            <a class="btn btn-primary" href="assets/mapa-mental-s15-devops.png" target="_blank" rel="noreferrer">
+              Abrir imagen completa
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/issues/21" target="_blank" rel="noreferrer">
+              Ver issue #21
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/users/luiscdano/projects/1" target="_blank" rel="noreferrer">
+              Ver Projects #1
+            </a>
+          </div>
+        </article>
+
+        <section class="evidence-grid" aria-label="Evidencia visual Semana 15">
+          <button
+            class="evidence-card"
+            type="button"
+            data-evidence-src="assets/mapa-mental-s15-devops.png"
+            data-evidence-caption="S15 · Mapa mental: mejores practicas en DevOps"
+          >
+            <img src="assets/mapa-mental-s15-devops.png" alt="Mapa mental de mejores practicas en DevOps (S15)" />
+            <span>S15 · Mapa mental (clic para ampliar)</span>
+          </button>
+        </section>
+
+        <article class="kanban-card">
+          <h3>Contenido incluido en el mapa</h3>
+          <ul class="metric-list">
+            <li class="metric-item"><strong>Cultura y colaboracion:</strong> comunicacion Dev/Ops/QA y responsabilidades compartidas.</li>
+            <li class="metric-item"><strong>Automatizacion:</strong> CI/CD, IaC y monitoreo con alertas.</li>
+            <li class="metric-item"><strong>Gestion de configuracion:</strong> versionado y consistencia entre entornos.</li>
+            <li class="metric-item"><strong>Seguridad:</strong> enfoque DevSecOps y gestion de secretos.</li>
+            <li class="metric-item"><strong>Metricas:</strong> logs centralizados, MTTR y feedback en dashboards.</li>
+            <li class="metric-item"><strong>Escalabilidad:</strong> pruebas de carga, resiliencia y uso de Kubernetes.</li>
+            <li class="metric-item"><strong>Mejora continua:</strong> metodologias agiles y revision post-mortem.</li>
+            <li class="metric-item"><strong>Nube:</strong> estrategia cloud-native y optimizacion de costos.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <div class="evidence-modal" id="evidence-modal" hidden>
+      <div class="evidence-modal-backdrop" data-evidence-close="true"></div>
+      <figure class="evidence-modal-content">
+        <button class="evidence-modal-close" type="button" data-evidence-close="true" aria-label="Cerrar evidencia">
+          Cerrar
+        </button>
+        <img id="evidence-modal-image" src="" alt="Captura ampliada" />
+        <figcaption id="evidence-modal-caption"></figcaption>
+      </figure>
+    </div>
+
+    <footer class="footer">
+      <p>
+        Luis Emilio Cedano · Matr. 2024-0128 · ITLA Electiva II (DevOps)
+      </p>
+    </footer>
+
+    <script src="script.js?v=20260402-06"></script>
+  </body>
+</html>

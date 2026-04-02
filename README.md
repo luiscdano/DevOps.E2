@@ -814,59 +814,32 @@ Configurar en `Settings > Secrets and variables > Actions`:
 
 ## S15 — Mejores Practicas en DevOps
 
-### Enfoque
-Las mejores practicas en DevOps buscan optimizar la colaboracion entre desarrollo y operaciones para entregar software de manera eficiente, segura y confiable.
+### Entregable completado
+Se elaboro un mapa mental a partir de la lectura de mejores practicas en DevOps, conectando los ejes solicitados para la semana:
 
-### Contenido Base Disponible
-1. **Cultura y Colaboracion**
-- Fomentar cultura DevOps entre desarrollo, operaciones y QA.
-- Compartir responsabilidades de calidad, seguridad y rendimiento.
-- Impulsar aprendizaje y mejora continua.
+- Cultura y colaboracion.
+- Automatizacion (CI/CD, IaC, monitoreo y alertas).
+- Gestion de configuracion.
+- Seguridad (DevSecOps y secretos).
+- Supervision y metricas (logs, MTTR, dashboards).
+- Escalabilidad y resiliencia.
+- Iteracion y mejora continua.
+- Uso de herramientas adecuadas.
+- Documentacion.
+- Adaptacion a la nube.
 
-2. **Automatizacion**
-- Implementar CI/CD para compilar, probar y desplegar automaticamente.
-- Usar IaC (Terraform, Ansible, CloudFormation).
-- Automatizar monitoreo y alertas.
-
-3. **Gestion de Configuracion**
-- Mantener versionado de aplicaciones, scripts y documentacion.
-- Asegurar consistencia de entornos con contenedores (Docker).
-
-4. **Seguridad (DevSecOps)**
-- Integrar seguridad temprano en el pipeline.
-- Gestionar secretos con herramientas especializadas.
-
-5. **Supervision y Metricas**
-- Centralizar logs (ELK, Loki, Splunk).
-- Medir KPIs como frecuencia de despliegue y MTTR.
-- Exponer dashboards con feedback en tiempo real.
-
-6. **Escalabilidad y Resiliencia**
-- Ejecutar pruebas de carga y estres.
-- Diseñar para tolerancia a fallos y recuperacion.
-- Evaluar orquestacion con Kubernetes.
-
-7. **Iteracion y Mejora Continua**
-- Aplicar practicas agiles (sprints, retrospectivas).
-- Realizar post-mortem de incidentes.
-
-8. **Uso de Herramientas Adecuadas**
-- Control de versiones: Git/GitLab/Bitbucket.
-- CI/CD: Jenkins, GitHub Actions, GitLab CI/CD, ArgoCD.
-- Observabilidad: Prometheus, Grafana, Datadog, New Relic.
-- Automatizacion: Ansible, Chef, Puppet.
-
-9. **Documentacion**
-- Mantener procesos y flujos documentados.
-- Automatizar documentacion tecnica cuando aplique.
-
-10. **Adaptacion a la Nube**
-- Diseñar con enfoque cloud-native y microservicios.
-- Optimizar costos de infraestructura en nube.
+### Evidencia visual (mapa mental)
+![Mapa mental S15 - Mejores practicas en DevOps](docs/assets/mapa-mental-s15-devops.png)
 
 ### Trazabilidad
+- Modulo web S15:
+  `https://luiscdano.github.io/DevOps.E2/evidencias-s15.html`
+- Imagen en repositorio:
+  `docs/assets/mapa-mental-s15-devops.png`
 - Issue S15:
   `https://github.com/luiscdano/DevOps.E2/issues/21`
+- Project Kanban:
+  `https://github.com/users/luiscdano/projects/1`
 
 ---
 

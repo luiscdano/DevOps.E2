@@ -226,13 +226,25 @@ const weeksData = [
   {
     id: "S15",
     title: "S15 - Mejores Practicas en DevOps",
-    status: "next",
+    status: "done",
     goal: "Aplicar buenas practicas DevOps para entrega eficiente, segura y confiable.",
     highlights: [
-      "Cultura/colaboracion, automatizacion e IaC",
-      "DevSecOps, supervision con metricas y feedback continuo",
-      "Escalabilidad, resiliencia, documentacion y nube",
-      "Contenido base ya disponible para estudio anticipado"
+      "Mapa mental S15 elaborado y publicado como evidencia visual",
+      "Cobertura de 10 ejes: cultura, CI/CD, IaC, DevSecOps y documentacion",
+      "Incluye supervision/metricas, resiliencia, mejora continua y nube",
+      "Issue #21 y sitio web actualizados con trazabilidad completa"
+    ],
+    actions: [
+      {
+        label: "Ver evidencia S15",
+        url: "evidencias-s15.html",
+        style: "primary"
+      },
+      {
+        label: "Ver issue #21",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/21",
+        style: "ghost"
+      }
     ]
   },
   {
@@ -315,8 +327,13 @@ const automationData = [
     status: "done"
   },
   {
-    title: "Ruta futura S15-S16",
-    detail: "Semanas registradas para continuidad del tramo final del curso despues de S14.",
+    title: "S15 mejores practicas (mapa mental)",
+    detail: "Semana 15 completada con mapa mental y evidencia publicada en docs/assets/mapa-mental-s15-devops.png.",
+    status: "done"
+  },
+  {
+    title: "Ruta futura S16",
+    detail: "Semana 16 permanece como siguiente hito para el proyecto final de cierre.",
     status: "next"
   }
 ];
@@ -549,8 +566,8 @@ const defaultProgressData = {
       id: "issue-21",
       title: "S15: mejores practicas en DevOps",
       week: "S15",
-      status: "todo",
-      details: "Semana futura registrada con contenido base para estudio anticipado.",
+      status: "done",
+      details: "Semana 15 completada: mapa mental publicado con trazabilidad en repo, issue y web.",
       proof: {
         label: "Issue S15",
         url: "https://github.com/luiscdano/DevOps.E2/issues/21"
@@ -591,6 +608,13 @@ const defaultProgressData = {
     }
   ],
   movements: [
+    {
+      date: "2026-04-02T03:00:00Z",
+      taskId: "issue-21",
+      from: "todo",
+      to: "done",
+      note: "Semana 15 completada con mapa mental y evidencia visual publicada."
+    },
     {
       date: "2026-03-25T23:59:03Z",
       taskId: "issue-19",

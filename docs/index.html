@@ -71,7 +71,7 @@
               <ul class="meta-strip">
                 <li><span class="label">Rama estable</span><span class="value">main</span></li>
                 <li><span class="label">Rama de trabajo</span><span class="value">dev</span></li>
-                <li><span class="label">Semana actual</span><span class="value">S14 · Cont. Despliegue a Produccion (completada)</span></li>
+                <li><span class="label">Semana actual</span><span class="value">S15 · Mejores Practicas en DevOps (completada)</span></li>
               </ul>
             </div>
           </div>
@@ -88,76 +88,53 @@
 
         <section class="reveal">
           <div class="section-head">
-            <p class="eyebrow">Semana 14 · Estado real</p>
-            <h2>Automatizacion CI/CD con Docker Hub y Render</h2>
+            <p class="eyebrow">Semana 15 · Estado real</p>
+            <h2>Mapa mental de mejores practicas en DevOps</h2>
           </div>
 
           <div class="weeks-grid">
             <article class="kanban-card">
-              <h3>Arquitectura de la practica</h3>
+              <h3>Entrega academica S15</h3>
               <p>
-                S14 extiende la practica anterior: usa la app de
-                <code>semana13-despliegue-produccion</code> para automatizar
-                build/push de imagen y despliegue a Render desde GitHub Actions.
+                Luego de la lectura de mejores practicas en DevOps, se elaboro
+                un mapa mental que conecta cultura, automatizacion, seguridad,
+                supervision, resiliencia, documentacion y nube.
               </p>
               <div class="quick-actions">
-                <a class="btn btn-primary" href="evidencias-s14.html">
-                  Ver evidencia S14
+                <a class="btn btn-primary" href="evidencias-s15.html">
+                  Ver evidencia S15
                 </a>
-                <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/tree/main/semana13-despliegue-produccion" target="_blank" rel="noreferrer">
-                  Ver carpeta base S13
-                </a>
-                <a class="btn btn-ghost" href="evidencias-s13.html">
-                  Ver evidencia S13
+                <a class="btn btn-ghost" href="assets/mapa-mental-s15-devops.png" target="_blank" rel="noreferrer">
+                  Abrir imagen S15
                 </a>
               </div>
             </article>
 
             <article class="kanban-card">
-              <h3>Imagen objetivo en Docker Hub</h3>
+              <h3>Contenido sintetizado</h3>
               <p>
-                El pipeline usa el repositorio
-                <code>luiscdano/devops-e2-s13-hola-mundo</code> y publica tags
-                <code>latest</code>, <code>SHA corto</code> y <code>fecha UTC</code>.
+                El mapa cubre 10 ejes: cultura y colaboracion, CI/CD e IaC,
+                gestion de configuracion, DevSecOps, metricas, escalabilidad,
+                mejora continua, herramientas, documentacion y adaptacion cloud.
               </p>
-            </article>
-
-            <article class="kanban-card">
-              <h3>Workflow S14</h3>
-              <p>
-                El workflow <code>s14-docker-render.yml</code> primero construye
-                y publica la imagen, y luego llama la API de Render para
-                desplegar la version mas reciente en produccion.
-              </p>
-              <div class="quick-actions">
-                <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2/actions/workflows/s14-docker-render.yml" target="_blank" rel="noreferrer">
-                  Ver workflow S14
-                </a>
-                <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/actions/runs/23879182714" target="_blank" rel="noreferrer">
-                  Ver run exitoso
-                </a>
-              </div>
             </article>
 
             <article class="kanban-card">
               <h3>Trazabilidad en GitHub</h3>
               <p>
-                S14 queda trazada en issue, workflow y Projects. La issue
-                <code>#20</code> fue cerrada despues de validar el flujo
-                completo con Docker Hub y Render.
+                S15 queda registrada con evidencia visual en el repositorio,
+                issue dedicada y seguimiento en Projects #1 para mantener el
+                control del avance semanal.
               </p>
               <div class="quick-actions">
-                <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2/issues/20" target="_blank" rel="noreferrer">
-                  Ver issue #20
+                <a class="btn btn-primary" href="https://github.com/luiscdano/DevOps.E2/issues/21" target="_blank" rel="noreferrer">
+                  Ver issue #21
                 </a>
                 <a class="btn btn-ghost" href="https://github.com/users/luiscdano/projects/1" target="_blank" rel="noreferrer">
                   Ver Projects #1
                 </a>
-                <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2/blob/main/.github/workflows/s14-docker-render.yml" target="_blank" rel="noreferrer">
-                  Ver YAML S14
-                </a>
-                <a class="btn btn-ghost" href="assets/evidencia-s14-docker-render.txt" target="_blank" rel="noreferrer">
-                  Ver evidencia TXT S14
+                <a class="btn btn-ghost" href="https://github.com/luiscdano/DevOps.E2#s15--mejores-practicas-en-devops" target="_blank" rel="noreferrer">
+                  Ver S15 en README
                 </a>
               </div>
             </article>
@@ -267,6 +244,6 @@
       </p>
     </footer>
 
-    <script src="script.js?v=20260402-05"></script>
+    <script src="script.js?v=20260402-06"></script>
   </body>
 </html>
