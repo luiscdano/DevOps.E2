@@ -39,6 +39,14 @@ Historial de ejecucion real
 - Job build-and-push: success
 - Job deploy-render: success
 
+4) Tercer run por push (validacion final, exitoso)
+- Run ID: 23879182714
+- URL: https://github.com/luiscdano/DevOps.E2/actions/runs/23879182714
+- Evento: push
+- Resultado final: success
+- Job build-and-push: success
+- Job deploy-render: success
+
 Evidencia Docker Hub (tags actualizados por workflow)
 - Repositorio: https://hub.docker.com/r/luiscdano/devops-e2-s13-hola-mundo
 - Tag latest:    2026-04-02T01:05:13.841568Z

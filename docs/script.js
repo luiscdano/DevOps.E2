@@ -206,7 +206,7 @@ const weeksData = [
     highlights: [
       "Workflow S14 creado en .github/workflows/s14-docker-render.yml",
       "Run #23877424134 fallo por token Docker sin scope; token reemplazado",
-      "Run #23878576731 completo en success (build/push Docker Hub + trigger Render)",
+      "Run #23879182714 completo en success (build/push Docker Hub + trigger Render)",
       "Endpoint publico Render pendiente de validacion final en dashboard/logs"
     ],
     actions: [
@@ -310,7 +310,7 @@ const automationData = [
   },
   {
     title: "Pipeline S14 Docker Hub + Render",
-    detail: "Automatizacion ejecutada con run exitoso #23878576731 y evidencia tecnica publicada en modulo S14.",
+    detail: "Automatizacion ejecutada con run exitoso #23879182714 y evidencia tecnica publicada en modulo S14.",
     status: "active"
   },
   {

@@ -759,11 +759,15 @@ Automatizar el ciclo de entrega para que cada `push` a `main`:
    - Run: `https://github.com/luiscdano/DevOps.E2/actions/runs/23878576731`
    - Job `build-and-push`: `success`
    - Job `deploy-render`: `success`
-5. Resultado Docker Hub validado:
+5. Tercer run por `push` (validacion final) tambien completado en `success`:
+   - Run: `https://github.com/luiscdano/DevOps.E2/actions/runs/23879182714`
+   - Job `build-and-push`: `success`
+   - Job `deploy-render`: `success`
+6. Resultado Docker Hub validado:
    - `latest`
    - `787906e`
    - `20260402`
-6. Resultado Render:
+7. Resultado Render:
    - trigger de deploy via API completado en workflow
    - endpoint publico en revision operativa (`/health` con timeout durante esta evidencia)
 
@@ -792,7 +796,7 @@ Configurar en `Settings > Secrets and variables > Actions`:
 - Run fallido (diagnostico):
   `https://github.com/luiscdano/DevOps.E2/actions/runs/23877424134`
 - Run exitoso (evidencia principal):
-  `https://github.com/luiscdano/DevOps.E2/actions/runs/23878576731`
+  `https://github.com/luiscdano/DevOps.E2/actions/runs/23879182714`
 - Evidencia TXT S14:
   `docs/assets/evidencia-s14-docker-render.txt`
 
