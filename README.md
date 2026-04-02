@@ -774,7 +774,9 @@ Automatizar el ciclo de entrega para que cada `push` a `main`:
    - correccion aplicada en repo:
      - `Dockerfile` en raiz reutilizando `semana13-despliegue-produccion/app/server.js`
      - `.dockerignore` en raiz para contexto minimo de build
-   - endpoint publico en revision operativa (`/health` con timeout durante esta evidencia)
+   - validacion final:
+     - `GET https://devops-e2.onrender.com/health` -> HTTP `200`
+     - respuesta: `{\"status\":\"ok\",\"week\":\"S13\",\"service\":\"hola-mundo-prod\"}`
 
 ### Secrets Requeridos (GitHub Actions)
 Configurar en `Settings > Secrets and variables > Actions`:

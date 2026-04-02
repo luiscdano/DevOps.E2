@@ -67,8 +67,12 @@ Evidencia Render (trigger)
 Observacion operativa posterior
 - Verificacion HTTP externa desde CLI (curl) devolvio timeout:
   curl: (28) Operation timed out after 30006 milliseconds with 0 bytes received
-- Conclusión: el trigger de deploy queda validado, y la disponibilidad HTTP del servicio
-  debe confirmarse desde Dashboard/Logs de Render.
+- Causa identificada en Render logs: Dockerfile ausente en raiz.
+- Se corrigio agregando Dockerfile y .dockerignore en raiz, se realizo nuevo push y nuevo deploy.
+- Validacion final exitosa:
+  - GET https://devops-e2.onrender.com/health
+  - HTTP 200
+  - Body: {"status":"ok","week":"S13","service":"hola-mundo-prod"}
 
 Trazabilidad
 - Issue S14: https://github.com/luiscdano/DevOps.E2/issues/20
