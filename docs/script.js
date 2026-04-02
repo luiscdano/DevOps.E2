@@ -201,7 +201,7 @@ const weeksData = [
   {
     id: "S14",
     title: "S14 - Cont. Despliegue a Produccion",
-    status: "active",
+    status: "done",
     goal: "Automatizar build/push de imagen Docker y despliegue a Render con GitHub Actions.",
     highlights: [
       "Workflow S14 creado en .github/workflows/s14-docker-render.yml",
@@ -312,7 +312,7 @@ const automationData = [
   {
     title: "Pipeline S14 Docker Hub + Render",
     detail: "Automatizacion ejecutada con run exitoso #23879182714 y evidencia tecnica publicada en modulo S14.",
-    status: "active"
+    status: "done"
   },
   {
     title: "Ruta futura S15-S16",
@@ -538,8 +538,8 @@ const defaultProgressData = {
       id: "issue-20",
       title: "S14: continuidad de despliegue a produccion",
       week: "S14",
-      status: "todo",
-      details: "Semana futura registrada como previsualizacion del tramo final del curso.",
+      status: "done",
+      details: "Semana 14 completada con pipeline Docker Hub + Render y validacion de despliegue en produccion.",
       proof: {
         label: "Issue S14",
         url: "https://github.com/luiscdano/DevOps.E2/issues/20"
