@@ -1,4 +1,4 @@
-name: S14 - Build Docker Image and Deploy to Render
+name: S16 - Final CI/CD (Test + Docker Hub + Render)
 
 on:
   push:
@@ -11,13 +11,14 @@ permissions:
 
 env:
   IMAGE_NAME: devops-e2-s13-hola-mundo
+  APP_DIR: semana13-despliegue-produccion/app
 
 concurrency:
-  group: s14-docker-render
+  group: s16-final-cicd
   cancel-in-progress: true
 
 jobs:
-  build-and-push:
+  test-build-push:
     runs-on: ubuntu-latest
     outputs:
       image_repo: ${{ steps.vars.outputs.image_repo }}
@@ -27,6 +28,21 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: ${{ env.APP_DIR }}/package-lock.json
+
+      - name: Install dependencies
+        working-directory: ${{ env.APP_DIR }}
+        run: npm ci
+
+      - name: Run unit tests
+        working-directory: ${{ env.APP_DIR }}
+        run: npm test
 
       - name: Validate Docker Hub secrets
         env:
@@ -69,7 +85,7 @@ jobs:
 
   deploy-render:
     runs-on: ubuntu-latest
-    needs: build-and-push
+    needs: test-build-push
 
     steps:
       - name: Validate Render secrets
@@ -98,8 +114,9 @@ jobs:
       - name: Publish deployment summary
         run: |
           {
-            echo "### S14 deployment triggered"
-            echo "- Docker image: ${{ needs.build-and-push.outputs.image_repo }}:latest"
-            echo "- Extra tags: ${{ needs.build-and-push.outputs.sha_short }}, ${{ needs.build-and-push.outputs.date_utc }}"
+            echo "### S16 deployment triggered"
+            echo "- Test stage: npm ci + npm test (OK)"
+            echo "- Docker image: ${{ needs.test-build-push.outputs.image_repo }}:latest"
+            echo "- Extra tags: ${{ needs.test-build-push.outputs.sha_short }}, ${{ needs.test-build-push.outputs.date_utc }}"
             echo "- Render deploy: trigger enviado correctamente"
           } >> "$GITHUB_STEP_SUMMARY"

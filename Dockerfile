@@ -4,6 +4,9 @@ ENV NODE_ENV=production
 WORKDIR /app
 
 # Render (repo build) espera Dockerfile en la raiz; se reutiliza la app S13.
+COPY semana13-despliegue-produccion/app/package*.json ./
+RUN npm ci --omit=dev --no-audit --no-fund
+
 COPY semana13-despliegue-produccion/app/server.js ./server.js
 
 EXPOSE 8080

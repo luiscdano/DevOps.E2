@@ -35,7 +35,27 @@ const requestHandler = (request, response) => {
 </html>`);
 };
 
-http.createServer(requestHandler).listen(port, host, () => {
-  // Mensaje visible en logs del contenedor para validación rápida.
-  console.log(`S13 app escuchando en http://${host}:${port}`);
-});
+function createServer() {
+  return http.createServer(requestHandler);
+}
+
+function startServer() {
+  const server = createServer();
+
+  server.listen(port, host, () => {
+    // Mensaje visible en logs del contenedor para validacion rapida.
+    console.log(`S13 app escuchando en http://${host}:${port}`);
+  });
+
+  return server;
+}
+
+if (require.main === module) {
+  startServer();
+}
+
+module.exports = {
+  requestHandler,
+  createServer,
+  startServer
+};

@@ -3,6 +3,9 @@ FROM node:22-alpine
 ENV NODE_ENV=production
 WORKDIR /app
 
+COPY app/package*.json ./
+RUN npm ci --omit=dev --no-audit --no-fund
+
 COPY app/server.js ./server.js
 
 EXPOSE 8080

@@ -1,0 +1,13 @@
+{
+  "name": "devops-e2-s13-hola-mundo-prod",
+  "version": "1.0.0",
+  "description": "Aplicacion Hola Mundo para despliegue final S16 (CI/CD)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

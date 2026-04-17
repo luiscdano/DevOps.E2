@@ -1,0 +1,50 @@
+S16 - Proyecto Final DevOps (CI/CD) - Evidencia Tecnica
+Fecha de verificacion local: 2026-04-16
+Repositorio: https://github.com/luiscdano/DevOps.E2
+
+1) Verificacion Docker Desktop
+$ docker info --format '{{.ServerVersion}}|{{.OperatingSystem}}|{{.OSType}}'
+29.2.1|Docker Desktop|linux
+
+2) Pruebas unitarias de la app de produccion
+$ cd semana13-despliegue-produccion/app
+$ npm ci
+up to date, audited 1 package in 262ms
+found 0 vulnerabilities
+
+$ npm test
+> devops-e2-s13-hola-mundo-prod@1.0.0 test
+> node --test
+
+PASS GET / devuelve HTML con mensaje Hola Mundo (24.650375ms)
+PASS GET /health devuelve estado JSON ok (6.079208ms)
+tests 2
+pass 2
+fail 0
+
+3) Endpoint de produccion Render
+$ curl -fsS -m 20 -w '\nHTTP:%{http_code}\n' https://devops-e2.onrender.com/health
+{"status":"ok","week":"S13","service":"hola-mundo-prod"}
+HTTP:200
+
+4) Pipeline CI/CD final (archivo actualizado)
+- .github/workflows/s14-docker-render.yml
+- Flujo en push a main:
+  a) Setup Node.js 22
+  b) npm ci
+  c) npm test
+  d) Docker login + build/push (latest, sha, fecha)
+  e) Trigger deploy Render via API
+
+5) Archivos clave agregados/actualizados para S16
+- semana13-despliegue-produccion/app/package.json
+- semana13-despliegue-produccion/app/package-lock.json
+- semana13-despliegue-produccion/app/server.test.js
+- semana13-despliegue-produccion/app/server.js
+- semana13-despliegue-produccion/Dockerfile
+- Dockerfile
+- .dockerignore
+- README.md
+- docs/evidencias-s16.html
+
+Estado final S16: IMPLEMENTADO LOCALMENTE Y LISTO PARA PUSH.

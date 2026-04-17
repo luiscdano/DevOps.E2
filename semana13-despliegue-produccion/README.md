@@ -5,6 +5,11 @@ Implementacion de la Semana 13 con el ciclo solicitado:
 2. Contenerizacion con Dockerfile
 3. Publicacion de imagen en Docker Hub
 
+Actualizacion S16 (Proyecto Final):
+- Se agregaron pruebas unitarias en `app/server.test.js`.
+- Se agrego `package.json` con scripts `start` y `test`.
+- El workflow CI/CD ahora ejecuta `npm ci` + `npm test` antes de publicar imagen.
+
 ## Estructura
 - `app/server.js`: app web HTTP en Node.js.
 - `Dockerfile`: imagen lista para produccion.
@@ -14,6 +19,13 @@ Implementacion de la Semana 13 con el ciclo solicitado:
 ```bash
 cd semana13-despliegue-produccion
 docker build -t luiscdano/devops-e2-s13-hola-mundo:2026.03.25 .
+```
+
+## Pruebas unitarias
+```bash
+cd semana13-despliegue-produccion/app
+npm ci
+npm test
 ```
 
 ## Validacion local

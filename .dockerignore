@@ -3,3 +3,5 @@
 !semana13-despliegue-produccion/
 !semana13-despliegue-produccion/app/
 !semana13-despliegue-produccion/app/server.js
+!semana13-despliegue-produccion/app/package.json
+!semana13-despliegue-produccion/app/package-lock.json

@@ -250,12 +250,24 @@ const weeksData = [
   {
     id: "S16",
     title: "S16 - Proyecto Final de DevOps",
-    status: "next",
-    goal: "Integrar aprendizajes del cuatrimestre en un entregable final consolidado.",
+    status: "done",
+    goal: "Consolidar CI/CD final: pruebas unitarias, Docker Hub y despliegue a Render.",
     highlights: [
-      "Integracion de CI/CD, infraestructura, seguridad y observabilidad",
-      "Preparacion de evidencia final",
-      "Cierre del ciclo academico DevOps"
+      "Pruebas unitarias agregadas en semana13-despliegue-produccion/app/server.test.js",
+      "Workflow actualizado: npm ci -> npm test -> build/push Docker Hub -> deploy Render",
+      "Evidencia S16 publicada en README, docs/evidencias-s16.html y TXT tecnico"
+    ],
+    actions: [
+      {
+        label: "Ver evidencia S16",
+        url: "evidencias-s16.html",
+        style: "primary"
+      },
+      {
+        label: "Ver issue #22",
+        url: "https://github.com/luiscdano/DevOps.E2/issues/22",
+        style: "ghost"
+      }
     ]
   }
 ];
@@ -332,9 +344,9 @@ const automationData = [
     status: "done"
   },
   {
-    title: "Ruta futura S16",
-    detail: "Semana 16 permanece como siguiente hito para el proyecto final de cierre.",
-    status: "next"
+    title: "S16 proyecto final CI/CD",
+    detail: "Cierre completado con pruebas unitarias, build/push Docker Hub y trigger de deploy en Render.",
+    status: "done"
   }
 ];
 
@@ -577,8 +589,8 @@ const defaultProgressData = {
       id: "issue-22",
       title: "S16: proyecto final de DevOps",
       week: "S16",
-      status: "todo",
-      details: "Semana futura registrada como cierre del cuatrimestre.",
+      status: "done",
+      details: "Cierre S16 implementado con pruebas, workflow CI/CD final y evidencia tecnica publicada.",
       proof: {
         label: "Issue S16",
         url: "https://github.com/luiscdano/DevOps.E2/issues/22"
@@ -608,6 +620,13 @@ const defaultProgressData = {
     }
   ],
   movements: [
+    {
+      date: "2026-04-16T23:40:00Z",
+      taskId: "issue-22",
+      from: "todo",
+      to: "done",
+      note: "Semana 16 cerrada con pipeline final CI/CD y evidencia tecnica."
+    },
     {
       date: "2026-04-02T03:00:00Z",
       taskId: "issue-21",

@@ -588,9 +588,9 @@ Automatizar la implementacion de un servidor web con Ansible, publicar el codigo
 
 ---
 
-## Ruta Futura (S14-S16) · Sujeta a Cambios
+## Ruta Consolidada (S12-S16)
 
-Nota: las Semanas 12 y 13 ya fueron implementadas y documentadas en este repositorio.
+Nota: las Semanas 12, 13, 14 y 15 quedaron completadas y la Semana 16 se cierra en este bloque final.
 
 ---
 
@@ -845,12 +845,65 @@ Se elaboro un mapa mental a partir de la lectura de mejores practicas en DevOps,
 
 ## S16 — Proyecto Final de DevOps
 
-### Objetivo Preliminar
-Consolidar en un proyecto final los aprendizajes del cuatrimestre: CI/CD, infraestructura, seguridad, observabilidad y despliegue.
+### Objetivo Final
+Cerrar el cuatrimestre con una practica integral CI/CD que cumpla el flujo solicitado:
+1. aplicacion web Hola Mundo;
+2. prueba unitaria automatizada;
+3. Dockerfile para contenedor;
+4. GitHub Actions para instalar dependencias, ejecutar pruebas, publicar imagen en Docker Hub y desplegar en Render.
+
+### Implementacion Aplicada
+- App base de despliegue:
+  - `semana13-despliegue-produccion/app/server.js`
+- Pruebas unitarias:
+  - `semana13-despliegue-produccion/app/server.test.js`
+- Scripts de ejecucion/test:
+  - `semana13-despliegue-produccion/app/package.json`
+  - `semana13-despliegue-produccion/app/package-lock.json`
+- Docker (entorno de produccion):
+  - `semana13-despliegue-produccion/Dockerfile`
+  - `Dockerfile` (raiz, compatible con Render repo-build)
+- Pipeline CI/CD final:
+  - `.github/workflows/s14-docker-render.yml` (actualizado a flujo S16)
+  - Jobs:
+    1. `test-build-push`
+       - `npm ci`
+       - `npm test`
+       - login Docker Hub
+       - build/push de imagen con tags `latest`, `sha`, `fecha`
+    2. `deploy-render`
+       - trigger de deploy via API Render
+
+### Validacion Tecnica Local (2026-04-16)
+- Docker Desktop detectado:
+  - version `29.2.1` (`docker info`)
+- Pruebas unitarias:
+  - comando: `cd semana13-despliegue-produccion/app && npm test`
+  - resultado: `2/2 pruebas en success`
+- Servicio Render publico:
+  - `GET https://devops-e2.onrender.com/health` -> HTTP `200`
+  - respuesta: `{"status":"ok","week":"S13","service":"hola-mundo-prod"}`
+
+### Secrets Requeridos (GitHub Actions)
+Configurar en `Settings > Secrets and variables > Actions`:
+- `DOCKER_USERNAME`
+- `DOCKER_PASSWORD`
+- `RENDER_API_KEY`
+- `RENDER_SERVICE_ID`
+
+### Evidencia S16
+- Modulo web:
+  - `docs/evidencias-s16.html`
+- Evidencia textual:
+  - `docs/assets/evidencia-s16-cicd-final.txt`
 
 ### Trazabilidad
-- Issue S16:
+- Issue S16 (cerrada, 2026-04-16):
   `https://github.com/luiscdano/DevOps.E2/issues/22`
+- Workflow CI/CD final:
+  `https://github.com/luiscdano/DevOps.E2/actions/workflows/s14-docker-render.yml`
+- Project Kanban:
+  `https://github.com/users/luiscdano/projects/1`
 
 ---
 
